@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+@theme {
+  --color-amazon: #FF9900;
+  --color-amazon-dark: #E68A00;
+  --color-flipkart: #2874F0;
+  --color-flipkart-dark: #1A5FD0;
+  --color-myntra: #FF3F6C;
+  --color-myntra-dark: #E0355F;
+  --color-snapdeal: #E40046;
+  --color-snapdeal-dark: #CC003E;
+  --color-shopclues: #6C3483;
+  --color-shopclues-dark: #5B2C6F;
+  --color-nykaa: #FC2779;
+  --color-ajio: #2C4152;
+  --color-meesho: #F43397;
+  --color-firstcry: #FF7043;
+  --color-indiamart: #2E3192;
+  --color-tatacliq: #212121;
+  --color-jiomart: #003873;
+  --color-pepperfry: #FF4500;
+  --color-croma: #00E9BF;
+  --color-croma-dark: #00CBA5;
+
+  --color-surface: #FAFAF7;
+  --color-surface-light: #FFFFFF;
+  --color-surface-card: #FFFFFF;
+  --color-surface-hover: #F2EBE1;
+  --color-border: #D9D0C1;
+  --color-border-light: #C5BBAA;
+
+  --color-text-primary: #1C1C1C;
+  --color-text-secondary: #4A4A4A;
+  --color-text-muted: #666666;
+
+  --color-accent: #C0392B;
+  --color-accent-light: #D94534;
+  --color-accent-secondary: #1A3C5E;
+  
+  --color-success: #2E7D32;
+  --color-success-bg: rgba(46, 125, 50, 0.12);
+  --color-warning: #F59E0B;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-surface);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-light);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+  }
+}
+
+/* Platform brand button styles */
+.btn-amazon {
+  background: linear-gradient(135deg, var(--color-amazon), var(--color-amazon-dark));
+  color: #1a1a1a;
+}
+.btn-amazon:hover {
+  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-flipkart {
+  background: linear-gradient(135deg, var(--color-flipkart), var(--color-flipkart-dark));
+  color: white;
+}
+.btn-flipkart:hover {
+  box-shadow: 0 4px 15px rgba(40, 116, 240, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-myntra {
+  background: linear-gradient(135deg, var(--color-myntra), var(--color-myntra-dark));
+  color: white;
+}
+.btn-myntra:hover {
+  box-shadow: 0 4px 15px rgba(255, 63, 108, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-snapdeal {
+  background: linear-gradient(135deg, var(--color-snapdeal), var(--color-snapdeal-dark));
+  color: white;
+}
+.btn-snapdeal:hover {
+  box-shadow: 0 4px 15px rgba(228, 0, 70, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-shopclues:hover {
+  box-shadow: 0 4px 15px rgba(108, 52, 131, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-nykaa { background: var(--color-nykaa); color: white; }
+.btn-ajio { background: var(--color-ajio); color: white; }
+.btn-meesho { background: var(--color-meesho); color: white; }
+.btn-firstcry { background: var(--color-firstcry); color: white; }
+.btn-indiamart { background: var(--color-indiamart); color: white; }
+.btn-tatacliq { background: var(--color-tatacliq); color: white; }
+.btn-jiomart { background: var(--color-jiomart); color: white; }
+.btn-pepperfry { background: var(--color-pepperfry); color: white; }
+.btn-croma { background: var(--color-croma); color: black; font-weight: 600; }
+.btn-croma:hover { background: var(--color-croma-dark); }
+
+/* Solid card */
+.glass-card {
+  background: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Best deal badge animation */
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.best-deal-badge {
+  animation: pulse-glow 2s infinite;
+}
+
+/* Heading/Accent text */
+.gradient-text {
+  color: var(--color-accent);
+}
+
+
+/* Skeleton loading */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, #EBEBEB 25%, #F5F5F5 50%, #EBEBEB 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 2px;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  animation: fadeInUp 0.4s ease-out forwards;
+}
+
+.stagger-children > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger-children > *:nth-child(8) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(9) { animation-delay: 0.45s; }
+.stagger-children > *:nth-child(10) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(11) { animation-delay: 0.55s; }
+.stagger-children > *:nth-child(12) { animation-delay: 0.6s; }
+
+/* Range slider styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 2px;
+  background: var(--color-border);
+  border-radius: 0;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-surface);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 0;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-surface);
+}
+
+/* Hide scrollbar utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

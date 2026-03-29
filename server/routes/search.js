@@ -1,5 +1,6 @@
 const express = require('express');
 const cache = require('../utils/cache');
+const { generateAffiliateLink } = require('../utils/affiliate');
 const { searchAmazon } = require('../scrapers/amazon');
 const { searchFlipkart } = require('../scrapers/flipkart');
 const { searchSnapdeal } = require('../scrapers/snapdeal');
@@ -41,7 +42,7 @@ function groupByProduct(allResults) {
       bestMatch.platforms.push({
         name: result.platform,
         price: result.price,
-        affiliateUrl: result.url,
+        affiliateUrl: generateAffiliateLink(result.platform, result.url),
         inStock: result.inStock,
       });
       // Use higher quality image if available
@@ -64,7 +65,7 @@ function groupByProduct(allResults) {
           {
             name: result.platform,
             price: result.price,
-            affiliateUrl: result.url,
+            affiliateUrl: generateAffiliateLink(result.platform, result.url),
             inStock: result.inStock,
           },
         ],

@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const https = require('https');
 const searchRoutes = require('./routes/search');
 const featuredRoutes = require('./routes/featured');
 const cache = require('./utils/cache');
@@ -57,4 +58,17 @@ app.listen(PORT, () => {
   console.log(`   Running on port ${PORT}`);
   console.log(`   Health: http://localhost:${PORT}/api/health`);
   console.log(`   Search: http://localhost:${PORT}/api/search?q=nike+shoes\n`);
+
+  // Self-ping to keep Render free tier alive
+  const RENDER_EXTERNAL_URL = process.env.RENDER_EXTERNAL_URL;
+  if (RENDER_EXTERNAL_URL) {
+    setInterval(() => {
+      https.get(`${RENDER_EXTERNAL_URL}/api/health`, (res) => {
+        console.log(`[${new Date().toLocaleTimeString()}] Self-ping status: ${res.statusCode}`);
+      }).on('error', (err) => {
+        console.error(`[${new Date().toLocaleTimeString()}] Self-ping error:`, err.message);
+      });
+    }, 14 * 60 * 1000); // 14 minutes
+    console.log(`   Self-ping mechanism enabled for ${RENDER_EXTERNAL_URL}\n`);
+  }
 });

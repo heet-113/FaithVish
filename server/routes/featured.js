@@ -1,5 +1,6 @@
 const express = require('express');
 const cache = require('../utils/cache');
+const { generateAffiliateLink } = require('../utils/affiliate');
 const { searchAmazon } = require('../scrapers/amazon');
 const { searchFlipkart } = require('../scrapers/flipkart');
 const { searchSnapdeal } = require('../scrapers/snapdeal');
@@ -123,7 +124,7 @@ router.get('/', async (req, res) => {
           platforms: [{
             name: product.platform,
             price: product.price,
-            affiliateUrl: product.url,
+            affiliateUrl: generateAffiliateLink(product.platform, product.url),
             inStock: product.inStock,
           }],
           isLive: true,

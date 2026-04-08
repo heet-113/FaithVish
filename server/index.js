@@ -53,11 +53,11 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log(`\n🔍 PriceWise Scraping Server`);
-  console.log(`   Running on http://0.0.0.0:${PORT}`);
-  console.log(`   Health: http://0.0.0.0:${PORT}/api/health`);
-  console.log(`   Search: http://0.0.0.0:${PORT}/api/search?q=nike+shoes\n`);
+  console.log(`   Running on port ${PORT}`);
+  console.log(`   Health: http://localhost:${PORT}/api/health`);
+  console.log(`   Search: http://localhost:${PORT}/api/search?q=nike+shoes\n`);
 
   // Self-ping to keep Render free tier alive
   const RENDER_EXTERNAL_URL = process.env.RENDER_EXTERNAL_URL;

@@ -1,29 +1,21 @@
 import React from 'react';
-import { BRAND_URLS } from '../utils/constants';
 
 const BrandSlider = () => {
-  const brands = [
-    { name: 'Nykaa', color: '#FC2779' },
-    { name: 'Ajio', color: '#2C4152' },
-    { name: 'Myntra', color: '#FF3F6C' },
-    { name: 'Meesho', color: '#F43397' },
-    { name: 'FirstCry', color: '#FF7043' },
-    { name: 'IndiaMART', color: '#2E3192' },
-    { name: 'Tata CliQ', color: '#212121' },
-    { name: 'JioMart', color: '#003873' },
-    { name: 'Pepperfry', color: '#FF4500' },
-    { name: 'Amazon', color: '#FF9900' },
-    { name: 'Flipkart', color: '#2874F0' },
+  const stores = [
+    'Tanishq', 'CaratLane', 'BlueStone', 'Amazon', 'Flipkart',
+    'Myntra', 'Meesho', 'Nykaa', 'Kalyan Jewellers', 'Malabar Gold',
+    'PC Jeweller', 'Senco Gold',
   ];
 
   return (
     <div className="w-full overflow-hidden bg-white py-6 border-y border-border mb-12">
+      <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-text-muted mb-4">Shop from Trusted Jewellers</p>
       <div className="flex animate-[scroll_40s_linear_infinite] gap-12 whitespace-nowrap px-12 items-center">
-        {[...brands, ...brands, ...brands].map((brand, idx) => (
+        {[...stores, ...stores, ...stores].map((store, idx) => (
           <div key={idx} className="flex items-center gap-12 group">
-            <a href={BRAND_URLS[brand.name] || '#'} target="_blank" rel="noopener noreferrer" className="text-xl font-bold font-serif uppercase tracking-widest text-text-muted group-hover:text-accent transition-colors hover:underline">
-              {brand.name}
-            </a>
+            <span className="text-lg font-bold font-serif uppercase tracking-widest text-text-muted group-hover:text-accent transition-colors cursor-default">
+              {store}
+            </span>
             <div className="w-[1px] h-6 bg-border"></div>
           </div>
         ))}

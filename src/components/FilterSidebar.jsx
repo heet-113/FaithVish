@@ -4,19 +4,15 @@ const FilterSidebar = ({ isOpen, onClose }) => {
   const {
     selectedCategory,
     setSelectedCategory,
-    selectedPlatform,
-    setSelectedPlatform,
     priceRange,
     setPriceRange,
     sortBy,
     setSortBy,
     getCategories,
-    getPlatforms,
     resetFilters,
   } = useStore();
 
   const categories = getCategories();
-  const platforms = getPlatforms();
 
   const handlePriceChange = (value) => {
     setPriceRange([0, parseInt(value)]);
@@ -65,17 +61,18 @@ const FilterSidebar = ({ isOpen, onClose }) => {
               className="w-full px-3 py-2.5 bg-white border-2 border-border rounded-sm text-sm text-text-primary font-medium focus:outline-none focus:border-accent transition-colors cursor-pointer"
               id="sort-select"
             >
-              <option value="default">Default</option>
+              <option value="default">Featured</option>
               <option value="price-low">Price: Low to High</option>
               <option value="price-high">Price: High to Low</option>
               <option value="rating">Highest Rated</option>
-              <option value="reviews">Most Reviewed</option>
+              <option value="reviews">Most Popular</option>
+              <option value="discount">Biggest Discount</option>
             </select>
           </div>
 
           {/* Categories */}
           <div>
-            <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3 mt-6">Category</h3>
+            <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3 mt-6">Jewelry Type</h3>
             <div className="space-y-1">
               {categories.map((cat) => (
                 <button
@@ -93,26 +90,6 @@ const FilterSidebar = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Platforms */}
-          <div>
-            <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3 mt-6">Platform</h3>
-            <div className="space-y-1">
-              {platforms.map((platform) => (
-                <button
-                  key={platform}
-                  onClick={() => setSelectedPlatform(platform)}
-                  className={`w-full text-left px-3 py-2 text-sm rounded-sm transition-all border-l-4 ${
-                    selectedPlatform === platform
-                      ? 'bg-surface-hover text-accent font-bold border-accent'
-                      : 'text-text-secondary border-transparent hover:bg-surface-hover hover:text-text-primary hover:border-border'
-                  }`}
-                >
-                  {platform}
-                </button>
-              ))}
-            </div>
-          </div>
-
           {/* Price Range */}
           <div>
             <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3 mt-6">
@@ -122,8 +99,8 @@ const FilterSidebar = ({ isOpen, onClose }) => {
               <input
                 type="range"
                 min="0"
-                max="30000"
-                step="500"
+                max="100000"
+                step="1000"
                 value={priceRange[1]}
                 onChange={(e) => handlePriceChange(e.target.value)}
                 className="w-full"

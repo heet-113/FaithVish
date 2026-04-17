@@ -1,20 +1,22 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import useStore from '../store/useStore';
-import { BRAND_URLS, PLATFORM_COLORS, formatPrice, getLowestPricePlatform, getSavingsPercentage } from '../utils/constants';
+import ProductCard from '../components/ProductCard';
+import { STORE_COLORS, BADGE_STYLES, formatPrice, getDiscountPercentage } from '../utils/constants';
 
 const MOCK_REVIEWS = [
-  { id: 1, user: 'Rahul S.', rating: 5, date: '2 days ago', text: 'Excellent product! Exactly as described. Very happy with my purchase. The quality is outstanding and delivery was quick.' },
-  { id: 2, user: 'Priya M.', rating: 4, date: '1 week ago', text: 'Good value for money. Works well and looks great. Minor packaging issue but the product itself is perfect.' },
-  { id: 3, user: 'Amit K.', rating: 5, date: '2 weeks ago', text: 'Best purchase I have made in a long time! Highly recommended. Compared prices on multiple sites and got the best deal here.' },
-  { id: 4, user: 'Sneha R.', rating: 4, date: '3 weeks ago', text: 'Satisfied with the product. The quality matches the description. Would definitely buy from this brand again.' },
-  { id: 5, user: 'Vikram T.', rating: 3, date: '1 month ago', text: 'Decent product for the price. Not the best quality but gets the job done. Good enough for everyday use.' },
+  { id: 1, user: 'Meera S.', rating: 5, date: '2 days ago', text: 'Absolutely gorgeous piece! The craftsmanship is impeccable and it looks even more beautiful in person. Received so many compliments at my friend\'s wedding. Worth every penny!' },
+  { id: 2, user: 'Priya M.', rating: 4, date: '1 week ago', text: 'Beautiful design and great quality. The packaging was very premium — perfect for gifting. Only giving 4 stars because the delivery took a bit longer than expected.' },
+  { id: 3, user: 'Ananya K.', rating: 5, date: '2 weeks ago', text: 'This is my third purchase from this brand and I\'m never disappointed. The finish is flawless and it\'s very comfortable to wear daily. Highly recommended!' },
+  { id: 4, user: 'Sneha R.', rating: 4, date: '3 weeks ago', text: 'Lovely piece that matches perfectly with both traditional and western outfits. The stone quality is excellent and the gold plating looks very rich.' },
+  { id: 5, user: 'Divya T.', rating: 5, date: '1 month ago', text: 'Bought this as an anniversary gift for my wife and she absolutely loved it! The quality exceeds the price point. Will definitely be shopping here again.' },
 ];
 
 const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { getProductById } = useStore();
+  const { getProductById, getRelatedProducts } = useStore();
   const product = getProductById(id);
+  const relatedProducts = getRelatedProducts(id, 4);
 
   if (!product) {
     return (
@@ -25,7 +27,7 @@ const ProductPage = () => {
           </svg>
         </div>
         <h2 className="text-xl font-bold font-serif uppercase tracking-widest text-text-primary mb-2">Product Not Found</h2>
-        <p className="text-text-muted mb-6">The product you're looking for doesn't exist.</p>
+        <p className="text-text-muted mb-6">The jewelry piece you're looking for doesn't exist.</p>
         <Link to="/" className="px-8 py-3 bg-accent text-white border-2 border-accent rounded-sm text-sm font-bold uppercase tracking-widest hover:bg-white hover:text-accent transition-colors">
           Back to Home
         </Link>
@@ -33,14 +35,9 @@ const ProductPage = () => {
     );
   }
 
-  const lowestPlatform = getLowestPricePlatform(product.platforms);
-  const savings = getSavingsPercentage(product.platforms);
-  const inStockPlatforms = product.platforms.filter((p) => p.inStock);
-  const outOfStockPlatforms = product.platforms.filter((p) => !p.inStock);
-
-  const getPlatformBtnClass = (platformName) => {
-    return PLATFORM_COLORS[platformName]?.btn || 'bg-accent text-white';
-  };
+  const discount = getDiscountPercentage(product.price, product.originalPrice);
+  const storeColor = STORE_COLORS[product.store] || { hex: '#6B7280', text: '#ffffff' };
+  const badgeStyle = product.badge ? BADGE_STYLES[product.badge] : null;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
@@ -64,10 +61,20 @@ const ProductPage = () => {
               className="w-full h-full object-cover"
               onError={(e) => { e.target.src = 'https://via.placeholder.com/400?text=No+Image'; }}
             />
-            {savings > 0 && (
+            {discount > 0 && (
               <div className="absolute top-0 right-0">
-                <span className="px-3 py-1.5 text-xs font-bold bg-success text-white border-b border-l border-success uppercase tracking-widest font-serif rounded-bl-sm">
-                  Save up to {savings}%
+                <span className="px-3 py-1.5 text-xs font-bold bg-accent text-white border-b border-l border-accent uppercase tracking-widest font-serif rounded-bl-sm">
+                  {discount}% Off
+                </span>
+              </div>
+            )}
+            {badgeStyle && (
+              <div className="absolute top-0 left-0">
+                <span
+                  className="px-3 py-1.5 text-xs font-bold uppercase tracking-widest font-serif rounded-br-sm"
+                  style={{ backgroundColor: badgeStyle.bg, color: badgeStyle.text }}
+                >
+                  {product.badge}
                 </span>
               </div>
             )}
@@ -85,7 +92,7 @@ const ProductPage = () => {
               {product.name}
             </h1>
             <div className="w-16 h-[3px] bg-accent mb-4"></div>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <div className="flex items-center gap-0.5">
                 {[...Array(5)].map((_, i) => (
                   <svg
@@ -104,11 +111,6 @@ const ProductPage = () => {
               <span className="text-sm text-text-muted">
                 ({(product.reviewCount || 0).toLocaleString()} reviews)
               </span>
-              {product.isLive && (
-                <span className="px-2 py-0.5 text-[9px] font-bold border border-success text-success rounded-sm uppercase tracking-widest">
-                  Live Data
-                </span>
-              )}
             </div>
           </div>
 
@@ -117,99 +119,60 @@ const ProductPage = () => {
             {product.description}
           </p>
 
-          {/* Price comparison table */}
-          <div className="bg-white border border-border p-5">
-            <div className="flex items-center justify-between mb-4 border-b border-border pb-2">
-              <h2 className="text-lg font-bold font-serif text-accent-secondary uppercase tracking-widest">
-                Price Comparison
-              </h2>
-              {lowestPlatform && (
-                <span className="text-xs text-success font-bold uppercase tracking-wider">
-                  Best: {formatPrice(lowestPlatform.price)}
+          {/* Price & Buy Section */}
+          <div className="bg-white border border-border p-6">
+            <div className="mb-4">
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl font-black text-text-primary">
+                  {formatPrice(product.price)}
                 </span>
-              )}
+                {product.originalPrice && product.originalPrice > product.price && (
+                  <>
+                    <span className="text-lg text-text-muted line-through">
+                      {formatPrice(product.originalPrice)}
+                    </span>
+                    <span className="px-2 py-0.5 text-sm font-bold bg-success-bg text-success rounded-sm">
+                      {discount}% off
+                    </span>
+                  </>
+                )}
+              </div>
+              <p className="text-xs text-text-muted mt-1">Inclusive of all taxes</p>
             </div>
 
-            <div className="space-y-3">
-              {/* In stock */}
-              {inStockPlatforms
-                .sort((a, b) => a.price - b.price)
-                .map((platform, idx) => {
-                  const isLowest = lowestPlatform && platform.name === lowestPlatform.name;
-                  const colors = PLATFORM_COLORS[platform.name];
-                  return (
-                    <div
-                      key={platform.name}
-                      className={`flex items-center justify-between p-3 rounded-sm transition-all border ${
-                        isLowest
-                          ? 'bg-success-bg border-success'
-                          : 'bg-white border-transparent hover:border-border'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        <div
-                          className="w-2.5 h-2.5 rounded-sm shrink-0 border border-text-primary/20"
-                          style={{ backgroundColor: colors?.hex }}
-                        />
-                        <div>
-                          <a href={BRAND_URLS[platform.name] || '#'} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-text-primary hover:underline">{platform.name}</a>
-                          {isLowest && (
-                            <span className="ml-2 px-2 py-0.5 text-[9px] font-bold bg-success text-white rounded-sm uppercase font-serif tracking-widest">
-                              Best Deal
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className={`text-base font-bold ${isLowest ? 'text-success' : 'text-text-primary'}`}>
-                          {formatPrice(platform.price)}
-                        </span>
-                        <a
-                          href={platform.affiliateUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`${getPlatformBtnClass(platform.name)} px-4 py-2 text-xs font-bold rounded-sm uppercase tracking-widest border border-transparent hover:border-text-primary transition-all`}
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Buy Now
-                        </a>
-                      </div>
-                    </div>
-                  );
-                })}
-
-              {/* Out of stock */}
-              {outOfStockPlatforms.map((platform) => {
-                const colors = PLATFORM_COLORS[platform.name];
-                return (
-                  <div
-                    key={platform.name}
-                    className="flex items-center justify-between p-3 rounded-sm bg-surface-hover/50 opacity-60 border border-transparent"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div
-                        className="w-2.5 h-2.5 rounded-sm shrink-0 grayscale opacity-50"
-                        style={{ backgroundColor: colors?.hex }}
-                      />
-                      <a href={BRAND_URLS[platform.name] || '#'} target="_blank" rel="noopener noreferrer" className="text-sm text-text-muted hover:underline">{platform.name}</a>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm text-text-muted line-through">{formatPrice(platform.price)}</span>
-                      <span className="px-3 py-2 text-xs font-bold uppercase tracking-widest text-text-muted bg-white border border-border rounded-sm">
-                        Out of Stock
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
+            {/* Store Info */}
+            <div className="flex items-center gap-2 mb-5 pb-4 border-b border-border">
+              <div
+                className="w-7 h-7 rounded-sm flex items-center justify-center text-[10px] font-black shrink-0"
+                style={{ backgroundColor: storeColor.hex, color: storeColor.text }}
+              >
+                {product.store?.[0]}
+              </div>
+              <span className="text-sm text-text-secondary">
+                Available on <strong>{product.store}</strong>
+              </span>
             </div>
+
+            {/* Buy Now Button */}
+            <a
+              href={product.affiliateUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full px-8 py-4 bg-accent text-white text-center text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-accent-light transition-all border-2 border-accent hover:shadow-[0_8px_30px_rgba(236,72,153,0.3)]"
+              id="buy-now-btn"
+            >
+              Buy Now on {product.store} →
+            </a>
+            <p className="text-[10px] text-text-muted text-center mt-2">
+              You will be redirected to {product.store}'s website to complete your purchase.
+            </p>
           </div>
 
           {/* Specs */}
           {product.specs && Object.keys(product.specs).length > 0 && (
             <div className="bg-white border border-border p-5">
               <h2 className="text-sm font-bold font-serif text-text-primary uppercase tracking-widest mb-4 border-b border-border pb-2">
-                Specifications
+                Product Details
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(product.specs).map(([key, value]) => (
@@ -223,6 +186,23 @@ const ProductPage = () => {
           )}
         </div>
       </div>
+
+      {/* Related Products */}
+      {relatedProducts.length > 0 && (
+        <div className="mb-12">
+          <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
+            <div>
+              <h2 className="text-xl font-bold font-serif uppercase tracking-widest text-text-primary">You May Also Like</h2>
+              <div className="w-12 h-[3px] bg-accent mt-2"></div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">
+            {relatedProducts.map((p) => (
+              <ProductCard key={p.id} product={p} />
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Reviews Section */}
       <div className="bg-white border border-border p-6 mb-8">
@@ -286,7 +266,7 @@ const ProductPage = () => {
           onClick={() => navigate(-1)}
           className="px-8 py-3 text-sm font-bold uppercase tracking-widest text-text-secondary bg-white border-2 border-border rounded-sm hover:border-text-primary hover:text-text-primary transition-all"
         >
-          ← Back to Products
+          ← Back to Jewelry
         </button>
       </div>
     </div>

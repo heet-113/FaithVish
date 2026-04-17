@@ -18,7 +18,7 @@ const ContactPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
           <p className="text-text-muted mb-6 leading-relaxed">
-            Have questions about our price comparison tools, affiliate partnerships, or a specific feature on our platform? 
+            Have questions about our jewelry collections, product recommendations, or affiliate partnerships? 
             We're here to help! Fill out the form, or reach out to us directly via email.
           </p>
           

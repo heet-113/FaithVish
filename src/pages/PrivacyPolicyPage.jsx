@@ -26,7 +26,7 @@ const PrivacyPolicyPage = () => {
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">2. How We Use Your Data</h2>
         <p>Your information is primarily used to:</p>
         <ul className="list-disc pl-6 space-y-2">
-          <li>Provide, operate, and maintain our price comparison service.</li>
+          <li>Provide, operate, and maintain our jewelry curation platform.</li>
           <li>Improve, personalize, and expand our website.</li>
           <li>Understand and analyze how you use our site.</li>
           <li>Monitor analytics and usage patterns.</li>
@@ -37,7 +37,7 @@ const PrivacyPolicyPage = () => {
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">3. Third-Party Links & Disclaimer</h2>
         <p>
-          FaithVish contains links to third-party e-commerce retailers (such as Amazon, Flipkart, etc.). 
+          FaithVish contains links to third-party jewelry retailers (such as Amazon, Flipkart, Tanishq, CaratLane, etc.). 
           We are not responsible for the privacy practices or content of these external sites. Once you leave our site 
           to make a purchase, any information you provide is subject to the third party's privacy policy. Please review 
           their policies before submitting any personal data.

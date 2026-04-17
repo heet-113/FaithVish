@@ -15,9 +15,9 @@ const TermsPage = () => {
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">1. Nature of the Service</h2>
         <p>
-          FaithVish is exclusively a price comparison tool and aggregator. <strong>We are not a retailer, distributor, or manufacturer.</strong> 
+          FaithVish is a jewelry curation and affiliate marketing website. <strong>We are not a retailer, distributor, or manufacturer.</strong> 
           We do not directly sell any products, manage inventory, or handle payment processing and order fulfillment. 
-          Any transactions you make are strictly with the respective third-party retailers.
+          Any transactions you make are strictly with the respective third-party jewelry retailers.
         </p>
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">2. Accuracy of Information</h2>
@@ -34,8 +34,8 @@ const TermsPage = () => {
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">3. Affiliate Relationship Disclosure</h2>
         <p>
           FaithVish participates in affiliate marketing programs. <strong>We may earn a commission when you click links to retailer sites and make a purchase.</strong> 
-          This comes at no extra cost to you. Our participation in these programs does not impact how we curate or display prices, 
-          as our primary goal is to help you find the best deal.
+          This comes at no extra cost to you. Our participation in these programs does not influence which jewelry pieces we feature, 
+          as our primary goal is to curate beautiful and trustworthy jewelry for you.
         </p>
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">4. Age Restrictions</h2>

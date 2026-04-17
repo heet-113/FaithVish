@@ -3,27 +3,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import useStore from '../store/useStore';
 
 const Navbar = () => {
-  const { searchQuery, setSearchQuery, searchLive, getCategories, setSelectedCategory } = useStore();
+  const { setSearchQuery } = useStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchFocused, setSearchFocused] = useState(false);
   const [navSearchInput, setNavSearchInput] = useState('');
   const navigate = useNavigate();
   const searchRef = useRef(null);
-  const categories = getCategories().filter((c) => c !== 'All');
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (navSearchInput.trim().length >= 2) {
       setSearchQuery(navSearchInput);
-      searchLive(navSearchInput);
       navigate('/');
     }
-  };
-
-  const handleCategoryClick = (category) => {
-    setSelectedCategory(category);
-    setMobileMenuOpen(false);
-    navigate('/');
   };
 
   return (
@@ -54,7 +46,7 @@ const Navbar = () => {
                 onChange={(e) => setNavSearchInput(e.target.value)}
                 onFocus={() => setSearchFocused(true)}
                 onBlur={() => setSearchFocused(false)}
-                placeholder="Search products, brands, categories..."
+                placeholder="Search rings, necklaces, earrings..."
                 className="w-full pl-10 pr-4 py-2.5 bg-white border-2 border-accent-secondary rounded-sm text-sm text-text-primary placeholder-text-muted focus:outline-none transition-colors"
                 id="nav-search-input"
               />
@@ -68,6 +60,18 @@ const Navbar = () => {
               className="px-3 py-2 text-sm font-semibold text-accent-secondary hover:underline transition-all uppercase tracking-wider"
             >
               Home
+            </Link>
+            <Link
+              to="/categories"
+              className="px-3 py-2 text-sm font-semibold text-text-secondary hover:text-accent transition-all uppercase tracking-wider"
+            >
+              Collections
+            </Link>
+            <Link
+              to="/about"
+              className="px-3 py-2 text-sm font-semibold text-text-secondary hover:text-accent transition-all uppercase tracking-wider"
+            >
+              About
             </Link>
           </div>
 
@@ -99,6 +103,27 @@ const Navbar = () => {
               className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
             >
               Home
+            </Link>
+            <Link
+              to="/categories"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              Collections
+            </Link>
+            <Link
+              to="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              About
+            </Link>
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              Contact
             </Link>
           </div>
         </div>

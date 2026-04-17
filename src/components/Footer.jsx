@@ -1,32 +1,7 @@
-import { Link, useNavigate } from 'react-router-dom';
-import useStore from '../store/useStore';
+import { Link } from 'react-router-dom';
+import { JEWELRY_CATEGORIES } from '../utils/constants';
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const { setSelectedCategory, featuredSections } = useStore();
-
-  const handleCategoryClick = (e, category) => {
-    e.preventDefault();
-    setSelectedCategory(category);
-    navigate(`/#category-${category}`);
-  };
-
-  const sectionOrder = ['Electronics', 'Footwear', 'Clothing', 'Beauty', 'Books', 'Home & Kitchen', 'Accessories'];
-  
-  let availableCategories = sectionOrder.filter((cat) => {
-    return featuredSections[cat] && featuredSections[cat].products && featuredSections[cat].products.length > 0;
-  });
-
-  Object.keys(featuredSections).forEach((cat) => {
-    if (!sectionOrder.includes(cat) && featuredSections[cat] && featuredSections[cat].products && featuredSections[cat].products.length > 0) {
-      availableCategories.push(cat);
-    }
-  });
-
-  const categoriesToShow = Object.keys(featuredSections).length > 0 
-    ? availableCategories 
-    : ['Electronics', 'Footwear', 'Clothing', 'Home & Kitchen', 'Beauty', 'Books'];
-
   return (
     <footer className="bg-surface-light border-t border-border mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +16,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-sm text-text-muted leading-relaxed">
-              Compare prices across India's top e-commerce platforms. Find the best deals and save money on every purchase.
+              Discover exquisite jewelry from India's most trusted brands. Handpicked collections for every occasion — from daily elegance to bridal grandeur.
             </p>
           </div>
 
@@ -50,36 +25,33 @@ const Footer = () => {
             <h3 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Quick Links</h3>
             <ul className="space-y-2.5">
               <li><Link to="/" className="text-sm text-text-muted hover:text-text-primary transition-colors">Home</Link></li>
-              <li><Link to="/categories" className="text-sm text-text-muted hover:text-text-primary transition-colors">Categories</Link></li>
+              <li><Link to="/categories" className="text-sm text-text-muted hover:text-text-primary transition-colors">Collections</Link></li>
               <li><Link to="/about" className="text-sm text-text-muted hover:text-text-primary transition-colors">About Us</Link></li>
               <li><Link to="/contact" className="text-sm text-text-muted hover:text-text-primary transition-colors">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Platforms */}
+          {/* Collections */}
           <div>
-            <h3 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Platforms</h3>
+            <h3 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Collections</h3>
             <ul className="space-y-2.5">
-              <li><a href="https://www.amazon.in" target="_blank" rel="noopener noreferrer" className="text-sm text-amazon hover:text-amazon-dark transition-colors">Amazon</a></li>
-              <li><a href="https://www.flipkart.com" target="_blank" rel="noopener noreferrer" className="text-sm text-flipkart hover:text-flipkart-dark transition-colors">Flipkart</a></li>
-              <li><a href="https://www.myntra.com" target="_blank" rel="noopener noreferrer" className="text-sm text-myntra hover:text-myntra-dark transition-colors">Myntra</a></li>
-              <li><a href="https://www.nykaa.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#FC2779] hover:opacity-80 transition-opacity">Nykaa</a></li>
-              <li><a href="https://www.ajio.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#2C4152] hover:opacity-80 transition-opacity">Ajio</a></li>
-              <li><a href="https://www.tatacliq.com" target="_blank" rel="noopener noreferrer" className="text-sm text-[#212121] hover:opacity-80 transition-opacity">Tata CliQ</a></li>
+              {JEWELRY_CATEGORIES.slice(0, 6).map(cat => (
+                <li key={cat}>
+                  <Link to="/categories" className="text-sm text-text-muted hover:text-text-primary transition-colors">
+                    {cat}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Customer Care */}
           <div>
-            <h3 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Categories</h3>
+            <h3 className="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wider">Information</h3>
             <ul className="space-y-2.5">
-              {categoriesToShow.map(cat => (
-                <li key={cat}>
-                  <a href={`/#category-${cat}`} onClick={(e) => handleCategoryClick(e, cat)} className="text-sm text-text-muted hover:text-text-primary transition-colors">
-                    {cat}
-                  </a>
-                </li>
-              ))}
+              <li><Link to="/privacy-policy" className="text-sm text-text-muted hover:text-text-primary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="text-sm text-text-muted hover:text-text-primary transition-colors">Terms of Service</Link></li>
+              <li><Link to="/about" className="text-sm text-text-muted hover:text-text-primary transition-colors">Affiliate Disclosure</Link></li>
             </ul>
           </div>
         </div>
@@ -88,11 +60,10 @@ const Footer = () => {
         <div className="py-4 border-t border-border">
           <div className="bg-white border-2 border-border rounded-sm p-4 mb-4">
             <p className="text-xs text-text-muted leading-relaxed">
-              <span className="font-semibold text-warning">⚠️ Affiliate Disclaimer:</span> FaithVish is a price comparison platform. 
-              We may earn affiliate commissions when you make purchases through our links. This does not affect the prices you pay. 
-              Product prices and availability are subject to change. We strive to keep information accurate but recommend verifying 
-              prices on the respective platforms before purchasing. All product names, logos, and brands are property of their 
-              respective owners.
+              <span className="font-semibold text-warning">⚠️ Affiliate Disclaimer:</span> FaithVish is a jewelry curation and affiliate marketing website. 
+              When you click on product links and make a purchase, we may earn a small commission at no extra cost to you. This helps us keep the site running 
+              and continue curating beautiful jewelry for you. Product prices and availability are subject to change. We recommend verifying details on the 
+              respective retailer's website before purchasing. All product names, logos, and brands are property of their respective owners.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2">

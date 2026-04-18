@@ -3,13 +3,6 @@ import useStore from '../store/useStore';
 import ProductCard from '../components/ProductCard';
 import { STORE_COLORS, BADGE_STYLES, formatPrice, getDiscountPercentage } from '../utils/constants';
 
-const MOCK_REVIEWS = [
-  { id: 1, user: 'Meera S.', rating: 5, date: '2 days ago', text: 'Absolutely gorgeous piece! The craftsmanship is impeccable and it looks even more beautiful in person. Received so many compliments at my friend\'s wedding. Worth every penny!' },
-  { id: 2, user: 'Priya M.', rating: 4, date: '1 week ago', text: 'Beautiful design and great quality. The packaging was very premium — perfect for gifting. Only giving 4 stars because the delivery took a bit longer than expected.' },
-  { id: 3, user: 'Ananya K.', rating: 5, date: '2 weeks ago', text: 'This is my third purchase from this brand and I\'m never disappointed. The finish is flawless and it\'s very comfortable to wear daily. Highly recommended!' },
-  { id: 4, user: 'Sneha R.', rating: 4, date: '3 weeks ago', text: 'Lovely piece that matches perfectly with both traditional and western outfits. The stone quality is excellent and the gold plating looks very rich.' },
-  { id: 5, user: 'Divya T.', rating: 5, date: '1 month ago', text: 'Bought this as an anniversary gift for my wife and she absolutely loved it! The quality exceeds the price point. Will definitely be shopping here again.' },
-];
 
 const ProductPage = () => {
   const { id } = useParams();
@@ -193,61 +186,6 @@ const ProductPage = () => {
         </div>
       )}
 
-      {/* Reviews Section */}
-      <div className="bg-white border border-border p-6 mb-8">
-        <div className="flex items-center justify-between mb-6 border-b border-border pb-2">
-          <div>
-            <h2 className="text-xl font-bold font-serif uppercase tracking-widest text-text-primary">Customer Reviews</h2>
-            <div className="w-12 h-[3px] bg-accent mt-2"></div>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center gap-0.5">
-              {[...Array(5)].map((_, i) => (
-                <svg
-                  key={i}
-                  className={`w-4 h-4 ${i < Math.floor(product.rating) ? 'text-warning' : 'text-border-light'}`}
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-sm font-medium text-text-primary">{product.rating} / 5</span>
-          </div>
-        </div>
-
-        <div className="space-y-4">
-          {MOCK_REVIEWS.map((review) => (
-            <div key={review.id} className="p-4 bg-white rounded-sm border border-border">
-              <div className="flex items-center justify-between mb-2 pb-2 border-b border-border/50">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-sm bg-border flex items-center justify-center">
-                    <span className="text-xs font-bold font-serif text-text-primary">{review.user.charAt(0)}</span>
-                  </div>
-                  <div>
-                    <span className="text-sm font-bold font-serif uppercase tracking-widest text-text-primary">{review.user}</span>
-                    <p className="text-[11px] text-text-muted font-bold uppercase">{review.date}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <svg
-                      key={i}
-                      className={`w-3 h-3 ${i < review.rating ? 'text-warning' : 'text-border-light'}`}
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-              </div>
-              <p className="text-sm text-text-secondary leading-relaxed">{review.text}</p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Back button */}
       <div className="text-center mt-12 mb-8">

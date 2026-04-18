@@ -133,8 +133,6 @@ const ProductPage = () => {
               <p className="text-xs text-text-muted mt-1">Inclusive of all taxes</p>
             </div>
 
-
-
             {/* Buy Now Button */}
             <a
               href={product.affiliateUrl}
@@ -143,10 +141,10 @@ const ProductPage = () => {
               className="block w-full px-8 py-4 bg-accent text-white text-center text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-accent-light transition-all border-2 border-accent hover:shadow-[0_8px_30px_rgba(236,72,153,0.3)]"
               id="buy-now-btn"
             >
-              Buy Now →
+              Buy Now on {product.store} →
             </a>
             <p className="text-[10px] text-text-muted text-center mt-2">
-              You will be redirected to the retailer's website to complete your purchase.
+              You will be redirected to {product.store}'s website to complete your purchase. As an affiliate, we may earn a small commission at no extra cost to you.
             </p>
           </div>
 
@@ -167,6 +165,128 @@ const ProductPage = () => {
             </div>
           )}
         </div>
+      </div>
+
+      {/* ========== EDITORIAL CONTENT SECTIONS ========== */}
+
+      {/* Our Review */}
+      {product.shortReview && (
+        <div className="mb-8 bg-white border border-border p-6 sm:p-8" id="product-review">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-10 h-10 rounded-sm bg-accent/10 border border-accent/30 flex items-center justify-center">
+              <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+              </svg>
+            </div>
+            <div>
+              <h2 className="text-lg font-bold font-serif uppercase tracking-widest text-text-primary">Our Review</h2>
+              <div className="w-10 h-[2px] bg-accent mt-1"></div>
+            </div>
+          </div>
+          <p className="text-sm text-text-secondary leading-relaxed whitespace-pre-line">
+            {product.shortReview}
+          </p>
+          <p className="text-[10px] text-text-muted mt-4 pt-3 border-t border-border italic">
+            This review is based on product specifications, seller descriptions, and verified buyer ratings on {product.store}. FaithVish does not physically test products.
+          </p>
+        </div>
+      )}
+
+      {/* Pros & Cons */}
+      {(product.pros?.length > 0 || product.cons?.length > 0) && (
+        <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-5" id="pros-cons">
+          {/* Pros */}
+          {product.pros?.length > 0 && (
+            <div className="bg-white border border-border p-6">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
+                <div className="w-8 h-8 rounded-sm bg-green-50 border border-green-200 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3 className="text-sm font-bold font-serif uppercase tracking-widest text-green-800">What We Like</h3>
+              </div>
+              <ul className="space-y-3">
+                {product.pros.map((pro, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 w-5 h-5 rounded-full bg-green-100 flex items-center justify-center shrink-0">
+                      <svg className="w-3 h-3 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    <span className="text-sm text-text-secondary leading-relaxed">{pro}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Cons */}
+          {product.cons?.length > 0 && (
+            <div className="bg-white border border-border p-6">
+              <div className="flex items-center gap-2 mb-4 pb-3 border-b border-border">
+                <div className="w-8 h-8 rounded-sm bg-red-50 border border-red-200 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </div>
+                <h3 className="text-sm font-bold font-serif uppercase tracking-widest text-red-700">Watch Out For</h3>
+              </div>
+              <ul className="space-y-3">
+                {product.cons.map((con, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 w-5 h-5 rounded-full bg-red-100 flex items-center justify-center shrink-0">
+                      <svg className="w-3 h-3 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </span>
+                    <span className="text-sm text-text-secondary leading-relaxed">{con}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Who Should Buy */}
+      {product.whoShouldBuy && (
+        <div className="mb-8 bg-gradient-to-r from-accent/5 to-accent-secondary/5 border border-border p-6 sm:p-8" id="who-should-buy">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-sm bg-accent-secondary/10 border border-accent-secondary/30 flex items-center justify-center">
+              <svg className="w-5 h-5 text-accent-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+              </svg>
+            </div>
+            <div>
+              <h2 className="text-lg font-bold font-serif uppercase tracking-widest text-text-primary">Who Should Buy This?</h2>
+              <div className="w-10 h-[2px] bg-accent-secondary mt-1"></div>
+            </div>
+          </div>
+          <p className="text-sm text-text-secondary leading-relaxed">
+            {product.whoShouldBuy}
+          </p>
+        </div>
+      )}
+
+      {/* Second CTA — after editorial content */}
+      <div className="mb-12 bg-white border-2 border-accent/20 p-6 text-center" id="cta-bottom">
+        <p className="text-sm text-text-secondary mb-3">
+          Convinced? Get the <strong className="text-text-primary">{product.name.length > 60 ? product.name.substring(0, 60) + '...' : product.name}</strong> for just <strong className="text-accent">{formatPrice(product.price)}</strong>
+          {discount > 0 && <span className="text-success font-semibold"> ({discount}% off)</span>}
+        </p>
+        <a
+          href={product.affiliateUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block px-10 py-3.5 bg-accent text-white text-sm font-bold uppercase tracking-[0.2em] rounded-sm hover:bg-accent-light transition-all border-2 border-accent hover:shadow-[0_8px_30px_rgba(236,72,153,0.3)]"
+          id="buy-now-btn-bottom"
+        >
+          Buy Now on {product.store} →
+        </a>
+        <p className="text-[10px] text-text-muted mt-2">
+          Affiliate link — we may earn a commission at no extra cost to you
+        </p>
       </div>
 
       {/* Related Products */}

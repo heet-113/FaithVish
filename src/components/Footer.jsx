@@ -18,6 +18,11 @@ const Footer = () => {
             <p className="text-sm text-text-muted leading-relaxed">
               Discover exquisite jewelry from India's most trusted brands. Handpicked collections for every occasion — from daily elegance to bridal grandeur.
             </p>
+            <p className="text-sm text-text-muted mt-3">
+              <strong className="text-text-secondary">📧</strong>{' '}
+              <a href="mailto:contact@faithvish.com" className="text-text-muted hover:text-text-primary transition-colors underline">contact@faithvish.com</a>
+            </p>
+            <p className="text-[10px] text-text-muted mt-2 italic">Written & curated by the FaithVish Editorial Team</p>
           </div>
 
           {/* Quick Links */}
@@ -26,6 +31,10 @@ const Footer = () => {
             <ul className="space-y-2.5">
               <li><Link to="/" className="text-sm text-text-muted hover:text-text-primary transition-colors">Home</Link></li>
               <li><Link to="/categories" className="text-sm text-text-muted hover:text-text-primary transition-colors">Collections</Link></li>
+              <li><Link to="/top-rings-under-1000" className="text-sm text-text-muted hover:text-text-primary transition-colors">Best Rings Under ₹1,000</Link></li>
+              <li><Link to="/gifting-guide" className="text-sm text-text-muted hover:text-text-primary transition-colors">Gifting Guide</Link></li>
+              <li><Link to="/buying-guide" className="text-sm text-text-muted hover:text-text-primary transition-colors">Buying Guide</Link></li>
+              <li><Link to="/jewellery-care-guide" className="text-sm text-text-muted hover:text-text-primary transition-colors">Jewellery Care</Link></li>
               <li><Link to="/about" className="text-sm text-text-muted hover:text-text-primary transition-colors">About Us</Link></li>
               <li><Link to="/contact" className="text-sm text-text-muted hover:text-text-primary transition-colors">Contact</Link></li>
             </ul>
@@ -51,7 +60,7 @@ const Footer = () => {
             <ul className="space-y-2.5">
               <li><Link to="/privacy-policy" className="text-sm text-text-muted hover:text-text-primary transition-colors">Privacy Policy</Link></li>
               <li><Link to="/terms" className="text-sm text-text-muted hover:text-text-primary transition-colors">Terms of Service</Link></li>
-              <li><Link to="/about" className="text-sm text-text-muted hover:text-text-primary transition-colors">Affiliate Disclosure</Link></li>
+              <li><Link to="/affiliate-disclosure" className="text-sm text-text-muted hover:text-text-primary transition-colors">Affiliate Disclosure</Link></li>
             </ul>
           </div>
         </div>

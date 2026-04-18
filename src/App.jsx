@@ -10,6 +10,11 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsPage from './pages/TermsPage';
 import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
+import TopRingsPage from './pages/TopRingsPage';
+import GiftingGuidePage from './pages/GiftingGuidePage';
+import AffiliateDisclosurePage from './pages/AffiliateDisclosurePage';
+import BuyingGuidePage from './pages/BuyingGuidePage';
+import JewelleryCareGuidePage from './pages/JewelleryCareGuidePage';
 
 function App() {
   return (
@@ -27,6 +32,11 @@ function App() {
             <Route path="/terms" element={<TermsPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/top-rings-under-1000" element={<TopRingsPage />} />
+            <Route path="/gifting-guide" element={<GiftingGuidePage />} />
+            <Route path="/affiliate-disclosure" element={<AffiliateDisclosurePage />} />
+            <Route path="/buying-guide" element={<BuyingGuidePage />} />
+            <Route path="/jewellery-care-guide" element={<JewelleryCareGuidePage />} />
           </Routes>
         </main>
         <Footer />

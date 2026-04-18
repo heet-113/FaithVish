@@ -68,6 +68,12 @@ const Navbar = () => {
               Collections
             </Link>
             <Link
+              to="/gifting-guide"
+              className="px-3 py-2 text-sm font-semibold text-text-secondary hover:text-accent transition-all uppercase tracking-wider"
+            >
+              Guides
+            </Link>
+            <Link
               to="/about"
               className="px-3 py-2 text-sm font-semibold text-text-secondary hover:text-accent transition-all uppercase tracking-wider"
             >
@@ -110,6 +116,34 @@ const Navbar = () => {
               className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
             >
               Collections
+            </Link>
+            <Link
+              to="/top-rings-under-1000"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              Best Rings Under ₹1,000
+            </Link>
+            <Link
+              to="/gifting-guide"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              Gifting Guide
+            </Link>
+            <Link
+              to="/buying-guide"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              Buying Guide
+            </Link>
+            <Link
+              to="/jewellery-care-guide"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest text-text-secondary hover:text-accent rounded-sm hover:bg-surface-hover transition-all border-l-2 border-transparent hover:border-accent"
+            >
+              Jewellery Care
             </Link>
             <Link
               to="/about"

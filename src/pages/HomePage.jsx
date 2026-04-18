@@ -1,4 +1,5 @@
 import { useState, useCallback, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import useStore from '../store/useStore';
 import ProductCard from '../components/ProductCard';
 import FilterSidebar from '../components/FilterSidebar';
@@ -161,6 +162,105 @@ const HomePage = () => {
         <p className="text-text-secondary text-sm sm:text-base max-w-2xl mx-auto font-medium mt-8 uppercase tracking-widest">
           Handpicked jewelry from India's most trusted brands — for every occasion.
         </p>
+      </div>
+
+      {/* Why FaithVish — Intent Section */}
+      <div className="mb-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div className="bg-white border border-border p-6 sm:p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-sm bg-accent/10 border border-accent/30 flex items-center justify-center">
+              <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h2 className="text-base font-bold font-serif uppercase tracking-widest text-text-primary">Why FaithVish?</h2>
+          </div>
+          <p className="text-sm text-text-secondary leading-relaxed mb-3">
+            Finding trustworthy jewellery online is overwhelming — thousands of listings, inflated MRPs, unclear materials,
+            and no way to know if a ₹200 ring is actually decent. We built FaithVish to cut through the noise.
+          </p>
+          <p className="text-sm text-text-secondary leading-relaxed">
+            Every product here is handpicked from Amazon India, with <strong className="text-text-primary">real ratings, real reviews, and honest pros & cons</strong>.
+            We don't just list products — we tell you what's genuinely good, what to watch out for, and who each piece is best for.
+          </p>
+        </div>
+
+        <div className="bg-white border border-border p-6 sm:p-8">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-sm bg-accent-secondary/10 border border-accent-secondary/30 flex items-center justify-center">
+              <svg className="w-5 h-5 text-accent-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h2 className="text-base font-bold font-serif uppercase tracking-widest text-text-primary">Who Is This For?</h2>
+          </div>
+          <ul className="space-y-2.5">
+            {[
+              'Budget-conscious shoppers looking for jewellery under ₹500–₹1,000',
+              'Gift buyers who need quick, reliable recommendations',
+              'First-time online jewellery buyers unsure which brands to trust',
+              'Women who want trendy fashion jewellery without overpaying',
+              'Anyone who prefers reading honest reviews before clicking "Buy"',
+            ].map((item, i) => (
+              <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
+                <span className="text-accent mt-0.5 shrink-0">→</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Buying Guides */}
+      <div className="mb-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <Link to="/top-rings-under-1000" className="group bg-white border border-border p-5 hover:border-accent transition-all flex items-center gap-4">
+          <div className="w-12 h-12 rounded-sm bg-accent/10 border border-accent/30 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors">
+            <span className="text-xl">💍</span>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-text-primary group-hover:text-accent transition-colors uppercase tracking-wider">Best Rings Under ₹1,000</h3>
+            <p className="text-xs text-text-muted mt-0.5">Ranked by real Amazon ratings & reviews</p>
+          </div>
+          <svg className="w-4 h-4 text-text-muted ml-auto group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+        <Link to="/gifting-guide" className="group bg-white border border-border p-5 hover:border-accent transition-all flex items-center gap-4">
+          <div className="w-12 h-12 rounded-sm bg-accent-secondary/10 border border-accent-secondary/30 flex items-center justify-center shrink-0 group-hover:bg-accent-secondary/20 transition-colors">
+            <span className="text-xl">🎁</span>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-text-primary group-hover:text-accent transition-colors uppercase tracking-wider">Best Jewelry for Gifting</h3>
+            <p className="text-xs text-text-muted mt-0.5">Curated gift picks by budget & occasion</p>
+          </div>
+          <svg className="w-4 h-4 text-text-muted ml-auto group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+        <Link to="/buying-guide" className="group bg-white border border-border p-5 hover:border-accent transition-all flex items-center gap-4">
+          <div className="w-12 h-12 rounded-sm bg-green-50 border border-green-200 flex items-center justify-center shrink-0 group-hover:bg-green-100 transition-colors">
+            <span className="text-xl">📖</span>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-text-primary group-hover:text-accent transition-colors uppercase tracking-wider">Online Buying Guide</h3>
+            <p className="text-xs text-text-muted mt-0.5">Materials, sizing, red flags & how to shop smart</p>
+          </div>
+          <svg className="w-4 h-4 text-text-muted ml-auto group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
+        <Link to="/jewellery-care-guide" className="group bg-white border border-border p-5 hover:border-accent transition-all flex items-center gap-4">
+          <div className="w-12 h-12 rounded-sm bg-amber-50 border border-amber-200 flex items-center justify-center shrink-0 group-hover:bg-amber-100 transition-colors">
+            <span className="text-xl">✨</span>
+          </div>
+          <div>
+            <h3 className="text-sm font-bold text-text-primary group-hover:text-accent transition-colors uppercase tracking-wider">Jewellery Care Guide</h3>
+            <p className="text-xs text-text-muted mt-0.5">Make your fashion jewellery last longer</p>
+          </div>
+          <svg className="w-4 h-4 text-text-muted ml-auto group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </Link>
       </div>
 
       {/* Search bar */}

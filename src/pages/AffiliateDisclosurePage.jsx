@@ -37,7 +37,7 @@ const AffiliateDisclosurePage = () => {
         </p>
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4 font-serif uppercase tracking-wider">Affiliate Programs We Participate In</h2>
-        <div className="bg-white border border-border p-5 my-4">
+        {/* <div className="bg-white border border-border p-5 my-4">
           <h3 className="text-sm font-bold text-text-primary mb-3 uppercase tracking-wider">Amazon Associates Program</h3>
           <p className="text-sm leading-relaxed">
             FaithVish is a participant in the <strong>Amazon Services LLC Associates Program</strong>, an affiliate advertising program
@@ -47,7 +47,7 @@ const AffiliateDisclosurePage = () => {
             As an Amazon Associate, FaithVish earns from qualifying purchases. Amazon, the Amazon logo, and all related marks
             are trademarks of Amazon.com, Inc. or its affiliates.
           </p>
-        </div>
+        </div> */}
         <div className="bg-white border border-border p-5 my-4">
           <h3 className="text-sm font-bold text-text-primary mb-3 uppercase tracking-wider">Cuelinks</h3>
           <p className="text-sm leading-relaxed">

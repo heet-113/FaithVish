@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import productsData from '../data/products.json';
+import productsData from '../data/products/index.js';
 
 const useStore = create((set, get) => ({
   // All products loaded from local JSON

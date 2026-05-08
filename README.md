@@ -6,12 +6,6 @@ FaithVish is a modern, editorial-style Indian e-commerce price comparison platfo
 
 ---
 
-## 🚀 Live Demo
-
-👉 **[View FaithVish on Vercel](https://faith-vish.vercel.app/)**
-
----
-
 ## ✨ Features
 
 - **Comprehensive Price Comparison:** Aggregates jewelry prices from top Indian e-commerce platforms.

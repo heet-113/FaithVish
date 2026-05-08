@@ -66,14 +66,8 @@ Contributions are welcome! Feel free to open issues or submit pull requests for 
 
 FaithVish is released under the MIT License.
 
-2. **Install Frontend Dependencies**:
+2. **Install Dependencies**:
    ```bash
-   npm install
-   ```
-
-3. **Install Backend Dependencies**:
-   ```bash
-   cd server
    npm install
    ```
 

@@ -6,6 +6,7 @@ import FilterSidebar from '../components/FilterSidebar';
 import CategoryGrid from '../components/CategoryGrid';
 import { getCategoryIcon } from '../components/CategoryGrid';
 import { JEWELRY_CATEGORIES } from '../utils/constants';
+import { getFeaturedPosts } from '../data/blog/index.js';
 
 // Horizontal scroll section component
 const CategorySection = ({ category, products }) => {
@@ -373,6 +374,53 @@ const HomePage = () => {
               products={catProducts}
             />
           ))}
+
+          {/* Blog Section */}
+          {(() => {
+            const blogPosts = getFeaturedPosts(3);
+            if (blogPosts.length === 0) return null;
+            return (
+              <div className="mb-12 mt-4">
+                <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
+                  <div>
+                    <h2 className="text-2xl font-bold font-serif uppercase tracking-widest text-accent-secondary">Latest from Our Blog</h2>
+                    <div className="w-16 h-[3px] bg-accent mt-2"></div>
+                  </div>
+                  <Link to="/blog" className="hidden sm:flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent hover:gap-3 transition-all">
+                    View All
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {blogPosts.map((post) => (
+                    <Link key={post.slug} to={`/blog/${post.slug}`} className="group bg-white border border-border hover:border-accent transition-all overflow-hidden">
+                      <div className="aspect-[16/10] overflow-hidden bg-surface relative">
+                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                        <div className="absolute top-3 left-3">
+                          <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/90 backdrop-blur-sm text-text-primary border border-border">{post.category}</span>
+                        </div>
+                      </div>
+                      <div className="p-5">
+                        <span className="text-[10px] font-bold uppercase tracking-widest text-accent-secondary">{new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                        <h3 className="text-base font-bold font-serif text-text-primary group-hover:text-accent transition-colors leading-snug mt-1.5 mb-2 line-clamp-2">{post.title}</h3>
+                        <p className="text-sm text-text-muted leading-relaxed line-clamp-2 mb-3">{post.excerpt}</p>
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent group-hover:gap-3 transition-all">
+                          <span>Read Article</span>
+                          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                        </div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+                <div className="text-center mt-6 sm:hidden">
+                  <Link to="/blog" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent hover:gap-3 transition-all">
+                    View All Articles
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Empty state */}
           {categorySections.length === 0 && (

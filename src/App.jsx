@@ -15,6 +15,8 @@ import GiftingGuidePage from './pages/GiftingGuidePage';
 import AffiliateDisclosurePage from './pages/AffiliateDisclosurePage';
 import BuyingGuidePage from './pages/BuyingGuidePage';
 import JewelleryCareGuidePage from './pages/JewelleryCareGuidePage';
+import BlogListingPage from './pages/BlogListingPage';
+import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
   return (
@@ -37,6 +39,8 @@ function App() {
             <Route path="/affiliate-disclosure" element={<AffiliateDisclosurePage />} />
             <Route path="/buying-guide" element={<BuyingGuidePage />} />
             <Route path="/jewellery-care-guide" element={<JewelleryCareGuidePage />} />
+            <Route path="/blog" element={<BlogListingPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
           </Routes>
         </main>
         <Footer />

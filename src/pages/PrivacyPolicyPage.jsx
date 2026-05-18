@@ -37,18 +37,39 @@ const PrivacyPolicyPage = () => {
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">3. Third-Party Links & Disclaimer</h2>
         <p>
-          FaithVish contains links to third-party jewelry retailers (such as Amazon, Flipkart, Tanishq, CaratLane, etc.). 
-          We are not responsible for the privacy practices or content of these external sites. Once you leave our site 
-          to make a purchase, any information you provide is subject to the third party's privacy policy. Please review 
-          their policies before submitting any personal data.
+          FaithVish contains links to third-party jewelry retailers (such as Amazon, Nykaa Fashion, Flipkart, Tanishq,
+          CaratLane, and others). We are not responsible for the privacy practices or content of these external sites.
+          Once you leave our site to make a purchase, any information you provide is subject to the third party's privacy
+          policy. Please review their policies before submitting any personal data.
+        </p>
+        <p>
+          We also use <strong>Cuelinks</strong>, an affiliate marketing network, which may automatically convert certain
+          outbound links on our site into tracked affiliate links. Cuelinks operates independently and has its own privacy
+          policy, which can be found at{' '}
+          <a href="https://www.cuelinks.com/privacy" target="_blank" rel="noopener noreferrer" className="text-accent underline">cuelinks.com/privacy</a>.
         </p>
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">4. Affiliate Disclosure</h2>
         <p>
-          FaithVish participates in various affiliate marketing programs. We may earn a commission when you click on 
-          links to retailer sites and make a qualifying purchase. This occurs at absolutely no extra cost to you. 
-          Tracking mechanisms (like cookies) are used by these affiliate programs to track traffic and sales originating 
-          from our site.
+          FaithVish participates in the following affiliate marketing programs:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Amazon Associates Program</strong> — We are a participant in the Amazon Services LLC Associates
+            Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees
+            by advertising and linking to Amazon.in. As an Amazon Associate, FaithVish earns from qualifying purchases.
+          </li>
+          <li>
+            <strong>Cuelinks Affiliate Network</strong> — We use Cuelinks, which automatically converts eligible
+            outbound product links into affiliate-tracked links. This may apply to links pointing to platforms beyond
+            Amazon, including other e-commerce websites. Cuelinks uses cookies and similar technologies to track
+            referrals and attribute commissions.
+          </li>
+        </ul>
+        <p className="mt-3">
+          All commissions are earned from the respective retailers and come at <strong>absolutely no extra cost to
+          you</strong>. These tracking mechanisms (cookies) are used solely to track traffic and sales originating
+          from our site for commission purposes.
         </p>
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">5. Contact Us</h2>

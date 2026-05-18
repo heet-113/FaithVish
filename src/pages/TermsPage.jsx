@@ -33,10 +33,24 @@ const TermsPage = () => {
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">3. Affiliate Relationship Disclosure</h2>
         <p>
-          FaithVish participates in affiliate marketing programs. <strong>We may earn a commission when you click links to retailer sites and make a purchase.</strong> 
-          This comes at no extra cost to you. Our participation in these programs does not influence which jewelry pieces we feature, 
-          as our primary goal is to curate beautiful and trustworthy jewelry for you.
+          FaithVish participates in affiliate marketing programs. <strong>We may earn a commission when you click links
+          to retailer sites and make a purchase.</strong> This comes at no extra cost to you. Our participation in
+          these programs does not influence which jewelry pieces we feature, as our primary goal is to curate beautiful
+          and trustworthy jewelry for you.
         </p>
+        <p>The affiliate programs we participate in include:</p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>
+            <strong>Amazon Associates Program</strong> — We are a participant in the Amazon Services LLC Associates
+            Program and earn from qualifying purchases made via Amazon.in links on our site.
+          </li>
+          <li>
+            <strong>Cuelinks Affiliate Network</strong> — We use Cuelinks, an affiliate marketing platform that may
+            automatically convert eligible outbound links on our site into tracked affiliate links. This includes links
+            to platforms such as Nykaa Fashion and other e-commerce websites. Cuelinks uses cookies to track referrals
+            and commissions.
+          </li>
+        </ul>
 
         <h2 className="text-2xl font-bold text-text-primary mt-8 mb-4">4. Age Restrictions</h2>
         <p>

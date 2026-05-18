@@ -112,6 +112,19 @@ const ProductPage = () => {
             {product.description}
           </p>
 
+          {/* ⚠️ Price Accuracy Disclaimer */}
+          <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-sm px-4 py-3" id="price-disclaimer">
+            <svg className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+            </svg>
+            <div>
+              <p className="text-xs font-bold text-amber-700 uppercase tracking-widest mb-0.5">Price May Have Changed</p>
+              <p className="text-[11px] text-amber-600 leading-relaxed">
+                Prices on our site are updated manually and may not reflect the current price. Always check the <strong>final price on {product.store}</strong> before completing your purchase.
+              </p>
+            </div>
+          </div>
+
           {/* Price & Buy Section */}
           <div className="bg-white border border-border p-6">
             <div className="mb-4">
@@ -131,6 +144,17 @@ const ProductPage = () => {
                 )}
               </div>
               <p className="text-xs text-text-muted mt-1">Inclusive of all taxes</p>
+              {product.lastUpdated && (
+                <p className="flex items-center gap-1 text-[11px] text-amber-600 mt-1">
+                  <svg className="w-3 h-3 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Price last verified:{' '}
+                  <span className="font-semibold">
+                    {new Date(product.lastUpdated + 'T00:00:00').toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' })}
+                  </span>
+                </p>
+              )}
             </div>
 
             {/* Buy Now Button */}

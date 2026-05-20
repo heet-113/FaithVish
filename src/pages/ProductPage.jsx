@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import useStore from '../store/useStore';
 import ProductCard from '../components/ProductCard';
@@ -28,9 +29,15 @@ const Card = ({ children, className = '', style = {} }) => {
 const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { getProductById, getRelatedProducts, activeGender } = useStore();
+  const { getProductById, getRelatedProducts, activeGender, setActiveGender } = useStore();
   const product = getProductById(id);
   const relatedProducts = getRelatedProducts(id, 4);
+
+  useEffect(() => {
+    if (product && product.gender && product.gender !== activeGender) {
+      setActiveGender(product.gender);
+    }
+  }, [product, activeGender, setActiveGender]);
 
   const isMen = product ? product.gender === 'men' : activeGender === 'men';
 

@@ -10,12 +10,25 @@ const FilterSidebar = ({ isOpen, onClose }) => {
     setSortBy,
     getCategories,
     resetFilters,
+    activeGender,
   } = useStore();
 
+  const isMen = activeGender === 'men';
   const categories = getCategories();
 
   const handlePriceChange = (value) => {
     setPriceRange([0, parseInt(value)]);
+  };
+
+  // Men's palette
+  const m = {
+    bg: '#282828',
+    bgInput: '#1E1E20',
+    border: '#3A3A3C',
+    accent: '#C9A96E',
+    textPrimary: '#F5F5F0',
+    textSecondary: '#9A9A9A',
+    textMuted: '#6B6B6B',
   };
 
   return (
@@ -32,19 +45,31 @@ const FilterSidebar = ({ isOpen, onClose }) => {
       <aside
         className={`
           fixed lg:sticky top-0 lg:top-20 left-0 h-full lg:h-auto w-72 lg:w-64
-          bg-surface-light lg:bg-transparent border-r lg:border-r-0 border-border
           z-50 lg:z-auto overflow-y-auto
           transform transition-transform duration-300
           ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
         `}
+        style={{
+          background: isMen ? m.bg : 'var(--color-surface-light)',
+          borderRight: isOpen ? `1px solid ${isMen ? m.border : 'var(--color-border)'}` : 'none',
+        }}
       >
         <div className="p-5 lg:p-0 space-y-6">
           {/* Header (mobile) */}
-          <div className="flex items-center justify-between lg:hidden border-b border-border pb-4 mb-4">
-            <h2 className="text-xl font-bold font-serif uppercase tracking-widest text-text-primary">Filters</h2>
+          <div
+            className="flex items-center justify-between lg:hidden pb-4 mb-4"
+            style={{ borderBottom: `1px solid ${isMen ? m.border : 'var(--color-border)'}` }}
+          >
+            <h2
+              className="text-xl font-bold font-serif uppercase tracking-widest"
+              style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}
+            >
+              Filters
+            </h2>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-sm hover:bg-surface-hover text-text-muted hover:text-text-primary transition-colors border-2 border-transparent hover:border-border"
+              className="p-1.5 rounded-sm transition-colors"
+              style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}
             >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -54,11 +79,21 @@ const FilterSidebar = ({ isOpen, onClose }) => {
 
           {/* Sort */}
           <div>
-            <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3">Sort By</h3>
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-3"
+              style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}
+            >
+              Sort By
+            </h3>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full px-3 py-2.5 bg-white border-2 border-border rounded-sm text-sm text-text-primary font-medium focus:outline-none focus:border-accent transition-colors cursor-pointer"
+              className="w-full px-3 py-2.5 rounded-sm text-sm font-medium focus:outline-none transition-colors cursor-pointer"
+              style={{
+                background: isMen ? m.bgInput : '#ffffff',
+                border: `2px solid ${isMen ? m.border : 'var(--color-border)'}`,
+                color: isMen ? m.textPrimary : 'var(--color-text-primary)',
+              }}
               id="sort-select"
             >
               <option value="default">Featured</option>
@@ -72,27 +107,46 @@ const FilterSidebar = ({ isOpen, onClose }) => {
 
           {/* Categories */}
           <div>
-            <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3 mt-6">Jewelry Type</h3>
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-3 mt-6"
+              style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}
+            >
+              Jewelry Type
+            </h3>
             <div className="space-y-1">
-              {categories.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  className={`w-full text-left px-3 py-2 text-sm rounded-sm transition-all border-l-4 ${
-                    selectedCategory === cat
-                      ? 'bg-surface-hover text-accent font-bold border-accent'
-                      : 'text-text-secondary border-transparent hover:bg-surface-hover hover:text-text-primary hover:border-border'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
+              {categories.map((cat) => {
+                const isActive = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className="w-full text-left px-3 py-2 text-sm rounded-sm transition-all border-l-4"
+                    style={{
+                      background: isActive
+                        ? (isMen ? '#303032' : 'var(--color-surface-hover)')
+                        : 'transparent',
+                      color: isActive
+                        ? (isMen ? m.accent : 'var(--color-accent)')
+                        : (isMen ? m.textSecondary : 'var(--color-text-secondary)'),
+                      fontWeight: isActive ? 700 : 400,
+                      borderLeftColor: isActive
+                        ? (isMen ? m.accent : 'var(--color-accent)')
+                        : 'transparent',
+                    }}
+                  >
+                    {cat}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
           {/* Price Range */}
           <div>
-            <h3 className="text-xs font-bold text-text-muted uppercase tracking-widest mb-3 mt-6">
+            <h3
+              className="text-xs font-bold uppercase tracking-widest mb-3 mt-6"
+              style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}
+            >
               Price Range
             </h3>
             <div className="px-1">
@@ -107,8 +161,16 @@ const FilterSidebar = ({ isOpen, onClose }) => {
                 id="price-range-slider"
               />
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-text-muted font-bold">₹0</span>
-                <span className="text-xs font-bold text-text-primary">
+                <span
+                  className="text-xs font-bold"
+                  style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}
+                >
+                  ₹0
+                </span>
+                <span
+                  className="text-xs font-bold"
+                  style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}
+                >
                   ₹{priceRange[1].toLocaleString()}
                 </span>
               </div>
@@ -118,7 +180,12 @@ const FilterSidebar = ({ isOpen, onClose }) => {
           {/* Reset button */}
           <button
             onClick={resetFilters}
-            className="w-full px-4 py-3 mt-6 text-sm font-bold uppercase tracking-widest text-text-secondary bg-white border-2 border-border rounded-sm hover:border-text-primary hover:text-text-primary transition-all"
+            className="w-full px-4 py-3 mt-6 text-sm font-bold uppercase tracking-widest rounded-sm transition-all"
+            style={{
+              background: isMen ? m.bgInput : '#ffffff',
+              border: `2px solid ${isMen ? m.border : 'var(--color-border)'}`,
+              color: isMen ? m.textSecondary : 'var(--color-text-secondary)',
+            }}
             id="reset-filters-btn"
           >
             Reset Filters

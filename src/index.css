@@ -230,3 +230,114 @@ input[type="range"]::-moz-range-thumb {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ===========================
+   MEN'S SECTION THEME
+   Dark charcoal + warm gold-bronze
+   =========================== */
+
+[data-theme="men"] {
+  --men-bg: #1E1E20;
+  --men-bg-card: #282828;
+  --men-bg-card-hover: #303032;
+  --men-border: #3A3A3C;
+  --men-border-hover: #C9A96E;
+  --men-accent: #C9A96E;
+  --men-accent-light: #D4BA82;
+  --men-accent-secondary: #C9A96E;
+  --men-text-primary: #F5F5F0;
+  --men-text-secondary: #9A9A9A;
+  --men-text-muted: #6B6B6B;
+  --men-surface: #1A1A1C;
+}
+
+/* Men's page wrapper */
+.men-page {
+  background-color: #1E1E20;
+  min-height: 100vh;
+}
+
+/* Men's hero section */
+.men-hero {
+  background: repeating-linear-gradient(
+    -45deg,
+    rgba(184, 167, 122, 0.04) 0px,
+    rgba(184, 167, 122, 0.04) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+  border-top: 2px solid #3A3A3C;
+  border-bottom: 2px solid #3A3A3C;
+}
+
+/* Men's card */
+.men-card {
+  background: #282828;
+  border: 1px solid #3A3A3C;
+  transition: all 0.25s ease;
+}
+.men-card:hover {
+  border-color: #C9A96E;
+  box-shadow: 0 4px 24px rgba(184, 167, 122, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Men's accent button */
+.men-btn-accent {
+  background: #C9A96E;
+  color: #1E1E20;
+  border: 2px solid #C9A96E;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  transition: all 0.2s ease;
+}
+.men-btn-accent:hover {
+  background: #D4BA82;
+  border-color: #D4BA82;
+}
+
+/* Men's section header underline */
+.men-section-underline {
+  width: 3rem;
+  height: 3px;
+  background: linear-gradient(90deg, #C9A96E, #C9A96E);
+  margin-top: 0.5rem;
+}
+
+/* Men's scrollbar */
+[data-theme="men"] ::-webkit-scrollbar-thumb {
+  background: #3A3A3C;
+}
+[data-theme="men"] ::-webkit-scrollbar-thumb:hover {
+  background: #C9A96E;
+}
+
+/* Men's range slider */
+[data-theme="men"] input[type="range"] {
+  background: #3A3A3C;
+}
+[data-theme="men"] input[type="range"]::-webkit-slider-thumb {
+  background: #C9A96E;
+  border-color: #1E1E20;
+}
+[data-theme="men"] input[type="range"]::-moz-range-thumb {
+  background: #C9A96E;
+  border-color: #1E1E20;
+}
+
+/* Men's skeleton */
+[data-theme="men"] .skeleton {
+  background: linear-gradient(90deg, #282828 25%, #333335 50%, #282828 75%);
+  background-size: 200% 100%;
+}
+
+/* Gold shimmer animation for men's accents */
+@keyframes goldShimmer {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+.men-gold-pulse {
+  animation: goldShimmer 3s ease-in-out infinite;
+}

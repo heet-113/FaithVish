@@ -5,6 +5,9 @@ const useStore = create((set, get) => ({
   // All products loaded from local JSON
   products: productsData,
 
+  // Active gender section: 'women' | 'men'
+  activeGender: 'women',
+
   // Filters
   searchQuery: '',
   selectedCategory: 'All',
@@ -12,6 +15,7 @@ const useStore = create((set, get) => ({
   sortBy: 'default',
 
   // Setters
+  setActiveGender: (gender) => set({ activeGender: gender, selectedCategory: 'All', searchQuery: '' }),
   setSearchQuery: (query) => set({ searchQuery: query }),
   setSelectedCategory: (category) => set({ selectedCategory: category }),
   setPriceRange: (range) => set({ priceRange: range }),
@@ -24,28 +28,77 @@ const useStore = create((set, get) => ({
     sortBy: 'default',
   }),
 
-  // Get unique categories from products
+  // Get unique categories from products (for current gender)
   getCategories: () => {
-    const cats = [...new Set(get().products.map((p) => p.category))];
+    const { products, activeGender } = get();
+    const genderProducts = products.filter((p) => p.gender === activeGender);
+    const cats = [...new Set(genderProducts.map((p) => p.category))];
     return ['All', ...cats.sort()];
   },
 
-  // Filtered products (client-side only)
+  // Filtered products (client-side only), respects active gender
   getFilteredProducts: () => {
-    const { products, searchQuery, selectedCategory, priceRange, sortBy } = get();
-    let filtered = [...products];
+    const { products, searchQuery, selectedCategory, priceRange, sortBy, activeGender } = get();
+    let filtered = products.filter((p) => p.gender === activeGender);
 
-    // Text search
+    // Text search — multi-word tokenized relevance scoring
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (p) =>
-          p.name.toLowerCase().includes(q) ||
-          p.category.toLowerCase().includes(q) ||
-          (p.description && p.description.toLowerCase().includes(q)) ||
-          (p.tags && p.tags.some((t) => t.toLowerCase().includes(q))) ||
-          (p.store && p.store.toLowerCase().includes(q))
-      );
+      // Split query into individual tokens (words), remove empty strings
+      const tokens = searchQuery.toLowerCase().trim().split(/\s+/).filter(Boolean);
+
+      // Build a scored, filterable list
+      const scored = filtered
+        .map((p) => {
+          // Flatten all searchable text fields into weighted buckets
+          const highPriority = [
+            p.name || '',
+            p.category || '',
+            (p.tags || []).join(' '),
+            p.badge || '',
+          ].join(' ').toLowerCase();
+
+          const medPriority = [
+            p.description || '',
+            p.shortReview || '',
+            p.whoShouldBuy || '',
+            p.store || '',
+          ].join(' ').toLowerCase();
+
+          const lowPriority = [
+            (p.pros || []).join(' '),
+            (p.cons || []).join(' '),
+            Object.values(p.specs || {}).join(' '),
+          ].join(' ').toLowerCase();
+
+          let score = 0;
+          let matchedTokens = 0;
+
+          for (const token of tokens) {
+            let tokenMatched = false;
+
+            if (highPriority.includes(token)) {
+              score += 3;
+              tokenMatched = true;
+            }
+            if (medPriority.includes(token)) {
+              score += 2;
+              tokenMatched = true;
+            }
+            if (lowPriority.includes(token)) {
+              score += 1;
+              tokenMatched = true;
+            }
+            if (tokenMatched) matchedTokens++;
+          }
+
+          return { product: p, score, matchedTokens };
+        })
+        // Keep products that match at least ONE token
+        .filter(({ matchedTokens }) => matchedTokens > 0)
+        // Sort by score descending (most relevant first)
+        .sort((a, b) => b.score - a.score);
+
+      filtered = scored.map(({ product }) => product);
     }
 
     // Category filter
@@ -86,22 +139,33 @@ const useStore = create((set, get) => ({
     return filtered;
   },
 
-  // Get single product
+  // Get single product (gender-agnostic for product detail pages)
   getProductById: (id) => {
     return get().products.find((p) => String(p.id) === String(id));
   },
 
-  // Get products by category
+  // Get products by category and active gender
   getProductsByCategory: (category) => {
-    return get().products.filter((p) => p.category === category);
+    const { products, activeGender } = get();
+    return products.filter((p) => p.category === category && p.gender === activeGender);
   },
 
-  // Get related products (same category, excluding current)
+  // Get products by gender only
+  getProductsByGender: (gender) => {
+    return get().products.filter((p) => p.gender === gender);
+  },
+
+  // Get products by category and explicit gender
+  getProductsByCategoryAndGender: (category, gender) => {
+    return get().products.filter((p) => p.category === category && p.gender === gender);
+  },
+
+  // Get related products (same category and gender, excluding current)
   getRelatedProducts: (productId, limit = 4) => {
     const product = get().getProductById(productId);
     if (!product) return [];
     return get().products
-      .filter((p) => p.category === product.category && String(p.id) !== String(productId))
+      .filter((p) => p.category === product.category && p.gender === product.gender && String(p.id) !== String(productId))
       .slice(0, limit);
   },
 }));

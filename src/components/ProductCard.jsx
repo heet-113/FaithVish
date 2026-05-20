@@ -3,7 +3,6 @@ import { STORE_COLORS, BADGE_STYLES, formatPrice, getDiscountPercentage } from '
 
 const ProductCard = ({ product }) => {
   const discount = getDiscountPercentage(product.price, product.originalPrice);
-  const storeColor = STORE_COLORS[product.store] || { hex: '#6B7280', text: '#ffffff' };
   const badgeStyle = product.badge ? BADGE_STYLES[product.badge] : null;
 
   return (

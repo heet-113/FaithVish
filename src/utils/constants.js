@@ -4,6 +4,25 @@ export const JEWELRY_CATEGORIES = [
   'Bangles', 'Pendants', 'Anklets', 'Mangalsutra'
 ];
 
+// Women's section categories (all categories)
+export const WOMEN_CATEGORIES = [
+  'Rings', 'Necklaces', 'Earrings', 'Bracelets',
+  'Bangles', 'Pendants', 'Anklets', 'Mangalsutra'
+];
+
+// Men's section categories (shared categories that apply to men)
+export const MEN_CATEGORIES = [
+  'Rings', 'Necklaces', 'Bracelets', 'Pendants'
+];
+
+// Display labels for men's categories (can override with more masculine wording)
+export const MEN_CATEGORY_LABELS = {
+  Rings: 'Rings',
+  Necklaces: 'Chains',
+  Bracelets: 'Bracelets',
+  Pendants: 'Pendants',
+};
+
 // Store brand colors (for affiliate badges)
 export const STORE_COLORS = {
   Amazon: { hex: '#FF9900', text: '#1a1a1a' },

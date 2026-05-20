@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import useStore from './store/useStore';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer';
@@ -19,10 +20,20 @@ import BlogListingPage from './pages/BlogListingPage';
 import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
+  const { activeGender } = useStore();
+  const isMen = activeGender === 'men';
+
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col bg-surface">
+      <div
+        className="min-h-screen flex flex-col"
+        data-theme={activeGender}
+        style={{
+          backgroundColor: isMen ? '#1E1E20' : 'var(--color-surface)',
+          transition: 'background-color 0.4s ease',
+        }}
+      >
         <AffiliateDisclosureBanner />
         <Navbar />
         <main className="flex-1">

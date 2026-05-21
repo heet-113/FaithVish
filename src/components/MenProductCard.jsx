@@ -35,7 +35,7 @@ const MenProductCard = ({ product }) => {
         {/* Category badge */}
         <div className="absolute top-0 left-0">
           <span
-            className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest font-serif border-b border-r"
+            className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest font-serif border-b border-r"
             style={{ background: '#1E1E20', color: '#C9A96E', borderColor: '#3A3A3C' }}
           >
             {displayCategory}
@@ -45,7 +45,7 @@ const MenProductCard = ({ product }) => {
         {discount > 0 && (
           <div className="absolute top-0 right-0">
             <span
-              className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest font-serif border-b border-l"
+              className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest font-serif border-b border-l"
               style={{ background: '#C9A96E', color: '#1E1E20', borderColor: '#A8903E' }}
             >
               {discount}% Off
@@ -56,7 +56,7 @@ const MenProductCard = ({ product }) => {
         {product.badge && (
           <div className="absolute bottom-2 left-2">
             <span
-              className="px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest font-serif"
+              className="px-2.5 py-1 text-[10px] sm:text-[9px] font-bold uppercase tracking-widest font-serif"
               style={{ background: '#C9A96E', color: '#1E1E20', borderRadius: '2px' }}
             >
               {product.badge}
@@ -119,7 +119,7 @@ const MenProductCard = ({ product }) => {
         </div>
 
         {/* CTA */}
-        <div className="pt-3 border-t flex items-center justify-end" style={{ borderColor: '#3A3A3C' }}>
+        <div className="pt-3 border-t flex items-center justify-end min-h-[44px] sm:min-h-0" style={{ borderColor: '#3A3A3C' }}>
           <span
             className="text-xs font-bold uppercase tracking-widest transition-colors group-hover:opacity-80"
             style={{ color: '#C9A96E' }}

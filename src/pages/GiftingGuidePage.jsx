@@ -161,7 +161,7 @@ const GiftCard = ({ product }) => {
           />
           {discount > 0 && (
             <span 
-              className="absolute top-0 right-0 px-2 py-1 text-[10px] font-bold uppercase tracking-widest font-serif"
+              className="absolute top-0 right-0 px-2 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest font-serif"
               style={{ 
                 backgroundColor: theme.accent, 
                 color: isMen ? m.bg : '#ffffff' 
@@ -228,7 +228,7 @@ const GiftCard = ({ product }) => {
             href={product.affiliateUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 px-3 py-2 text-center text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all"
+            className="flex-1 px-3 py-2.5 sm:py-2 text-center text-[11px] sm:text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all"
             style={{ 
               backgroundColor: theme.accent, 
               color: isMen ? m.bg : '#ffffff' 
@@ -244,7 +244,7 @@ const GiftCard = ({ product }) => {
           </a>
           <Link
             to={`/product/${product.id}`}
-            className="px-3 py-2 border text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all"
+            className="px-3 py-2.5 sm:py-2 border text-[11px] sm:text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all"
             style={{ 
               backgroundColor: theme.cardBg, 
               borderColor: theme.cardBorder, 
@@ -321,7 +321,7 @@ const GiftingGuidePage = () => {
             : 'repeating-linear-gradient(45deg, rgba(217,208,193,0.1) 0px, rgba(217,208,193,0.1) 2px, rgba(250,250,247,0.5) 2px, rgba(250,250,247,0.5) 8px)'
         }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Gift Guide</p>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Gift Guide</p>
         <h1 className="text-3xl sm:text-4xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: theme.textPrimary }}>
           Best {isMen ? "Men's Jewelry" : "Jewelry"} for <span style={{ color: theme.accent }}>Gifting</span>
         </h1>
@@ -330,7 +330,7 @@ const GiftingGuidePage = () => {
             ? "Finding the right jewelry gift for a man can be a challenge — standard sizes, metal durability, and style preferences. We've compiled the ultimate guide to the best men's chains, cuffs, and kadas." 
             : "Choosing jewellery as a gift can be overwhelming — wrong size, wrong style, wrong budget. We've organised our collection into practical gift categories so you can find the right piece in minutes, not hours."}
         </p>
-        <p className="text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
           All products available on Amazon India · Prices verified April 2026
         </p>
       </div>
@@ -362,7 +362,7 @@ const GiftingGuidePage = () => {
           <strong style={{ color: theme.textPrimary }}> No brand has paid us to feature their products as gift picks.</strong> We earn affiliate 
           commissions on purchases, but our selections are editorially independent.
         </p>
-        <p className="text-[10px] mt-3 italic" style={{ color: theme.textMuted }}>Written by the FaithVish Editorial Team · contact@faithvish.com</p>
+        <p className="text-[11px] sm:text-[10px] mt-3 italic" style={{ color: theme.textMuted }}>Written by the FaithVish Editorial Team · contact@faithvish.com</p>
       </div>
 
       {/* Gift Buying Tips */}
@@ -405,7 +405,7 @@ const GiftingGuidePage = () => {
                 {item.num}
               </span>
               <p className="text-xs font-bold mb-1" style={{ color: theme.textPrimary }}>{item.tip}</p>
-              <p className="text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>{item.detail}</p>
+              <p className="text-[11px] sm:text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>{item.detail}</p>
             </div>
           ))}
         </div>
@@ -505,7 +505,7 @@ const GiftingGuidePage = () => {
 
       {/* Affiliate Disclaimer */}
       <div className="mt-6 p-4 border" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
-        <p className="text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
           <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish is a participant in the Amazon Services LLC Associates Program.
           Links on this page are affiliate links — when you buy through them, we may earn a small commission at no extra cost to you. Our gift recommendations
           are based on publicly available Amazon data (prices, ratings, reviews) and our editorial judgement. We are not paid to feature any product.

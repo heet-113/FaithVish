@@ -51,7 +51,7 @@ const CategoriesPage = () => {
         style={{ borderBottom: `2px solid ${isMen ? m.border : 'var(--color-border)'}` }}
       >
         <p
-          className="text-[10px] font-bold uppercase tracking-[0.4em] mb-3"
+          className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3"
           style={{ color: isMen ? m.accent : 'var(--color-accent-secondary)' }}
         >
           {isMen ? 'Built for Him' : 'Curated for You'}
@@ -127,7 +127,7 @@ const CategoriesPage = () => {
                 style={{ borderTop: `1px solid ${isMen ? m.border : 'var(--color-border)'}` }}
               >
                 <div>
-                  <p className="text-[10px] uppercase tracking-wider font-bold" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
+                  <p className="text-[11px] sm:text-[10px] uppercase tracking-wider font-bold" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
                     Starting from
                   </p>
                   <p className="text-lg font-bold" style={{ color: isMen ? m.accent : 'var(--color-accent-secondary)' }}>

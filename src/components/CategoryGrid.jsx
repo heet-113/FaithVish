@@ -19,12 +19,12 @@ const getCategoryIcon = (cat) => {
 
 const CategoryGrid = ({ onCategoryClick, selectedCategory }) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-12">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-12">
       {JEWELRY_CATEGORIES.map((cat) => (
         <button
           key={cat}
           onClick={() => onCategoryClick(cat)}
-          className={`flex flex-col items-center justify-center p-6 bg-white border transition-all duration-200 group relative overflow-hidden ${
+          className={`flex flex-col items-center justify-center p-3 sm:p-6 bg-white border transition-all duration-200 group relative overflow-hidden ${
             selectedCategory === cat 
               ? 'border-l-4 border-l-accent border-y-border border-r-border shadow-sm' 
               : 'border-border hover:border-l-4 hover:border-l-accent hover:shadow-sm'

@@ -230,7 +230,7 @@ const BlogPostPage = () => {
   return (
     <article className="animate-fade-in-up">
       {/* Cover Image Hero */}
-      <div className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] overflow-hidden">
+      <div className="relative w-full h-[220px] sm:h-[360px] md:h-[420px] overflow-hidden">
         <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
         <div className="absolute inset-0 flex items-end">
@@ -263,7 +263,7 @@ const BlogPostPage = () => {
         <div className="flex flex-wrap items-center gap-4 mb-8 pb-6 border-b" style={{ borderColor: theme.cardBorder }}>
           <div className="flex items-center gap-2">
             <div 
-              className="w-8 h-8 flex items-center justify-center rounded-sm border"
+              className="w-10 h-10 sm:w-8 sm:h-8 flex items-center justify-center rounded-sm border"
               style={{ backgroundColor: theme.alertBg, borderColor: isMen ? m.border : 'rgba(var(--color-accent-rgb), 0.3)' }}
             >
               <svg className="w-4 h-4" style={{ color: theme.accent }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -272,7 +272,7 @@ const BlogPostPage = () => {
             </div>
             <div>
               <p className="text-xs font-bold" style={{ color: theme.textPrimary }}>{post.author}</p>
-              <p className="text-[10px]" style={{ color: theme.textMuted }}>{formatDate(post.date)}</p>
+              <p className="text-[11px] sm:text-[10px]" style={{ color: theme.textMuted }}>{formatDate(post.date)}</p>
             </div>
           </div>
           <span style={{ color: theme.cardBorder }} className="hidden sm:inline">|</span>
@@ -282,7 +282,7 @@ const BlogPostPage = () => {
               href={`https://pinterest.com/pin/create/button/?url=${encodeURIComponent(window.location.href)}&media=${encodeURIComponent(window.location.origin + post.coverImage)}&description=${encodeURIComponent(post.title)}`} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="w-8 h-8 border flex items-center justify-center transition-all group rounded-sm" 
+              className="w-10 h-10 sm:w-8 sm:h-8 border flex items-center justify-center transition-all group rounded-sm" 
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
               title="Pin on Pinterest"
             >
@@ -292,7 +292,7 @@ const BlogPostPage = () => {
             </a>
             <button 
               onClick={() => { navigator.clipboard.writeText(window.location.href); }} 
-              className="w-8 h-8 border flex items-center justify-center transition-all group rounded-sm" 
+              className="w-10 h-10 sm:w-8 sm:h-8 border flex items-center justify-center transition-all group rounded-sm" 
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
               title="Copy link"
             >
@@ -312,7 +312,7 @@ const BlogPostPage = () => {
         {post.tags && post.tags.length > 0 && (
           <div className="mt-10 pt-6 border-t" style={{ borderColor: theme.cardBorder }}>
             <div className="flex flex-wrap items-center gap-2">
-              <span className="text-[10px] font-bold uppercase tracking-widest mr-2" style={{ color: theme.textMuted }}>Tags:</span>
+              <span className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest mr-2" style={{ color: theme.textMuted }}>Tags:</span>
               {post.tags.map((tag) => (
                 <span 
                   key={tag} 
@@ -355,7 +355,7 @@ const BlogPostPage = () => {
         <div className="border-t mt-8" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <div className="text-center mb-8">
-              <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-2" style={{ color: theme.accent }}>Keep Reading</p>
+              <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-2" style={{ color: theme.accent }}>Keep Reading</p>
               <h2 className="text-xl font-bold font-serif uppercase tracking-widest" style={{ color: theme.textPrimary }}>More from FaithVish</h2>
               <div className="w-12 h-[3px] mx-auto mt-3" style={{ backgroundColor: theme.accent }} />
             </div>
@@ -373,7 +373,7 @@ const BlogPostPage = () => {
                     <img src={relPost.coverImage} alt={relPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                   </div>
                   <div className="p-4">
-                    <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.accent }}>
+                    <span className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.accent }}>
                       {formatDate(relPost.date)}
                     </span>
                     <h3 

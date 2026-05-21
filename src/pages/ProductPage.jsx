@@ -97,7 +97,7 @@ const ProductPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm mb-6" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
+      <nav className="flex items-center gap-2 text-sm mb-6 flex-wrap overflow-hidden" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
         <Link to="/" className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>Home</Link>
         <span>/</span>
         <Link to="/categories" className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>{product.category}</Link>
@@ -229,7 +229,7 @@ const ProductPage = () => {
           {/* Price & Buy Section */}
           <Card className="p-6">
             <div className="mb-4">
-              <div className="flex items-baseline gap-3">
+              <div className="flex items-baseline gap-2 sm:gap-3 flex-wrap">
                 <span className="text-3xl font-black" style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}>
                   {formatPrice(product.price)}
                 </span>
@@ -279,7 +279,7 @@ const ProductPage = () => {
             >
               Buy Now on {product.store} →
             </a>
-            <p className="text-[10px] text-center mt-2" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
+            <p className="text-[11px] sm:text-[10px] text-center mt-2" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
               You will be redirected to {product.store}'s website to complete your purchase. As an affiliate, we may earn a small commission at no extra cost to you.
             </p>
           </Card>
@@ -335,7 +335,7 @@ const ProductPage = () => {
             {product.shortReview}
           </p>
           <p
-            className="text-[10px] mt-4 pt-3 italic"
+            className="text-[11px] sm:text-[10px] mt-4 pt-3 italic"
             style={{
               color: isMen ? m.textMuted : 'var(--color-text-muted)',
               borderTop: `1px solid ${isMen ? m.border : 'var(--color-border)'}`,
@@ -451,7 +451,7 @@ const ProductPage = () => {
           href={product.affiliateUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-10 py-3.5 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all"
+          className="inline-block px-10 py-3.5 w-full sm:w-auto text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all"
           style={{
             background: isMen ? m.accent : 'var(--color-accent)',
             color: isMen ? m.bg : '#ffffff',
@@ -461,7 +461,7 @@ const ProductPage = () => {
         >
           Buy Now on {product.store} →
         </a>
-        <p className="text-[10px] mt-2" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
+        <p className="text-[11px] sm:text-[10px] mt-2" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
           Affiliate link — we may earn a commission at no extra cost to you
         </p>
       </Card>

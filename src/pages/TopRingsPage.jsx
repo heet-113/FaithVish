@@ -62,7 +62,7 @@ const TopRingsPage = () => {
             : 'repeating-linear-gradient(45deg, rgba(217,208,193,0.1) 0px, rgba(217,208,193,0.1) 2px, rgba(250,250,247,0.5) 2px, rgba(250,250,247,0.5) 8px)'
         }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Buying Guide</p>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Buying Guide</p>
         <h1 className="text-3xl sm:text-4xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: theme.textPrimary }}>
           Best Rings Under <span style={{ color: theme.accent }}>₹1,000</span>
         </h1>
@@ -70,7 +70,7 @@ const TopRingsPage = () => {
           Looking for a stylish ring without breaking the bank? We've analysed ratings, buyer reviews, materials, and value
           to rank the best affordable rings available on Amazon India right now. All prices verified at the time of writing.
         </p>
-        <p className="text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
           Last updated: April 2026 · {affordableRings.length} rings reviewed
         </p>
       </div>
@@ -129,7 +129,7 @@ const TopRingsPage = () => {
           <strong style={{ color: theme.textPrimary }}> No brand has paid us to feature or rank their product higher.</strong> We earn affiliate commissions 
           when you buy through our links, but commission rates do not influence our rankings.
         </p>
-        <p className="text-[10px] mt-3 italic" style={{ color: theme.textMuted }}>Written by the FaithVish Editorial Team · contact@faithvish.com</p>
+        <p className="text-[11px] sm:text-[10px] mt-3 italic" style={{ color: theme.textMuted }}>Written by the FaithVish Editorial Team · contact@faithvish.com</p>
       </div>
 
       {/* How We Ranked */}
@@ -146,7 +146,7 @@ const TopRingsPage = () => {
         <p className="text-sm leading-relaxed mb-3" style={{ color: theme.textSecondary }}>
           Our ranking considers four factors based on publicly available Amazon India data:
         </p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {[
             { label: 'Buyer Rating', desc: 'Amazon star rating from verified buyers' },
             { label: 'Review Volume', desc: 'Number of buyer reviews — more reviews = more trust' },
@@ -159,7 +159,7 @@ const TopRingsPage = () => {
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
             >
               <p className="text-xs font-bold mb-1" style={{ color: theme.textPrimary }}>{factor.label}</p>
-              <p className="text-[10px]" style={{ color: theme.textMuted }}>{factor.desc}</p>
+              <p className="text-[11px] sm:text-[10px]" style={{ color: theme.textMuted }}>{factor.desc}</p>
             </div>
           ))}
         </div>
@@ -260,7 +260,7 @@ const TopRingsPage = () => {
                       {ring.specs && Object.entries(ring.specs).map(([key, val]) => (
                         <span 
                           key={key} 
-                          className="px-2 py-1 text-[10px] font-medium uppercase tracking-wider border"
+                          className="px-2 py-1 text-[11px] sm:text-[10px] font-medium uppercase tracking-wider border"
                           style={{ 
                             backgroundColor: theme.surfaceBg, 
                             borderColor: theme.cardBorder, 
@@ -301,7 +301,7 @@ const TopRingsPage = () => {
                         href={ring.affiliateUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="px-6 py-2.5 text-xs font-bold uppercase tracking-widest rounded-sm transition-all"
+                        className="px-6 py-3 sm:py-2.5 text-xs font-bold uppercase tracking-widest rounded-sm transition-all"
                         style={{ 
                           backgroundColor: theme.accent, 
                           color: isMen ? m.bg : '#ffffff' 
@@ -317,7 +317,7 @@ const TopRingsPage = () => {
                       </a>
                       <Link
                         to={`/product/${ring.id}`}
-                        className="px-4 py-2.5 border text-xs font-bold uppercase tracking-widest rounded-sm transition-all"
+                        className="px-4 py-3 sm:py-2.5 border text-xs font-bold uppercase tracking-widest rounded-sm transition-all"
                         style={{ 
                           backgroundColor: theme.cardBg, 
                           borderColor: theme.cardBorder, 
@@ -370,7 +370,7 @@ const TopRingsPage = () => {
 
       {/* Affiliate Disclaimer */}
       <div className="mt-6 p-4 border" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
-        <p className="text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
           <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish is a participant in the Amazon Services LLC Associates Program.
           Links on this page are affiliate links — when you buy through them, we may earn a small commission at no extra cost to you. Our rankings are
           based on publicly available Amazon data (ratings, reviews, specifications) and our editorial analysis. We are not paid to rank any product higher.

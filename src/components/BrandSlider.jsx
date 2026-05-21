@@ -8,12 +8,12 @@ const BrandSlider = () => {
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-white py-6 border-y border-border mb-12">
-      <p className="text-center text-[10px] font-bold uppercase tracking-[0.3em] text-text-muted mb-4">Shop from Trusted Jewellers</p>
-      <div className="flex animate-[scroll_40s_linear_infinite] gap-12 whitespace-nowrap px-12 items-center">
+    <div className="w-full overflow-hidden bg-white py-4 sm:py-6 border-y border-border mb-6 sm:mb-12">
+      <p className="text-center text-[10px] sm:text-[10px] font-bold uppercase tracking-[0.3em] text-text-muted mb-4">Shop from Trusted Jewellers</p>
+      <div className="flex animate-[scroll_40s_linear_infinite] gap-8 sm:gap-12 whitespace-nowrap px-6 sm:px-12 items-center">
         {[...stores, ...stores, ...stores].map((store, idx) => (
-          <div key={idx} className="flex items-center gap-12 group">
-            <span className="text-lg font-bold font-serif uppercase tracking-widest text-text-muted group-hover:text-accent transition-colors cursor-default">
+          <div key={idx} className="flex items-center gap-8 sm:gap-12 group">
+            <span className="text-xs sm:text-lg font-bold font-serif uppercase tracking-widest text-text-muted group-hover:text-accent transition-colors cursor-default">
               {store}
             </span>
             <div className="w-[1px] h-6 bg-border"></div>

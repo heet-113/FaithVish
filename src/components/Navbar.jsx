@@ -46,7 +46,7 @@ const Navbar = () => {
           style={{ borderColor: isMen ? '#282828' : 'var(--color-border)' }}
         >
           <span
-            className="text-[10px] font-bold uppercase tracking-widest mr-3"
+            className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest mr-3"
             style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
           >
             Shop For
@@ -55,7 +55,7 @@ const Navbar = () => {
           <button
             onClick={() => handleGenderSwitch('women')}
             id="gender-toggle-women"
-            className="flex items-center gap-1.5 px-4 py-1 text-xs font-bold uppercase tracking-widest transition-all duration-300"
+            className="flex items-center gap-1.5 px-3 py-2 text-xs sm:px-4 sm:py-1 font-bold uppercase tracking-widest transition-all duration-300"
             style={{
               background: !isMen ? '#EC4899' : 'transparent',
               color: !isMen ? '#ffffff' : isMen ? '#6B6B6B' : 'var(--color-text-muted)',
@@ -79,7 +79,7 @@ const Navbar = () => {
           <button
             onClick={() => handleGenderSwitch('men')}
             id="gender-toggle-men"
-            className="flex items-center gap-1.5 px-4 py-1 text-xs font-bold uppercase tracking-widest transition-all duration-300"
+            className="flex items-center gap-1.5 px-3 py-2 text-xs sm:px-4 sm:py-1 font-bold uppercase tracking-widest transition-all duration-300"
             style={{
               background: isMen ? '#C9A96E' : 'transparent',
               color: isMen ? '#1E1E20' : 'var(--color-text-muted)',
@@ -166,12 +166,12 @@ const Navbar = () => {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-sm transition-all border border-transparent"
+            className="md:hidden p-2.5 sm:p-2 rounded-sm transition-all border border-transparent"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             id="mobile-menu-toggle"
             style={{ color: isMen ? '#9A9A9A' : 'var(--color-text-secondary)' }}
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               ) : (
@@ -207,7 +207,7 @@ const Navbar = () => {
                 key={to}
                 to={to}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-2.5 text-sm font-bold uppercase tracking-widest rounded-sm transition-all border-l-2 border-transparent"
+                className="block px-3 py-3.5 text-sm sm:py-2.5 font-bold uppercase tracking-widest rounded-sm transition-all border-l-2 border-transparent"
                 style={{ color: isMen ? '#9A9A9A' : 'var(--color-text-secondary)' }}
                 onMouseEnter={e => {
                   e.currentTarget.style.borderLeftColor = isMen ? '#C9A96E' : 'var(--color-accent)';
@@ -226,7 +226,7 @@ const Navbar = () => {
             <div className="pt-3 mt-3 border-t flex gap-2" style={{ borderColor: isMen ? '#3A3A3C' : 'var(--color-border)' }}>
               <button
                 onClick={() => { handleGenderSwitch('women'); setMobileMenuOpen(false); }}
-                className="flex-1 py-2 text-xs font-bold uppercase tracking-widest transition-all"
+                className="flex-1 py-3 text-xs sm:py-2 font-bold uppercase tracking-widest transition-all"
                 style={{
                   background: !isMen ? '#EC4899' : 'transparent',
                   color: !isMen ? '#ffffff' : '#6B6B6B',
@@ -238,7 +238,7 @@ const Navbar = () => {
               </button>
               <button
                 onClick={() => { handleGenderSwitch('men'); setMobileMenuOpen(false); }}
-                className="flex-1 py-2 text-xs font-bold uppercase tracking-widest transition-all"
+                className="flex-1 py-3 text-xs sm:py-2 font-bold uppercase tracking-widest transition-all"
                 style={{
                   background: isMen ? '#C9A96E' : 'transparent',
                   color: isMen ? '#1E1E20' : '#6B6B6B',

@@ -44,7 +44,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
       {/* Sidebar */}
       <aside
         className={`
-          fixed lg:sticky top-0 lg:top-20 left-0 h-full lg:h-auto w-72 lg:w-64
+          fixed lg:sticky top-0 lg:top-20 left-0 h-full lg:h-auto w-[85vw] max-w-72 lg:w-64
           z-50 lg:z-auto overflow-y-auto
           transform transition-transform duration-300
           ${isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
@@ -54,7 +54,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
           borderRight: isOpen ? `1px solid ${isMen ? m.border : 'var(--color-border)'}` : 'none',
         }}
       >
-        <div className="p-5 lg:p-0 space-y-6">
+        <div className="p-5 pb-24 lg:p-0 lg:pb-0 space-y-6">
           {/* Header (mobile) */}
           <div
             className="flex items-center justify-between lg:hidden pb-4 mb-4"
@@ -68,10 +68,10 @@ const FilterSidebar = ({ isOpen, onClose }) => {
             </h2>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-sm transition-colors"
+              className="p-3 sm:p-1.5 rounded-sm transition-colors"
               style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -88,7 +88,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value)}
-              className="w-full px-3 py-2.5 rounded-sm text-sm font-medium focus:outline-none transition-colors cursor-pointer"
+              className="w-full px-3 py-3 sm:py-2.5 rounded-sm text-sm font-medium focus:outline-none transition-colors cursor-pointer"
               style={{
                 background: isMen ? m.bgInput : '#ffffff',
                 border: `2px solid ${isMen ? m.border : 'var(--color-border)'}`,
@@ -120,7 +120,7 @@ const FilterSidebar = ({ isOpen, onClose }) => {
                   <button
                     key={cat}
                     onClick={() => setSelectedCategory(cat)}
-                    className="w-full text-left px-3 py-2 text-sm rounded-sm transition-all border-l-4"
+                    className="w-full text-left px-3 py-4 sm:py-2 text-sm rounded-sm transition-all border-l-4"
                     style={{
                       background: isActive
                         ? (isMen ? '#303032' : 'var(--color-surface-hover)')

@@ -43,7 +43,7 @@ const ContactPage = () => {
         Contact Us
       </h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
         <div>
           <p 
             className="mb-6 leading-relaxed"
@@ -125,7 +125,7 @@ const ContactPage = () => {
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-2 border-2 rounded-sm focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 sm:py-2 border-2 rounded-sm focus:outline-none transition-colors"
                   style={{ 
                     backgroundColor: theme.inputBg, 
                     borderColor: theme.cardBorder,
@@ -148,7 +148,7 @@ const ContactPage = () => {
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-2 border-2 rounded-sm focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 sm:py-2 border-2 rounded-sm focus:outline-none transition-colors"
                   style={{ 
                     backgroundColor: theme.inputBg, 
                     borderColor: theme.cardBorder,
@@ -171,7 +171,7 @@ const ContactPage = () => {
                   rows={4}
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  className="w-full px-4 py-2 border-2 rounded-sm focus:outline-none transition-colors"
+                  className="w-full px-4 py-3 sm:py-2 border-2 rounded-sm focus:outline-none transition-colors"
                   style={{ 
                     backgroundColor: theme.inputBg, 
                     borderColor: theme.cardBorder,

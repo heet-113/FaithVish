@@ -221,6 +221,32 @@ input[type="range"]::-moz-range-thumb {
   border: 2px solid var(--color-surface);
 }
 
+/* Larger range slider thumb on mobile for touch */
+@media (max-width: 639px) {
+  input[type="range"]::-webkit-slider-thumb {
+    width: 28px;
+    height: 28px;
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Touch active states for cards */
+@media (max-width: 639px) {
+  .glass-card:active {
+    border-color: var(--color-accent);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.05);
+    transform: translateY(-1px);
+  }
+  .men-card:active {
+    border-color: #C9A96E;
+    box-shadow: 0 4px 24px rgba(184, 167, 122, 0.12);
+    transform: translateY(-2px);
+  }
+}
+
 /* Hide scrollbar utility */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

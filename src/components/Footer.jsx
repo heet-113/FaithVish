@@ -16,9 +16,9 @@ const Footer = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main footer content */}
-        <div className="py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <img src="/FVicon.svg" alt="FaithVish Logo" className="w-9 h-9 object-contain" />
               <span className="text-xl font-black font-serif tracking-tight">
@@ -39,13 +39,13 @@ const Footer = () => {
               <strong style={{ color: isMen ? '#9A9A9A' : 'var(--color-text-secondary)' }}>📧</strong>{' '}
               <a href="mailto:contact@faithvish.com" className="underline transition-colors" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>contact@faithvish.com</a>
             </p>
-            <p className="text-[10px] mt-2 italic" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>Written &amp; curated by the FaithVish Editorial Team</p>
+            <p className="text-[12px] sm:text-[11px] mt-2 italic" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>Written &amp; curated by the FaithVish Editorial Team</p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: isMen ? '#F5F5F0' : 'var(--color-text-primary)' }}>Quick Links</h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1 sm:space-y-2.5">
               {[
                 { to: '/', label: 'Home' },
                 { to: '/categories', label: 'Collections' },
@@ -60,7 +60,7 @@ const Footer = () => {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm transition-colors"
+                    className="text-sm transition-colors block py-2 sm:py-0"
                     style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
                     onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
                     onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}
@@ -75,10 +75,10 @@ const Footer = () => {
           {/* Collections */}
           <div>
             <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: isMen ? '#F5F5F0' : 'var(--color-text-primary)' }}>Collections</h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1 sm:space-y-2.5">
               {(isMen ? MEN_CATEGORIES : JEWELRY_CATEGORIES.slice(0, 6)).map(cat => (
                 <li key={cat}>
-                  <Link to="/categories" className="text-sm transition-colors" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
+                  <Link to="/categories" className="text-sm transition-colors block py-2 sm:py-0" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
                     onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
                     onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}
                   >
@@ -92,7 +92,7 @@ const Footer = () => {
           {/* Customer Care */}
           <div>
             <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: isMen ? '#F5F5F0' : 'var(--color-text-primary)' }}>Information</h3>
-            <ul className="space-y-2.5">
+            <ul className="space-y-1 sm:space-y-2.5">
               {[
                 { to: '/privacy-policy', label: 'Privacy Policy' },
                 { to: '/terms', label: 'Terms of Service' },
@@ -101,7 +101,7 @@ const Footer = () => {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm transition-colors"
+                    className="text-sm transition-colors py-1 sm:py-0"
                     style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
                     onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
                     onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}

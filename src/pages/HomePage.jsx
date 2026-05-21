@@ -36,17 +36,17 @@ const CategorySection = ({ category, products }) => {
           <p className="text-xs text-text-secondary mt-2 tracking-wide font-medium uppercase">{products.length} pieces available</p>
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={() => scroll('left')} className="w-10 h-10 bg-white border-2 border-border hover:border-accent hover:text-accent flex items-center justify-center text-text-muted transition-all rounded-sm" aria-label="Scroll left">
+          <button onClick={() => scroll('left')} className="hidden sm:flex w-10 h-10 bg-white border-2 border-border hover:border-accent hover:text-accent items-center justify-center text-text-muted transition-all rounded-sm" aria-label="Scroll left">
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           </button>
-          <button onClick={() => scroll('right')} className="w-8 h-8 rounded-sm bg-white border border-border hover:border-accent hover:text-accent flex items-center justify-center text-text-muted transition-all" aria-label="Scroll right">
+          <button onClick={() => scroll('right')} className="hidden sm:flex w-8 h-8 rounded-sm bg-white border border-border hover:border-accent hover:text-accent items-center justify-center text-text-muted transition-all" aria-label="Scroll right">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
           </button>
         </div>
       </div>
       <div ref={scrollRef} className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {products.map((product) => (
-          <div key={product.id} className="shrink-0 w-[280px]">
+          <div key={product.id} className="shrink-0 w-[240px] sm:w-[280px]">
             <ProductCard product={product} />
           </div>
         ))}
@@ -81,13 +81,13 @@ const MenCategorySection = ({ category, products }) => {
           <p className="text-xs mt-2 tracking-wide font-medium uppercase" style={{ color: '#6B6B6B' }}>{products.length} pieces available</p>
         </div>
         <div className="flex items-center gap-2">
-          <button onClick={() => scroll('left')} className="w-10 h-10 flex items-center justify-center transition-all" style={{ background: '#282828', border: '2px solid #3A3A3C', borderRadius: '2px', color: '#9A9A9A' }} aria-label="Scroll left"
+          <button onClick={() => scroll('left')} className="hidden sm:flex w-10 h-10 items-center justify-center transition-all" style={{ background: '#282828', border: '2px solid #3A3A3C', borderRadius: '2px', color: '#9A9A9A' }} aria-label="Scroll left"
             onMouseEnter={e => { e.currentTarget.style.borderColor = '#C9A96E'; e.currentTarget.style.color = '#C9A96E'; }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = '#3A3A3C'; e.currentTarget.style.color = '#9A9A9A'; }}
           >
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
           </button>
-          <button onClick={() => scroll('right')} className="w-8 h-8 flex items-center justify-center transition-all" style={{ background: '#282828', border: '1px solid #3A3A3C', borderRadius: '2px', color: '#9A9A9A' }} aria-label="Scroll right"
+          <button onClick={() => scroll('right')} className="hidden sm:flex w-8 h-8 items-center justify-center transition-all" style={{ background: '#282828', border: '1px solid #3A3A3C', borderRadius: '2px', color: '#9A9A9A' }} aria-label="Scroll right"
             onMouseEnter={e => { e.currentTarget.style.borderColor = '#C9A96E'; e.currentTarget.style.color = '#C9A96E'; }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = '#3A3A3C'; e.currentTarget.style.color = '#9A9A9A'; }}
           >
@@ -97,7 +97,7 @@ const MenCategorySection = ({ category, products }) => {
       </div>
       <div ref={scrollRef} className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {products.map((product) => (
-          <div key={product.id} className="shrink-0 w-[280px]">
+          <div key={product.id} className="shrink-0 w-[240px] sm:w-[280px]">
             <MenProductCard product={product} />
           </div>
         ))}
@@ -118,7 +118,7 @@ const SectionSkeleton = ({ isMen }) => (
     </div>
     <div className="flex gap-4 overflow-hidden">
       {[...Array(4)].map((_, i) => (
-        <div key={i} className="shrink-0 w-[280px] overflow-hidden" style={isMen ? { background: '#282828', border: '1px solid #3A3A3C' } : {}}>
+        <div key={i} className="shrink-0 w-[240px] sm:w-[280px] overflow-hidden" style={isMen ? { background: '#282828', border: '1px solid #3A3A3C' } : {}}>
           <div className="skeleton aspect-square" />
           <div className="p-4 space-y-3">
             <div className="skeleton h-4 w-3/4 rounded" />
@@ -217,7 +217,7 @@ const HomePage = () => {
 
           {/* Men's Hero */}
           <div className="mb-10 text-center py-16 men-hero">
-            <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-4 men-gold-pulse" style={{ color: '#C9A96E' }}>
+            <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-4 men-gold-pulse" style={{ color: '#C9A96E' }}>
               Forged for Him
             </p>
             <h1 className="text-4xl sm:text-5xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: '#F5F5F0' }}>
@@ -278,7 +278,7 @@ const HomePage = () => {
 
           {/* Search bar — Men's theme */}
           <div ref={searchSectionRef} className="mb-8 p-6" style={{ background: '#282828', border: '1px solid #3A3A3C', boxShadow: '4px 4px 0 rgba(0,0,0,0.3)' }}>
-            <form onSubmit={handleSearch} className="flex gap-2">
+            <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2">
               <div className="flex-1 relative">
                 <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: '#C9A96E' }}>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -302,7 +302,7 @@ const HomePage = () => {
               <button
                 type="submit"
                 disabled={searchInput.trim().length < 1}
-                className="px-8 py-3 text-sm font-bold tracking-widest uppercase rounded-sm transition-all shrink-0 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed men-btn-accent"
+                className="px-8 py-3 text-sm font-bold tracking-widest uppercase rounded-sm transition-all shrink-0 flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start disabled:opacity-50 disabled:cursor-not-allowed men-btn-accent"
               >
                 Search
               </button>
@@ -394,7 +394,7 @@ const HomePage = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Hero section */}
       <div className="mb-10 text-center py-16 bg-[repeating-linear-gradient(45deg,rgba(217,208,193,0.1)_0px,rgba(217,208,193,0.1)_2px,rgba(250,250,247,0.5)_2px,rgba(250,250,247,0.5)_8px)] border-y-2 border-border">
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-accent-secondary mb-4">Curated with Love</p>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] text-accent-secondary mb-4">Curated with Love</p>
         <h1 className="text-4xl sm:text-5xl font-black mb-4 font-serif uppercase tracking-widest text-text-primary leading-tight">
           Discover Exquisite<br />
           <span className="text-accent underline decoration-4 underline-offset-8">Jewelry</span>
@@ -489,7 +489,7 @@ const HomePage = () => {
 
       {/* Search bar */}
       <div ref={searchSectionRef} className="mb-8 bg-white border border-border p-6 shadow-[4px_4px_0_rgba(0,0,0,0.05)] rounded-none">
-        <form onSubmit={handleSearch} className="flex gap-2">
+        <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2">
           <div className="flex-1 relative">
             <svg className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-accent-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -506,7 +506,7 @@ const HomePage = () => {
           <button
             type="submit"
             disabled={searchInput.trim().length < 1}
-            className="px-8 py-3 bg-accent text-white text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-accent-light disabled:opacity-50 disabled:cursor-not-allowed transition-all border-2 border-accent flex items-center gap-2 shrink-0"
+            className="px-8 py-3 bg-accent text-white text-sm font-bold tracking-widest uppercase rounded-sm hover:bg-accent-light disabled:opacity-50 disabled:cursor-not-allowed transition-all border-2 border-accent flex items-center gap-2 w-full sm:w-auto justify-center sm:justify-start shrink-0"
           >
             Search
           </button>
@@ -600,7 +600,7 @@ const HomePage = () => {
                         </div>
                       </div>
                       <div className="p-5">
-                        <span className="text-[10px] font-bold uppercase tracking-widest text-accent-secondary">{new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                        <span className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest text-accent-secondary">{new Date(post.date).toLocaleDateString('en-IN', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                         <h3 className="text-base font-bold font-serif text-text-primary group-hover:text-accent transition-colors leading-snug mt-1.5 mb-2 line-clamp-2">{post.title}</h3>
                         <p className="text-sm text-text-muted leading-relaxed line-clamp-2 mb-3">{post.excerpt}</p>
                         <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent group-hover:gap-3 transition-all">

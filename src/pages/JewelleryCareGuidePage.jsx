@@ -72,7 +72,7 @@ const JewelleryCareGuidePage = () => {
             : 'repeating-linear-gradient(45deg, rgba(217,208,193,0.1) 0px, rgba(217,208,193,0.1) 2px, rgba(250,250,247,0.5) 2px, rgba(250,250,247,0.5) 8px)'
         }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Educational Guide</p>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Educational Guide</p>
         <h1 className="text-3xl sm:text-4xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: theme.textPrimary }}>
           {isMen ? <>How to Care for Men's <span style={{ color: theme.accent }}>Accessories</span></> : <>How to Care for Your <span style={{ color: theme.accent }}>Fashion Jewellery</span></>}
         </h1>
@@ -81,7 +81,7 @@ const JewelleryCareGuidePage = () => {
             ? "Why your kadas turn green, why your steel chains get scratched, and exactly what to do about it. A practical, no-nonsense care guide for men's rings, chains, kadas, and bracelets."
             : "Why your plated jewellery turns black, why your rings leave green marks, and exactly what to do about it. A practical, no-nonsense care guide for every type of fashion jewellery."}
         </p>
-        <p className="text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
           Written by the FaithVish Team · April 2026 · {isMen ? '6 min read' : '8 min read'}
         </p>
       </div>
@@ -494,7 +494,7 @@ const JewelleryCareGuidePage = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
           <Link
             to="/buying-guide"
-            className="px-8 py-3 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all border-2"
+            className="w-full sm:w-auto px-8 py-3 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all border-2"
             style={{
               backgroundColor: theme.accent,
               color: isMen ? '#1E1E20' : '#ffffff',
@@ -513,7 +513,7 @@ const JewelleryCareGuidePage = () => {
           </Link>
           <Link
             to="/"
-            className="px-8 py-3 border-2 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all"
+            className="w-full sm:w-auto px-8 py-3 border-2 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all"
             style={{
               backgroundColor: isMen ? 'transparent' : '#ffffff',
               color: theme.textSecondary,
@@ -547,10 +547,10 @@ const JewelleryCareGuidePage = () => {
           </div>
           <div>
             <p className="text-xs font-bold" style={{ color: theme.textPrimary }}>Written by the FaithVish Editorial Team</p>
-            <p className="text-[10px]" style={{ color: theme.textMuted }}>Last updated: April 2026 · contact@faithvish.com</p>
+            <p className="text-[11px] sm:text-[10px]" style={{ color: theme.textMuted }}>Last updated: April 2026 · contact@faithvish.com</p>
           </div>
         </div>
-        <p className="text-[10px] leading-relaxed mt-2" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] leading-relaxed mt-2" style={{ color: theme.textMuted }}>
           <strong style={{ color: theme.textSecondary }}>Disclaimer:</strong> This care guide is based on general material science and manufacturer 
           best practices. Individual results may vary depending on your local climate, skin chemistry, and specific product properties. 
           When in doubt, follow the care instructions provided by the specific product manufacturer.{' '}

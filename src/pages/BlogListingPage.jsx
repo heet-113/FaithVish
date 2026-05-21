@@ -70,7 +70,7 @@ const BlogListingPage = () => {
           borderColor: theme.cardBorder 
         }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-4" style={{ color: theme.accent }}>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-4" style={{ color: theme.accent }}>
           FaithVish Journal
         </p>
         <h1 
@@ -92,7 +92,7 @@ const BlogListingPage = () => {
             <button
               key={cat}
               onClick={() => handleCategoryChange(cat)}
-              className="px-4 py-2 text-xs font-bold uppercase tracking-widest border-2 transition-all"
+              className="px-4 py-2.5 sm:py-2 text-xs font-bold uppercase tracking-widest border-2 transition-all"
               style={{
                 backgroundColor: isActive ? theme.accent : theme.cardBg,
                 color: isActive ? (isMen ? m.bg : '#ffffff') : theme.textSecondary,
@@ -146,11 +146,11 @@ const BlogListingPage = () => {
             </div>
             <div className="p-5">
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.accent }}>
+                <span className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.accent }}>
                   {formatDate(post.date)}
                 </span>
                 <span style={{ color: theme.cardBorder }}>•</span>
-                <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.textMuted }}>
+                <span className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.textMuted }}>
                   {post.readTime}
                 </span>
               </div>
@@ -231,7 +231,7 @@ const BlogListingPage = () => {
           borderColor: theme.cardBorder 
         }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>
           Stay Updated
         </p>
         <h2 className="text-xl sm:text-2xl font-bold font-serif uppercase tracking-widest mb-3" style={{ color: theme.textPrimary }}>

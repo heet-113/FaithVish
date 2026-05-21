@@ -17,14 +17,14 @@ const ProductCard = ({ product }) => {
         />
         {/* Category badge */}
         <div className="absolute top-0 left-0">
-          <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-white text-text-secondary border-b border-r border-border rounded-br-sm font-serif">
+          <span className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest bg-white text-text-secondary border-b border-r border-border rounded-br-sm font-serif">
             {product.category}
           </span>
         </div>
         {/* Discount badge */}
         {discount > 0 && (
           <div className="absolute top-0 right-0">
-            <span className="px-2.5 py-1 text-[10px] font-bold bg-accent text-white border-b border-l border-accent uppercase tracking-widest font-serif rounded-bl-sm">
+            <span className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold bg-accent text-white border-b border-l border-accent uppercase tracking-widest font-serif rounded-bl-sm">
               {discount}% Off
             </span>
           </div>
@@ -33,7 +33,7 @@ const ProductCard = ({ product }) => {
         {badgeStyle && (
           <div className="absolute bottom-2 left-2">
             <span
-              className="px-2.5 py-1 text-[9px] font-bold uppercase tracking-widest rounded-sm font-serif"
+              className="px-2.5 py-1 text-[10px] sm:text-[9px] font-bold uppercase tracking-widest rounded-sm font-serif"
               style={{ backgroundColor: badgeStyle.bg, color: badgeStyle.text }}
             >
               {product.badge}
@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* CTA */}
-        <div className="pt-3 border-t border-border flex items-center justify-end">
+        <div className="pt-3 border-t border-border flex items-center justify-end min-h-[44px] sm:min-h-0">
           <span className="text-xs font-bold uppercase tracking-widest text-accent group-hover:text-accent-light transition-colors">
             Shop Now →
           </span>

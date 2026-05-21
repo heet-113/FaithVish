@@ -39,14 +39,14 @@ const getMenCategoryIcon = (cat) => {
 
 const MenCategoryGrid = ({ onCategoryClick, selectedCategory }) => {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 mb-4 sm:mb-12">
       {MEN_CATEGORIES.map((cat) => {
         const isActive = selectedCategory === cat;
         return (
           <button
             key={cat}
             onClick={() => onCategoryClick(cat)}
-            className="flex flex-col items-center justify-center p-6 transition-all duration-200 group relative overflow-hidden"
+            className="flex flex-col items-center justify-center p-4 sm:p-6 transition-all duration-200 group relative overflow-hidden"
             style={{
               background: isActive ? '#303032' : '#282828',
               border: isActive ? '1px solid #C9A96E' : '1px solid #3A3A3C',

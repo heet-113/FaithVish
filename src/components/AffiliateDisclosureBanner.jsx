@@ -6,7 +6,7 @@ const AffiliateDisclosureBanner = () => {
 
   return (
     <div
-      className="border-b-2 py-2 px-4 shadow-sm z-50 relative"
+      className="border-b-2 py-2 px-3 sm:px-4 shadow-sm z-50 relative"
       style={{
         background: isMen ? '#1A1A1C' : 'var(--color-surface-light)',
         borderColor: isMen ? '#3A3A3C' : 'var(--color-border)',

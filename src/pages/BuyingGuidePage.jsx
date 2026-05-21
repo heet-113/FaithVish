@@ -94,7 +94,7 @@ const BuyingGuidePage = () => {
           borderColor: theme.cardBorder
         }}
       >
-        <p className="text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: isMen ? theme.accent : 'var(--color-accent-secondary)' }}>In-Depth Guide</p>
+        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: isMen ? theme.accent : 'var(--color-accent-secondary)' }}>In-Depth Guide</p>
         <h1 className="text-3xl sm:text-4xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: theme.textPrimary }}>
           {isMen ? <>How to Buy Men's Jewellery <span style={{ color: theme.accent }}>Online in India</span></> : <>How to Buy Jewellery <span style={{ color: theme.accent }}>Online in India</span></>}
         </h1>
@@ -103,7 +103,7 @@ const BuyingGuidePage = () => {
             ? "Everything you need to know before buying men's chains, kadas, and bracelets online. Sizing guides, metal durability, styling tips, and common buying mistakes to avoid."
             : "Everything you need to know before spending money on fashion jewellery from Amazon, Flipkart, or any online store. Materials, red flags, sizing, care tips, and how to avoid common mistakes."}
         </p>
-        <p className="text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
           Written by the FaithVish Team · April 2026 · {isMen ? '8 min read' : '10 min read'}
         </p>
       </div>
@@ -136,15 +136,15 @@ const BuyingGuidePage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
           <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
             <p className="text-lg font-black" style={{ color: theme.accent }}>{isMen ? '12+' : '24+'}</p>
-            <p className="text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Products reviewed</p>
+            <p className="text-[11px] sm:text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Products reviewed</p>
           </div>
           <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
             <p className="text-lg font-black" style={{ color: theme.accent }}>{isMen ? '8,000+' : '20,000+'}</p>
-            <p className="text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Buyer reviews analysed</p>
+            <p className="text-[11px] sm:text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Buyer reviews analysed</p>
           </div>
           <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
             <p className="text-lg font-black" style={{ color: theme.accent }}>₹0</p>
-            <p className="text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Paid by brands for listings</p>
+            <p className="text-[11px] sm:text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Paid by brands for listings</p>
           </div>
         </div>
       </div>
@@ -161,7 +161,7 @@ const BuyingGuidePage = () => {
               >
                 {i + 1}
               </span>
-              <a href={`#${item.id}`} className="transition-colors py-0.5" style={{ color: theme.textSecondary }} onMouseEnter={(e) => e.target.style.color = theme.accent} onMouseLeave={(e) => e.target.style.color = theme.textSecondary}>{item.title}</a>
+              <a href={`#${item.id}`} className="transition-colors block py-2 sm:py-0.5" style={{ color: theme.textSecondary }} onMouseEnter={(e) => e.target.style.color = theme.accent} onMouseLeave={(e) => e.target.style.color = theme.textSecondary}>{item.title}</a>
             </li>
           ))}
         </ol>
@@ -754,10 +754,10 @@ const BuyingGuidePage = () => {
           </div>
           <div>
             <p className="text-xs font-bold" style={{ color: theme.textPrimary }}>Written by the FaithVish Editorial Team</p>
-            <p className="text-[10px]" style={{ color: theme.textMuted }}>Last updated: April 2026 · contact@faithvish.com</p>
+            <p className="text-[11px] sm:text-[10px]" style={{ color: theme.textMuted }}>Last updated: April 2026 · contact@faithvish.com</p>
           </div>
         </div>
-        <p className="text-[10px] leading-relaxed mt-2" style={{ color: theme.textMuted }}>
+        <p className="text-[11px] sm:text-[10px] leading-relaxed mt-2" style={{ color: theme.textMuted }}>
           <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish is a participant in the Amazon Services LLC Associates Program.
           Links across our site are affiliate links — we may earn a small commission when you buy through them. This costs you nothing extra. Our editorial
           analysis is independent and not influenced by commission rates.{' '}

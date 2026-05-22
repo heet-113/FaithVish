@@ -240,7 +240,7 @@ const GiftCard = ({ product }) => {
               e.target.style.backgroundColor = theme.accent;
             }}
           >
-            Buy on Amazon
+            Buy on {product.store || 'Store'}
           </a>
           <Link
             to={`/product/${product.id}`}
@@ -331,7 +331,7 @@ const GiftingGuidePage = () => {
             : "Choosing jewellery as a gift can be overwhelming — wrong size, wrong style, wrong budget. We've organised our collection into practical gift categories so you can find the right piece in minutes, not hours."}
         </p>
         <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
-          All products available on Amazon India · Prices verified April 2026
+          All products available on trusted online stores · Prices verified April 2026
         </p>
       </div>
 
@@ -358,7 +358,7 @@ const GiftingGuidePage = () => {
           <h2 className="text-sm font-bold font-serif uppercase tracking-widest" style={{ color: theme.textPrimary }}>Why Trust This Guide?</h2>
         </div>
         <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-          Our gift recommendations are based on real Amazon India data — buyer ratings, review volumes, material specs, and price-to-value ratio. 
+          Our gift recommendations are based on real buyer data — ratings, review volumes, material specs, and price-to-value ratio. 
           <strong style={{ color: theme.textPrimary }}> No brand has paid us to feature their products as gift picks.</strong> We earn affiliate 
           commissions on purchases, but our selections are editorially independent.
         </p>
@@ -467,10 +467,10 @@ const GiftingGuidePage = () => {
                 </p>
               </div>
               <div>
-                <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Can I return jewelry bought on Amazon?</h3>
+                <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Can I return jewelry bought online?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-                  Return policies vary by seller. Most fashion jewelry on Amazon India has a 10–30 day return window. 
-                  Check the specific product listing for return policies before buying. Prime-eligible items typically have smoother return processes.
+                  Return policies vary by seller and platform. Most fashion jewelry has a 10–30 day return window. 
+                  Check the specific product listing on the store's website for return policies before buying.
                 </p>
               </div>
             </>
@@ -492,10 +492,10 @@ const GiftingGuidePage = () => {
                 </p>
               </div>
               <div>
-                <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Can I return jewellery bought on Amazon?</h3>
+                <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Can I return jewellery bought online?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-                  Return policies vary by seller. Most fashion jewellery on Amazon India has a 10–30 day return window.
-                  Check the specific product listing for return policies before buying. Prime-eligible items typically have smoother return processes.
+                  Return policies vary by seller and platform. Most fashion jewellery has a 10–30 day return window.
+                  Check the specific product listing on the store's website for return policies before buying.
                 </p>
               </div>
             </>
@@ -506,9 +506,9 @@ const GiftingGuidePage = () => {
       {/* Affiliate Disclaimer */}
       <div className="mt-6 p-4 border" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
         <p className="text-[11px] sm:text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
-          <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish is a participant in the Amazon Services LLC Associates Program.
+          <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish participates in affiliate programs including the Amazon Services LLC Associates Program and others.
           Links on this page are affiliate links — when you buy through them, we may earn a small commission at no extra cost to you. Our gift recommendations
-          are based on publicly available Amazon data (prices, ratings, reviews) and our editorial judgement. We are not paid to feature any product.
+          are based on publicly available data (prices, ratings, reviews) and our editorial judgement. We are not paid to feature any product.
         </p>
       </div>
 

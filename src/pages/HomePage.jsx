@@ -420,7 +420,7 @@ const HomePage = () => {
             and no way to know if a ₹200 ring is actually decent. We built FaithVish to cut through the noise.
           </p>
           <p className="text-sm text-text-secondary leading-relaxed">
-            Every product here is handpicked from Amazon India, with <strong className="text-text-primary">real ratings, real reviews, and honest pros & cons</strong>.
+            Every product here is handpicked from India's most trusted online stores, with <strong className="text-text-primary">real ratings, real reviews, and honest pros & cons</strong>.
             We don't just list products, we tell you what's genuinely good, what to watch out for, and who each piece is best for.
           </p>
         </div>
@@ -457,7 +457,7 @@ const HomePage = () => {
           <div className="w-12 h-12 rounded-sm bg-accent/10 border border-accent/30 flex items-center justify-center shrink-0 group-hover:bg-accent/20 transition-colors"><span className="text-xl">💍</span></div>
           <div>
             <h3 className="text-sm font-bold text-text-primary group-hover:text-accent transition-colors uppercase tracking-wider">Best Rings Under ₹1,000</h3>
-            <p className="text-xs text-text-muted mt-0.5">Ranked by real Amazon ratings & reviews</p>
+            <p className="text-xs text-text-muted mt-0.5">Ranked by real ratings & reviews</p>
           </div>
           <svg className="w-4 h-4 text-text-muted ml-auto group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
         </Link>

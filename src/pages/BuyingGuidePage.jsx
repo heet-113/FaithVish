@@ -54,7 +54,7 @@ const BuyingGuidePage = () => {
   const sections = [
     { title: 'Understanding Jewellery Materials', id: 'section-1' },
     { title: 'Gold Plating: What It Really Means', id: 'section-2' },
-    { title: 'How to Read Amazon Jewellery Ratings', id: 'section-3' },
+    { title: 'How to Read Online Jewellery Ratings', id: 'section-3' },
     { 
       title: isMen ? 'Chain & Necklace Sizing: The Right Length' : 'Ring Sizing: Getting It Right Online', 
       id: 'section-4' 
@@ -101,7 +101,7 @@ const BuyingGuidePage = () => {
         <p className="text-sm max-w-2xl mx-auto mt-4 leading-relaxed" style={{ color: theme.textSecondary }}>
           {isMen
             ? "Everything you need to know before buying men's chains, kadas, and bracelets online. Sizing guides, metal durability, styling tips, and common buying mistakes to avoid."
-            : "Everything you need to know before spending money on fashion jewellery from Amazon, Flipkart, or any online store. Materials, red flags, sizing, care tips, and how to avoid common mistakes."}
+            : "Everything you need to know before spending money on fashion jewellery online. Materials, red flags, sizing, care tips, and how to avoid common mistakes."}
         </p>
         <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
           Written by the FaithVish Team · April 2026 · {isMen ? '8 min read' : '10 min read'}
@@ -131,7 +131,7 @@ const BuyingGuidePage = () => {
           <h2 className="text-sm font-bold font-serif uppercase tracking-widest" style={{ color: theme.textPrimary }}>Why Trust This Guide?</h2>
         </div>
         <p className="text-sm leading-relaxed mb-3" style={{ color: theme.textSecondary }}>
-          FaithVish is an independent editorial team that curates and reviews jewellery from Amazon India. We earn affiliate commissions when you purchase through our links, but <strong style={{ color: theme.textPrimary }}>we are not paid by any brand to feature or promote their products</strong>.
+          FaithVish is an independent editorial team that curates and reviews jewellery from India's most trusted online stores. We earn affiliate commissions when you purchase through our links, but <strong style={{ color: theme.textPrimary }}>we are not paid by any brand to feature or promote their products</strong>.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
           <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
@@ -177,7 +177,7 @@ const BuyingGuidePage = () => {
           <p className="text-sm leading-relaxed mb-4" style={{ color: theme.textSecondary }}>
             The single most important factor in any jewellery purchase — online or offline — is the <strong style={{ color: theme.textPrimary }}>base material</strong>.
             It determines how long the piece lasts, how it feels on your skin, whether it causes allergic reactions, and how it looks after a month of wear.
-            Here's a breakdown of every material you'll encounter on Amazon India, ranked from most to least durable:
+            Here's a breakdown of every material you'll encounter when shopping for jewellery online, ranked from most to least durable:
           </p>
           <div className="space-y-4">
             <div className="border p-5" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
@@ -230,9 +230,9 @@ const BuyingGuidePage = () => {
           </h2>
           <p className="text-sm leading-relaxed mb-4" style={{ color: theme.textSecondary }}>
             {isMen ? (
-              "Almost every gold-toned chain or Kada you see on Amazon under ₹5,000 is gold plated, not real gold. Understanding the differences saves you from disappointment:"
+              "Almost every gold-toned chain or Kada you see online under ₹5,000 is gold plated, not real gold. Understanding the differences saves you from disappointment:"
             ) : (
-              "Almost every \"gold\" piece you see on Amazon under ₹5,000 is gold plated, not real gold. Understanding the differences saves you from disappointment:"
+              "Almost every \"gold\" piece you see online under ₹5,000 is gold plated, not real gold. Understanding the differences saves you from disappointment:"
             )}
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
@@ -282,10 +282,10 @@ const BuyingGuidePage = () => {
         {/* Section 3 */}
         <section id="section-3">
           <h2 className="text-xl font-bold font-serif uppercase tracking-widest mb-4 pb-2 border-b" style={{ color: theme.textPrimary, borderColor: theme.cardBorder }}>
-            3. How to Read Amazon Jewellery Ratings
+            3. How to Read Online Jewellery Ratings
           </h2>
           <p className="text-sm leading-relaxed mb-4" style={{ color: theme.textSecondary }}>
-            Not all 4-star ratings are created equal. Here's how to actually interpret what you see on Amazon:
+            Not all 4-star ratings are created equal. Here's how to actually interpret what you see on online jewellery stores:
           </p>
           <div className="space-y-4">
             <div className="border p-5" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
@@ -498,7 +498,7 @@ const BuyingGuidePage = () => {
               { flag: '"90% off MRP" claims', detail: 'If a product\'s MRP is listed as ₹1,999 and selling at ₹199, the MRP is almost certainly inflated. No genuine ₹2,000 product sells for ₹200 at a profit. Judge the product by its selling price, not the discount percentage.' },
               { flag: 'No material specification', detail: 'A listing that says just "metal" without specifying brass, stainless steel, alloy, or silver is hiding something. Reputable brands name their materials because it\'s a selling point.' },
               { flag: 'Stock photos that look too good', detail: 'If every product photo is studio-lit with professional modelling and there are zero buyer photos in reviews, be cautious. The gap between studio photos and reality can be significant in budget jewellery.' },
-              { flag: 'Zero reviews on a "Best Seller" tag', detail: 'Amazon\'s "Best Seller" tag in narrow sub-categories can be misleading. A product can be a "best seller" in a very niche category with minimal sales. Always check actual review counts.' },
+              { flag: 'Zero reviews on a "Best Seller" tag', detail: 'A "Best Seller" tag in narrow sub-categories can be misleading. A product can be a "best seller" in a very niche category with minimal sales. Always check actual review counts.' },
               { flag: 'No brand name or unknown brand', detail: 'Brands like YouBella, Shining Diva, Clara, and Sukkhi have thousands of products and millions of reviews across their range. An unbranded listing has no reputation to protect.' },
             ].map((item, i) => (
               <div key={i} className="border p-5" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
@@ -670,7 +670,7 @@ const BuyingGuidePage = () => {
                 { criterion: 'Buyer Validation', weight: '25%', detail: isMen ? 'Review count and star rating together. 500+ reviews at 4.0+ is our gold standard. Zero reviews receive explicit flags.' : 'Review count and star rating together. 500+ reviews at 4.0+ is our gold standard. Zero reviews receive explicit flags and caveated recommendations.' },
                 { criterion: 'Value for Money', weight: '20%', detail: isMen ? 'Not just the lowest price — the quality-to-price ratio. A ₹350 steel Kada can be much better value than a ₹150 alloy chain.' : 'Not just the lowest price — the best quality-to-price ratio. A ₹350 stainless steel bracelet can be better value than a ₹150 alloy one.' },
                 { criterion: 'Design & Versatility', weight: '15%', detail: isMen ? 'How many masculine outfits and occasions the accessory works with. Versatile cuffs rank higher than niche party chains.' : 'How many occasions and outfits the piece works with. Versatile pieces rank higher than narrow-occasion items.' },
-                { criterion: 'Brand Track Record', weight: '10%', detail: isMen ? 'The brand\'s history across their full product range on Amazon. Strong brands provide better manufacturing trust.' : 'The brand\'s history across their full product range on Amazon. A strong brand provides quality assurance even for new listings.' },
+                { criterion: 'Brand Track Record', weight: '10%', detail: isMen ? 'The brand\'s history across their full product range online. Strong brands provide better manufacturing trust.' : 'The brand\'s history across their full product range online. A strong brand provides quality assurance even for new listings.' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 pb-4 border-b last:border-b-0 last:pb-0" style={{ borderColor: theme.cardBorder }}>
                   <span 
@@ -758,7 +758,7 @@ const BuyingGuidePage = () => {
           </div>
         </div>
         <p className="text-[11px] sm:text-[10px] leading-relaxed mt-2" style={{ color: theme.textMuted }}>
-          <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish is a participant in the Amazon Services LLC Associates Program.
+          <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish participates in affiliate programs including the Amazon Services LLC Associates Program and others.
           Links across our site are affiliate links — we may earn a small commission when you buy through them. This costs you nothing extra. Our editorial
           analysis is independent and not influenced by commission rates.{' '}
           <Link to="/affiliate-disclosure" className="underline" style={{ color: theme.accent }}>Full disclosure →</Link>

@@ -63,7 +63,7 @@ const AffiliateDisclosurePage = () => {
           }}
         >
           <p className="text-sm leading-relaxed font-medium" style={{ color: theme.textSecondary }}>
-            <strong style={{ color: theme.textPrimary }}>In plain language:</strong> FaithVish earns money when you click our product links and buy something on Amazon.
+            <strong style={{ color: theme.textPrimary }}>In plain language:</strong> FaithVish earns money when you click our product links and buy something through our partner stores.
             This costs you absolutely nothing extra. We only recommend products we genuinely believe are worth your money,
             and we clearly disclose this relationship on every page.
           </p>
@@ -118,7 +118,7 @@ const AffiliateDisclosurePage = () => {
           Our product recommendations, reviews, and rankings are based on the following real, publicly available data:
         </p>
         <ul className="list-disc pl-6 space-y-2">
-          <li><strong style={{ color: theme.textPrimary }}>Amazon buyer ratings</strong> — the star ratings given by verified purchasers</li>
+          <li><strong style={{ color: theme.textPrimary }}>Buyer ratings</strong> — the star ratings given by verified purchasers on each store</li>
           <li><strong style={{ color: theme.textPrimary }}>Review volume</strong> — the number of buyer reviews, indicating how well-tested a product is</li>
           <li><strong style={{ color: theme.textPrimary }}>Product specifications</strong> — materials, construction, and features as listed by the seller</li>
           <li><strong style={{ color: theme.textPrimary }}>Price and value</strong> — what you get relative to what you pay</li>
@@ -154,7 +154,7 @@ const AffiliateDisclosurePage = () => {
         </p>
         <ul className="list-disc pl-6 space-y-2">
           <li>Include honest pros <em>and</em> cons for every product — we don't hide negatives</li>
-          <li>Show real buyer ratings and review counts from Amazon</li>
+          <li>Show real buyer ratings and review counts from each store</li>
           <li>Flag products with low ratings or limited reviews</li>
           <li>Clearly label all outbound links as leading to the retailer's website</li>
           <li>Display this affiliate disclosure prominently across the site</li>

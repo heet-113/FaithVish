@@ -33,6 +33,9 @@ export const STORE_COLORS = {
   CaratLane: { hex: '#5C2D91', text: '#ffffff' },
   BlueStone: { hex: '#003366', text: '#ffffff' },
   Nykaa: { hex: '#FC2779', text: '#ffffff' },
+  'Nykaa Fashion': { hex: '#FC2779', text: '#ffffff' },
+  Salty: { hex: '#2D2D2D', text: '#ffffff' },
+  IGP: { hex: '#E84C3D', text: '#ffffff' },
 };
 
 // Badge colors

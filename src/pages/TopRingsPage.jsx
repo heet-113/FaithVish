@@ -68,7 +68,7 @@ const TopRingsPage = () => {
         </h1>
         <p className="text-sm max-w-2xl mx-auto mt-4 leading-relaxed" style={{ color: theme.textSecondary }}>
           Looking for a stylish ring without breaking the bank? We've analysed ratings, buyer reviews, materials, and value
-          to rank the best affordable rings available on Amazon India right now. All prices verified at the time of writing.
+          to rank the best affordable rings available online right now. All prices verified at the time of writing.
         </p>
         <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
           Last updated: April 2026 · {affordableRings.length} rings reviewed
@@ -125,7 +125,7 @@ const TopRingsPage = () => {
           <h2 className="text-sm font-bold font-serif uppercase tracking-widest" style={{ color: theme.textPrimary }}>Why Trust This Guide?</h2>
         </div>
         <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-          Our rankings are based entirely on publicly available Amazon India data — star ratings, review counts, material specifications, and pricing. 
+          Our rankings are based entirely on publicly available data — star ratings, review counts, material specifications, and pricing. 
           <strong style={{ color: theme.textPrimary }}> No brand has paid us to feature or rank their product higher.</strong> We earn affiliate commissions 
           when you buy through our links, but commission rates do not influence our rankings.
         </p>
@@ -144,11 +144,11 @@ const TopRingsPage = () => {
           How We Ranked These Rings
         </h2>
         <p className="text-sm leading-relaxed mb-3" style={{ color: theme.textSecondary }}>
-          Our ranking considers four factors based on publicly available Amazon India data:
+          Our ranking considers four factors based on publicly available data:
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {[
-            { label: 'Buyer Rating', desc: 'Amazon star rating from verified buyers' },
+            { label: 'Buyer Rating', desc: 'Star rating from verified buyers' },
             { label: 'Review Volume', desc: 'Number of buyer reviews — more reviews = more trust' },
             { label: 'Material Quality', desc: 'Stainless steel & silver rank above unspecified alloys' },
             { label: 'Value for Money', desc: 'What you get relative to what you pay' },
@@ -313,7 +313,7 @@ const TopRingsPage = () => {
                           e.target.style.backgroundColor = theme.accent;
                         }}
                       >
-                        Buy on Amazon →
+                        Buy on {ring.store || 'Store'} →
                       </a>
                       <Link
                         to={`/product/${ring.id}`}
@@ -371,9 +371,9 @@ const TopRingsPage = () => {
       {/* Affiliate Disclaimer */}
       <div className="mt-6 p-4 border" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
         <p className="text-[11px] sm:text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
-          <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish is a participant in the Amazon Services LLC Associates Program.
+          <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish participates in affiliate programs including the Amazon Services LLC Associates Program and others.
           Links on this page are affiliate links — when you buy through them, we may earn a small commission at no extra cost to you. Our rankings are
-          based on publicly available Amazon data (ratings, reviews, specifications) and our editorial analysis. We are not paid to rank any product higher.
+          based on publicly available data (ratings, reviews, specifications) and our editorial analysis. We are not paid to rank any product higher.
         </p>
       </div>
 

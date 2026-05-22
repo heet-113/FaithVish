@@ -10,7 +10,9 @@ const STORE_COLORS = {
   CaratLane: { hex: '#5C2D91', text: '#ffffff' },
   BlueStone: { hex: '#003366', text: '#ffffff' },
   Nykaa: { hex: '#FC2779', text: '#ffffff' },
+  'Nykaa Fashion': { hex: '#FC2779', text: '#ffffff' },
   Salty: { hex: '#C9A96E', text: '#1E1E20' },
+  IGP: { hex: '#E84C3D', text: '#ffffff' },
 };
 
 const MenProductCard = ({ product }) => {

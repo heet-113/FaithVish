@@ -41,10 +41,17 @@ const useStore = create((set, get) => ({
     const { products, searchQuery, selectedCategory, priceRange, sortBy, activeGender } = get();
     let filtered = products.filter((p) => p.gender === activeGender);
 
-    // Text search — multi-word tokenized relevance scoring
+    // Text search — multi-word tokenized relevance scoring with word-boundary awareness
     if (searchQuery.trim()) {
       // Split query into individual tokens (words), remove empty strings
       const tokens = searchQuery.toLowerCase().trim().split(/\s+/).filter(Boolean);
+
+      // Build word-boundary regex for each token to prevent substring false positives
+      // e.g. "ring" should match "ring", "rings" but NOT "earring", "earrings"
+      const tokenRegexes = tokens.map((token) => {
+        const escaped = token.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        return new RegExp(`\\b${escaped}`, 'i');
+      });
 
       // Build a scored, filterable list
       const scored = filtered
@@ -73,18 +80,33 @@ const useStore = create((set, get) => ({
           let score = 0;
           let matchedTokens = 0;
 
-          for (const token of tokens) {
+          for (let i = 0; i < tokens.length; i++) {
+            const token = tokens[i];
+            const regex = tokenRegexes[i];
             let tokenMatched = false;
 
-            if (highPriority.includes(token)) {
+            // High priority: use word-boundary regex to avoid substring matches
+            // (e.g. "ring" should NOT match "earring" in name/category/tags)
+            if (regex.test(highPriority)) {
               score += 3;
               tokenMatched = true;
+
+              // Bonus: exact category match (e.g. searching "rings" when category is "Rings")
+              if (regex.test((p.category || '').toLowerCase())) {
+                score += 5;
+              }
+              // Bonus: word appears in name (strong signal)
+              if (regex.test((p.name || '').toLowerCase())) {
+                score += 2;
+              }
             }
-            if (medPriority.includes(token)) {
+            // Medium priority: use word-boundary regex for descriptions too
+            if (regex.test(medPriority)) {
               score += 2;
               tokenMatched = true;
             }
-            if (lowPriority.includes(token)) {
+            // Low priority: use word-boundary regex
+            if (regex.test(lowPriority)) {
               score += 1;
               tokenMatched = true;
             }

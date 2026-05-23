@@ -324,7 +324,7 @@
     },
     "price": 649,
     "originalPrice": 990,
-    "affiliateUrl": "https://salty.co.in/products/astor-ring", 
+    "affiliateUrl": "https://salty.co.in/products/astor-ring",
     "store": "Salty",
     "rating": 4.8,
     "reviewCount": 5,
@@ -357,21 +357,88 @@
     },
     "price": 399,
     "originalPrice": 990,
-    "affiliateUrl": "https://salty.co.in/products/ottoman-golden-ring", 
+    "affiliateUrl": "https://salty.co.in/products/ottoman-golden-ring",
     "store": "Salty",
-    "rating": 5.0,
+    "rating": 5,
     "reviewCount": 28,
     "pros": [
       "Elegant Design: Its sleek and minimalist style makes it perfect for any occasion.",
-      "High-Quality Materials: Crafted to ensure durability and comfort."  
+      "High-Quality Materials: Crafted to ensure durability and comfort."
     ],
     "cons": [
-      "Limited Size Options: Currently available in specific sizes only.",  
-      "Not for Heavy Wear: Best suited as a fashion accessory rather than for everyday heavy-duty use."  
+      "Limited Size Options: Currently available in specific sizes only.",
+      "Not for Heavy Wear: Best suited as a fashion accessory rather than for everyday heavy-duty use."
     ],
     "whoShouldBuy": "Ideal for anyone looking for a versatile accessory that complements both casual and formal outfits. Great choice for gift-givers seeking a timeless piece for friends or loved ones.",
     "shortReview": "The Ottoman Golden Ring is a chic and durable piece that adds a touch of elegance to any outfit. With positive reviews highlighting its shine and subtlety, it's a great addition to any jewellery collection! 🌟  ",
     "lastUpdated": "2026-05-20",
+    "gender": "men"
+  },
+  {
+    "name": "Zavya Solitaire Gold-Plated 925 Sterlin Silver Men's Ring",
+    "image": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/4/14dee6eM-RNG-40398-G_5.jpg?rnd=20200526195200&tr=w-512",
+    "description": "Crafted From High-Quality 925 Sterling Silver With A Luxurious Gold Plating, This Men'S Ring Features A Striking Solitaire Cubic Zirconia Stone. ",
+    "specs": {
+      "Material": "Sterling Silver",
+      "Pack Size": "Single",
+      "Plating": "Gold",
+      "Occasion": "Everyday Essentials",
+      "Warranty": "No Warranty"
+    },
+    "price": 2688,
+    "originalPrice": 4199,
+    "affiliateUrl": "https://www.nykaafashion.com/zavya-solitaire-gold-plated-925-sterling-silver-men-s-ring/p/19258031",
+    "store": "Nykaa Fashion",
+    "badge": "Best Seller",
+    "tags": [
+      "party",
+      "wedding",
+      "anniversary"
+    ],
+    "pros": [
+      "Crafted from high-quality 925 sterling silver with luxurious gold plating, offering a premium look and feel.",
+      "Features a striking solitaire cubic zirconia stone that adds a touch of elegance and sparkle.",
+      "Versatile design suitable for everyday wear as well as special occasions.",
+      "Positive customer reviews praising its craftsmanship and aesthetic appeal."
+    ],
+    "cons": [
+      "Gold plating may fade over time with regular use, especially if exposed to water or sweat.",
+      "Cubic zirconia, while visually appealing, does not have the same durability or prestige as natural gemstones.",
+      "May not be suitable for those with metal allergies or sensitivities, as the base metal composition is not specified."
+    ],
+    "whoShouldBuy": "Ideal for men looking for a stylish and affordable ring that can be worn daily or for special occasions. Great for gift-givers seeking a meaningful piece of jewelry for birthdays, anniversaries, or other celebrations.",
+    "lastUpdated": "2026-05-23",
+    "gender": "men"
+  },
+  {
+    "name": "Palmonas Waterproof and Anti-Tarnish Shiny Diamond Gold Ring for Men",
+    "image": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/1/9/195958fPMMSSRG506-G-8-Gold_1.jpg?rnd=20200526195200&tr=w-512",
+    "description": "This ring is designed to be waterproof and anti-tarnish, ensuring that it maintains its shine and durability even with regular wear. The shiny diamond gold finish adds a touch of elegance, making it suitable for both casual and formal occasions.",
+    "specs": {
+      "Base metal": "Stainless Steel",
+      "Plating": "Gold",
+      "Plated Size": "8",
+      "Weight": "7 gms",
+      "Type": "Ring",
+      "Warranty": "1 year on Color and Plating"
+    },
+    "price": 1000,
+    "originalPrice": 2499,
+    "affiliateUrl": "https://www.nykaafashion.com/palmonas-waterproof-and-anti-tarnish-shiny-diamond-gold-ring-for-men/p/19359775",
+    "store": "Nykaa Fashion",
+    "pros": [
+      "Waterproof and anti-tarnish properties ensure long-lasting shine and durability, making it a practical choice for everyday wear.",
+      "Shiny diamond gold finish adds a touch of elegance, making it suitable for both casual and formal occasions.",
+      "Crafted from stainless steel, which is known for its strength and resistance to corrosion, providing a sturdy base for the ring.",
+      "Comes with a 1-year warranty on color and plating, offering peace of mind to buyers regarding the product's longevity and quality."
+    ],
+    "cons": [
+      "While the ring is designed to be waterproof and anti-tarnish, regular exposure to water, sweat, and chemicals may still affect the plating over time, especially if not cared for properly.",
+      "The shiny diamond gold finish, while visually appealing, may not have the same depth and brilliance as natural diamonds or higher-quality gemstones, which could be a consideration for those seeking a more luxurious look.",
+      "Stainless steel, while durable, may not have the same prestige or feel as precious metals like gold or silver, which could be a drawback for those looking for a more traditional or high-end piece of jewelry."
+    ],
+    "whoShouldBuy": "Ideal for men looking for a stylish and durable ring that can withstand daily wear and tear. Great for those who want a practical yet elegant accessory that can be worn in various settings, from casual outings to formal events. ",
+    "lastUpdated": "2026-05-23",
     "gender": "men"
   }
 ]

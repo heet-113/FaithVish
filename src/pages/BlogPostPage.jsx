@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getPostBySlug, getRelatedPosts, getLatestPosts } from '../data/blog/index.js';
 import useStore from '../store/useStore.js';
@@ -174,6 +175,7 @@ const BlogPostPage = () => {
   const post = getPostBySlug(slug);
   const { activeGender } = useStore();
   const isMen = activeGender === 'men';
+  const [copiedLink, setCopiedLink] = useState(false);
 
   const m = {
     bg: '#1E1E20',
@@ -198,6 +200,36 @@ const BlogPostPage = () => {
     cardBorder: isMen ? m.border : 'var(--color-border)',
     surfaceBg: isMen ? m.surface : 'var(--color-surface-light)',
     alertBg: isMen ? 'rgba(201, 169, 110, 0.08)' : 'rgba(var(--color-accent-rgb), 0.05)',
+  };
+
+  useEffect(() => {
+    if (!copiedLink) return undefined;
+    const timer = window.setTimeout(() => setCopiedLink(false), 1800);
+    return () => window.clearTimeout(timer);
+  }, [copiedLink]);
+
+  const copyPostLink = async () => {
+    const url = window.location.href;
+
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        const textArea = document.createElement('textarea');
+        textArea.value = url;
+        textArea.setAttribute('readonly', '');
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+      }
+
+      setCopiedLink(true);
+    } catch (error) {
+      window.prompt('Copy this link:', url);
+    }
   };
 
   if (!post) {
@@ -291,15 +323,22 @@ const BlogPostPage = () => {
               </svg>
             </a>
             <button 
-              onClick={() => { navigator.clipboard.writeText(window.location.href); }} 
+              type="button"
+              onClick={copyPostLink} 
               className="w-10 h-10 sm:w-8 sm:h-8 border flex items-center justify-center transition-all group rounded-sm" 
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
-              title="Copy link"
+              title={copiedLink ? 'Link copied' : 'Copy link'}
+              aria-label={copiedLink ? 'Link copied' : 'Copy post link'}
             >
               <svg className="w-3.5 h-3.5 text-text-muted group-hover:text-accent transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
               </svg>
             </button>
+            {copiedLink && (
+              <span className="hidden sm:inline-flex items-center text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-sm border" style={{ color: theme.accent, borderColor: theme.cardBorder }}>
+                Copied
+              </span>
+            )}
           </div>
         </div>
 

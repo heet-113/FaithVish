@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+src/data/products/template.txt
 
 # Editor directories and files
 .vscode/*

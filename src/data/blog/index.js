@@ -50,12 +50,13 @@ import { parseMarkdownToSections } from './markdownParser.js';
  * Splits --- delimited YAML header from the Markdown body.
  */
 function parseFrontmatter(raw) {
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  const match = raw.match(/^\uFEFF?\s*---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) return { attributes: {}, body: raw };
   const body = match[2];
   const attributes = {};
   for (const line of match[1].split('\n')) {
-    const m = line.match(/^(\w+):\s*(.+)$/);
+    const trimmed = line.trim();
+    const m = trimmed.match(/^([\w-]+):\s*(.+)$/);
     if (!m) continue;
     let value = m[2].trim();
     // Parse arrays: ["a", "b"]
@@ -85,7 +86,54 @@ const posts = Object.entries(markdownFiles).map(([filepath, rawContent]) => {
   const slug = filepath.replace('./posts/', '').replace('.md', '');
   
   // Parse frontmatter and body
-  const { attributes, body } = parseFrontmatter(rawContent);
+  let { attributes, body } = parseFrontmatter(rawContent);
+
+  // If parsing failed, log a helpful warning and try a simple fallback
+  if (!attributes || Object.keys(attributes).length === 0) {
+    // Extra targeted debug for known problematic file
+    if (filepath.includes('how-to-select-jewelry-style-for-yourself.md')) {
+      try {
+        console.warn('[blog][debug] Raw content snippet for problematic file:', filepath);
+        const snippet = rawContent.slice(0, 240);
+        console.warn(snippet);
+        const codes = Array.from(snippet).map((c, i) => `${i}:${c.charCodeAt(0)}`).slice(0, 40);
+        console.warn('[blog][debug] Char codes (first 40):', codes.join(', '));
+      } catch (e) {
+        console.error('[blog][debug] Error printing raw snippet', e);
+      }
+    }
+    try {
+      console.warn('[blog] Frontmatter parse failed — attempting fallback for:', filepath);
+      console.warn(rawContent.slice(0, 600));
+
+      const firstSep = rawContent.indexOf('---');
+      const secondSep = rawContent.indexOf('---', firstSep + 3);
+      if (firstSep !== -1 && secondSep !== -1) {
+        const yamlBlock = rawContent.slice(firstSep + 3, secondSep).trim();
+        const altAttributes = {};
+        for (const line of yamlBlock.split(/\r?\n/)) {
+          const m = line.match(/^([\w-]+):\s*(.+)$/);
+          if (!m) continue;
+          let value = m[2].trim();
+          if (value.startsWith('[')) {
+            try { value = JSON.parse(value); } catch { }
+          } else if (value === 'true') value = true;
+          else if (value === 'false') value = false;
+          else if ((/^\".*\"$/).test(value) || (/^'.*'$/).test(value)) {
+            value = value.slice(1, -1);
+          }
+          altAttributes[m[1]] = value;
+        }
+        if (Object.keys(altAttributes).length > 0) {
+          attributes = altAttributes;
+          body = rawContent.slice(secondSep + 3);
+          console.info('[blog] Frontmatter fallback succeeded for:', filepath);
+        }
+      }
+    } catch (e) {
+      console.error('[blog] Error during frontmatter fallback parse for:', filepath, e);
+    }
+  }
   
   // Convert markdown body to content sections
   const content = parseMarkdownToSections(body);
@@ -105,6 +153,23 @@ const posts = Object.entries(markdownFiles).map(([filepath, rawContent]) => {
   };
 });
 
+// Debug: show parsed posts summary during dev to help diagnose frontmatter issues
+try {
+  if (typeof window !== 'undefined' && window.location && window.location.hostname) {
+    // running in browser dev server
+    // Print minimal summary so console is readable
+    console.info('[blog] Parsed posts summary:', posts.map(p => ({
+      slug: p.slug,
+      title: p.title,
+      coverImage: p.coverImage,
+      category: p.category,
+      readTime: p.readTime
+    })));
+  }
+} catch (e) {
+  // ignore in non-browser environments
+}
+
 /**
  * Get all blog posts, sorted by date (newest first)
  */
@@ -123,7 +188,10 @@ export const getPostBySlug = (slug) => {
  * Get all unique blog categories
  */
 export const getBlogCategories = () => {
-  return ['All', ...new Set(posts.map((p) => p.category))];
+  const categories = posts
+    .map((p) => p.category)
+    .filter((category) => Boolean(category));
+  return ['All', ...new Set(categories)];
 };
 
 /**

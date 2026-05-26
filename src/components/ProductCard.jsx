@@ -6,9 +6,9 @@ const ProductCard = ({ product }) => {
   const badgeStyle = product.badge ? BADGE_STYLES[product.badge] : null;
 
   return (
-    <Link to={`/product/${product.id}`} className="bg-white border hover:border-accent border-border block overflow-hidden group transition-all duration-300 hover:shadow-[0_8px_30px_rgba(236,72,153,0.12)]" id={`product-card-${product.id}`}>
+    <Link to={`/product/${product.id}`} className="bg-white border hover:border-accent border-border flex flex-col h-full overflow-hidden group transition-all duration-300 hover:shadow-[0_8px_30px_rgba(236,72,153,0.12)]" id={`product-card-${product.id}`}>
       {/* Image section */}
-      <div className="relative overflow-hidden aspect-square bg-white border-b border-border p-2">
+      <div className="relative w-full overflow-hidden aspect-square bg-white border-b border-border p-2 flex-shrink-0">
         <img
           src={product.image}
           alt={product.name}
@@ -43,7 +43,7 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         {/* Product name */}
         <h3 className="text-sm font-semibold text-text-primary mb-1.5 line-clamp-2 group-hover:text-accent transition-colors leading-snug">
           {product.name}
@@ -90,7 +90,7 @@ const ProductCard = ({ product }) => {
         </div>
 
         {/* CTA */}
-        <div className="pt-3 border-t border-border flex items-center justify-end min-h-[44px] sm:min-h-0">
+        <div className="mt-auto pt-3 border-t border-border flex items-center justify-end min-h-[44px] sm:min-h-0">
           <span className="text-xs font-bold uppercase tracking-widest text-accent group-hover:text-accent-light transition-colors">
             Shop Now →
           </span>

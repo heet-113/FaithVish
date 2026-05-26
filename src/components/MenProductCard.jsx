@@ -22,12 +22,12 @@ const MenProductCard = ({ product }) => {
   return (
     <Link
       to={`/product/${product.id}`}
-      className="block overflow-hidden group transition-all duration-300 men-card"
+      className="flex flex-col h-full overflow-hidden group transition-all duration-300 men-card"
       id={`product-card-${product.id}`}
       style={{ borderRadius: '2px' }}
     >
       {/* Image section */}
-      <div className="relative overflow-hidden aspect-square border-b" style={{ borderColor: '#3A3A3C', backgroundColor: '#222224', padding: '8px' }}>
+      <div className="relative w-full overflow-hidden aspect-square border-b flex-shrink-0" style={{ borderColor: '#3A3A3C', backgroundColor: '#222224', padding: '8px' }}>
         <img
           src={product.image}
           alt={product.name}
@@ -68,7 +68,7 @@ const MenProductCard = ({ product }) => {
       </div>
 
       {/* Content */}
-      <div className="p-4">
+      <div className="p-4 flex flex-col flex-grow">
         {/* Product name */}
         <h3
           className="text-sm font-semibold mb-1.5 line-clamp-2 transition-colors leading-snug"
@@ -121,7 +121,7 @@ const MenProductCard = ({ product }) => {
         </div>
 
         {/* CTA */}
-        <div className="pt-3 border-t flex items-center justify-end min-h-[44px] sm:min-h-0" style={{ borderColor: '#3A3A3C' }}>
+        <div className="mt-auto pt-3 border-t flex items-center justify-end min-h-[44px] sm:min-h-0" style={{ borderColor: '#3A3A3C' }}>
           <span
             className="text-xs font-bold uppercase tracking-widest transition-colors group-hover:opacity-80"
             style={{ color: '#C9A96E' }}

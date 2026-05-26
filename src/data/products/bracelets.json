@@ -504,5 +504,35 @@
     "whoShouldBuy": "This bracelet is perfect for individuals seeking a comfortable and versatile accessory that can easily fit various wrist sizes. It's ideal for those who prefer a more casual and flexible style, making it suitable for everyday wear or as a layering piece with other bracelets. Additionally, it can be a great choice for those who have difficulty finding traditional bracelets that fit well.",
     "lastUpdated": "2026-05-25",
     "gender": "women"
+  },
+  { 
+    "name": "Ocean Breeze Cuban Link Bracelet",
+    "image": "https://salty.co.in/cdn/shop/files/MB1S1005-S-BU_Model.jpg?v=1773393741&width=1080",
+    "description": "Channel effortless style with the Ocean Breeze Cuban Link Bracelet, a sleek accessory inspired by modern fashion and classic design.",
+    "specs": {
+        "Colour": "Silver",
+        "Material": "Copper",
+        "Pattern": "Chain, Bold Chain, Charm, Ocean Breeze",
+        "Clasp Type": "Fold-over Clasp",
+        "Common Name": "Chain Bracelets",
+        "Warranty": "N/A"
+    },
+    "price": 1399,
+    "originalPrice": 2798,
+    "affiliateUrl": "https://inr.deals/track?id=hee678835005&src=backend&url=https%3A%2F%2Fsalty.co.in%2Fcollections%2Fmens-jewellery%2Fproducts%2Focean-breeze-cuban-link-bracelet",
+    "store": "Salty Alpha",
+    "pros": [
+        "Timeless Design: The Cuban link style is a classic and versatile design that complements a wide range of outfits, from casual to formal.",
+        "Durable Material: Made from high-quality copper, this bracelet is designed to withstand daily wear while maintaining its shine and integrity.",
+        "Secure Clasp: The fold-over clasp ensures that the bracelet stays securely fastened, providing peace of mind during wear."
+    ],
+    "cons": [
+        "Material Sensitivity: Copper can cause skin reactions in some individuals, especially if worn for extended periods or in hot weather, which may lead to discomfort or discoloration.",
+        "Weight: Depending on the thickness of the links, Cuban link bracelets can be heavier than other styles, which may not be comfortable for everyone, particularly those who prefer lightweight accessories.",
+        "Maintenance: Copper can tarnish over time, requiring regular cleaning and maintenance to keep the bracelet looking its best."
+    ],
+    "whoShouldBuy": "This bracelet is ideal for individuals who appreciate classic and bold jewelry styles, particularly those who enjoy statement pieces that can elevate their look. It's perfect for fashion-forward",
+    "lastUpdated": "2026-05-26",
+    "gender": "men"
   }
 ]

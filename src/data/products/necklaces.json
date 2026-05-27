@@ -346,5 +346,42 @@
     "whoShouldBuy": "Ideal for individuals who appreciate understated elegance and are looking for a versatile accessory that can complement a wide range of outfits. Perfect for those who want to add a touch of sophistication to their look without investing in high-end jewelry.",
     "lastUpdated": "2026-05-23",
     "gender": "men"
+  },
+  { 
+    "name": "SZN Brass Gold-Plated Necklace",
+    "image": "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2025/DECEMBER/30/tB3HmwGP_8104f6a3ecef4ca3b83d30ac675584a5.jpg",
+    "description": "Crafted with a smooth gold-plated finish, these lightweight necklaces offer comfort for all-day wear.",
+    "specs": {
+        "Material": "Brass",
+        "Plating": "Gold-Plated",
+        "Closure": "S-Hook",
+        "Size & fit": "Chain Length: Approx. 18 inch, Pendant Size: Approx. 2 cm"
+    },
+    "price": 73,
+    "originalPrice": 249,
+    "affiliateUrl": "https://inr.deals/OgFP7d",
+    "store": "Myntra",
+    "rating": 4.3,
+    "reviewCount": "19.8k",
+    "badge": "Best Seller",
+    "tags": [
+        "wedding",
+        "engagement",
+        "anniversary"
+    ],
+    "pros": [
+        "The gold-plated finish provides an elegant and luxurious look at an affordable price point, making it accessible for a wide range of customers.",
+        "Brass material ensures durability while maintaining a lightweight feel, allowing for comfortable all-day wear.",
+        "The S-Hook closure offers ease of use and a secure fit, making it convenient for daily wear.",
+        "With a chain length of approximately 18 inches and a pendant size of around 2 cm, this necklace is versatile enough to complement various outfits and occasions, from casual to formal."
+    ],
+    "cons": [
+        "Gold plating may wear off over time, especially with frequent use, which can affect the necklace's appearance and longevity.",
+        "Brass material, while durable, may cause skin reactions for those with sensitive skin, particularly if the plating wears off and exposes the base metal.",
+        "The S-Hook closure, while convenient, may not be as secure as other types of clasps, potentially leading to accidental loss if not fastened properly."
+    ],
+    "whoShouldBuy": "Ideal for individuals seeking an affordable yet stylish accessory that can enhance their everyday look. Perfect for those who want to add a touch of elegance to their outfits without investing in high-end jewelry. Suitable for a wide range of occasions, from casual outings to formal events, making it a versatile addition to any jewelry collection.",
+    "lastUpdated": "2026-05-27",
+    "gender": "women"
   }
 ]

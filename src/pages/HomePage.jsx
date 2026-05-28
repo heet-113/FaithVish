@@ -32,7 +32,7 @@ const CategorySection = ({ category, products }) => {
             </div>
             <h2 className="text-xl font-bold font-serif uppercase tracking-widest text-text-primary">{category}</h2>
           </div>
-          <div className="w-12 h-[3px] bg-accent mt-3" />
+          <div className="w-12 h-0.75 bg-accent mt-3" />
           <p className="text-xs text-text-secondary mt-2 tracking-wide font-medium uppercase">{products.length} pieces available</p>
         </div>
         <div className="flex items-center gap-2">
@@ -46,7 +46,7 @@ const CategorySection = ({ category, products }) => {
       </div>
       <div ref={scrollRef} className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {products.map((product) => (
-          <div key={product.id} className="shrink-0 w-[240px] sm:w-[280px]">
+          <div key={product.id} className="shrink-0 w-60 sm:w-70">
             <ProductCard product={product} />
           </div>
         ))}
@@ -97,7 +97,7 @@ const MenCategorySection = ({ category, products }) => {
       </div>
       <div ref={scrollRef} className="flex gap-4 overflow-x-auto pb-2 scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
         {products.map((product) => (
-          <div key={product.id} className="shrink-0 w-[240px] sm:w-[280px]">
+          <div key={product.id} className="shrink-0 w-60 sm:w-70">
             <MenProductCard product={product} />
           </div>
         ))}
@@ -118,7 +118,7 @@ const SectionSkeleton = ({ isMen }) => (
     </div>
     <div className="flex gap-4 overflow-hidden">
       {[...Array(4)].map((_, i) => (
-        <div key={i} className="shrink-0 w-[240px] sm:w-[280px] overflow-hidden" style={isMen ? { background: '#282828', border: '1px solid #3A3A3C' } : {}}>
+        <div key={i} className="shrink-0 w-60 sm:w-70 overflow-hidden" style={isMen ? { background: '#282828', border: '1px solid #3A3A3C' } : {}}>
           <div className="skeleton aspect-square" />
           <div className="p-4 space-y-3">
             <div className="skeleton h-4 w-3/4 rounded" />
@@ -563,7 +563,7 @@ const HomePage = () => {
             <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
               <div>
                 <h2 className="text-2xl font-bold font-serif uppercase tracking-widest text-accent-secondary">Shop by Collection</h2>
-                <div className="w-16 h-[3px] bg-accent mt-2" />
+                <div className="w-16 h-0.75 bg-accent mt-2" />
               </div>
             </div>
             <CategoryGrid onCategoryClick={(cat) => handleCategoryClick(cat)} selectedCategory={selectedCategory} />
@@ -583,7 +583,7 @@ const HomePage = () => {
                 <div className="flex items-center justify-between mb-6 pb-2 border-b border-border">
                   <div>
                     <h2 className="text-2xl font-bold font-serif uppercase tracking-widest text-accent-secondary">Latest from Our Blog</h2>
-                    <div className="w-16 h-[3px] bg-accent mt-2" />
+                    <div className="w-16 h-0.75 bg-accent mt-2" />
                   </div>
                   <Link to="/blog" className="hidden sm:flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent hover:gap-3 transition-all">
                     View All
@@ -593,7 +593,7 @@ const HomePage = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {blogPosts.map((post) => (
                     <Link key={post.slug} to={`/blog/${post.slug}`} className="group bg-white border border-border hover:border-accent transition-all overflow-hidden">
-                      <div className="aspect-[16/10] overflow-hidden bg-surface relative">
+                      <div className="aspect-16/10 overflow-hidden bg-surface relative">
                         <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
                         <div className="absolute top-3 left-3">
                           <span className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest bg-white/90 backdrop-blur-sm text-text-primary border border-border">{post.category}</span>

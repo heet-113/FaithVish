@@ -173,7 +173,7 @@ const ProductPage = () => {
             >
               {product.name}
             </h1>
-            <div className="w-16 h-[3px] mb-4" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
+            <div className="w-16 h-0.75 mb-4" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
             {product.rating != null && (
               <div className="flex items-center gap-2 flex-wrap">
                 <div className="flex items-center gap-0.5">
@@ -299,7 +299,7 @@ const ProductPage = () => {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {Object.entries(product.specs).map(([key, value]) => (
                   <div key={key} className="flex items-start gap-2">
-                    <span className="text-xs whitespace-nowrap min-w-[80px]" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>{key}</span>
+                    <span className="text-xs whitespace-nowrap min-w-20" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>{key}</span>
                     <span className="text-xs font-medium" style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}>{value}</span>
                   </div>
                 ))}
@@ -328,7 +328,7 @@ const ProductPage = () => {
             </div>
             <div>
               <h2 className="text-lg font-bold font-serif uppercase tracking-widest" style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}>Our Review</h2>
-              <div className="w-10 h-[2px] mt-1" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
+              <div className="w-10 h-0.5 mt-1" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
             </div>
           </div>
           <p className="text-sm leading-relaxed whitespace-pre-line" style={{ color: isMen ? m.textSecondary : 'var(--color-text-secondary)' }}>
@@ -429,7 +429,7 @@ const ProductPage = () => {
             </div>
             <div>
               <h2 className="text-lg font-bold font-serif uppercase tracking-widest" style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}>Who Should Buy This?</h2>
-              <div className="w-10 h-[2px] mt-1" style={{ background: isMen ? m.accent : 'var(--color-accent-secondary)' }} />
+              <div className="w-10 h-0.5 mt-1" style={{ background: isMen ? m.accent : 'var(--color-accent-secondary)' }} />
             </div>
           </div>
           <p className="text-sm leading-relaxed" style={{ color: isMen ? m.textSecondary : 'var(--color-text-secondary)' }}>
@@ -472,7 +472,7 @@ const ProductPage = () => {
           <div className="flex items-center justify-between mb-6 pb-2" style={{ borderBottom: `1px solid ${isMen ? m.border : 'var(--color-border)'}` }}>
             <div>
               <h2 className="text-xl font-bold font-serif uppercase tracking-widest" style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}>You May Also Like</h2>
-              <div className="w-12 h-[3px] mt-2" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
+              <div className="w-12 h-0.75 mt-2" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">

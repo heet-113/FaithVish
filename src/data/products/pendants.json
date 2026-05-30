@@ -422,5 +422,45 @@
     "whoShouldBuy": "Minimalist jewellery lovers - Clean, classic wolf tooth design that's not overly flashy. Fashion beginners - Easy to style with both casual and office wear. Gift buyers - Comes in elegant ready-to-gift packaging for birthdays, anniversaries, or Valentine's Day. Men looking for subtle accessories - Specifically designed for men but works universally",
     "lastUpdated": "2026-05-23",
     "gender": "men"
+  },
+  { 
+    "name": "Electrostorm Shimmer Chain",
+    "image": "https://salty.co.in/cdn/shop/files/Electrostorm-Shimmer-Chain-Salty-Alpha-224491071.png?v=1777054678&width=1080",
+    "description": "Crafted with high-quality materials, this chain adds a touch of sophistication and strength to any outfit. Whether you want to elevate your casual look or make a daring statement.",
+    "specs": {
+        "Color": "Silver",
+        "Material": "Stainless Steel",
+        "Dimensions": "Chain Length: 60.0 cm, Pendant Length: 4.7 cm, Pendant Width: 1.5 cm",
+        "Pattern": "lightning strike, Diamond, Street Wear, Salty Street",
+        "Clasp type": "Lobster",
+        "Common name": "Pendant Necklace",
+        "Warranty": "N/A"
+    },
+    "price": 379,
+    "originalPrice": 650,
+    "affiliateUrl": "https://inr.deals/NiWMyU",
+    "store": "Salty Alpha",
+    "rating": 4.8,
+    "reviewCount": 136,
+    "badge": "Casual Pick",
+    "tags": [
+        "men",
+        "chain",
+        "pendant"
+    ],
+    "pros": [
+        "Unique lightning strike design adds a bold and edgy element to your style",
+        "Crafted from high-quality stainless steel for durability and a sleek finish",
+        "Lobster clasp ensures secure fastening and ease of wear",
+        "Versatile accessory that complements both casual and streetwear outfits"
+    ],
+    "cons": [
+        "Limited reviews available, making it difficult to gauge long-term durability",
+        "Design may not appeal to those with more traditional or minimalist tastes",
+        "Stainless steel, while durable, may not have the same prestige as precious metals like gold or silver"
+    ],
+    "whoShouldBuy": "Ideal for fashion-forward individuals looking for a bold and unique accessory, Those who prefer durable and low-maintenance jewelry, Anyone seeking a statement piece to elevate their casual or streetwear style.",
+    "lastUpdated": "2026-05-30",
+    "gender": "men"
   }
 ]

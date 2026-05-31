@@ -383,5 +383,41 @@
     "whoShouldBuy": "Ideal for individuals seeking an affordable yet stylish accessory that can enhance their everyday look. Perfect for those who want to add a touch of elegance to their outfits without investing in high-end jewelry. Suitable for a wide range of occasions, from casual outings to formal events, making it a versatile addition to any jewelry collection.",
     "lastUpdated": "2026-05-27",
     "gender": "women"
+  },
+  { 
+    "name": "Dazzling Beehive Necklace",
+    "image": "https://salty.co.in/cdn/shop/files/DazzlingBeehiveNecklace_1_b9bdd6d5-223a-40b7-9f7e-b2385049e5bd.png?v=1773397695&width=1080",
+    "description": "Bold, beautiful, and brilliantly unique — the Dazzling Beehive Necklace is inspired by the natural elegance of honeycombs, crafted for those who love to stand out.",
+    "specs": {
+        "Colour": "Silver",
+        "Material": "Stainless Steel",
+        "Pattern": "Minimal, geometrical",
+        "Common Name": "2 layered",
+        "Warranty": "N/A"
+    },
+    "price": 449,
+    "originalPrice": 910,
+    "affiliateUrl": "https://inr.deals/KYag7R",
+    "store": "Salty",
+    "rating": 4.6,
+    "reviewCount": 34,
+    "badge": "Minimal Design",
+    "tags": [
+        "minimal",
+        "geometrical"
+    ],
+    "pros": [
+        "The unique beehive design offers a bold and eye-catching aesthetic that sets it apart from traditional necklaces, making it a statement piece for those who want to express their individuality.",
+        "Crafted from stainless steel, this necklace is durable and resistant to tarnishing, ensuring it maintains its shine and appearance over time, even with regular wear.",
+        "The minimal and geometrical pattern adds a modern and sophisticated touch, making it versatile enough to complement both casual and formal outfits, allowing for a wide range of styling options."
+    ],
+    "cons": [
+        "The bold design may not appeal to everyone, particularly those who prefer more classic or understated jewelry pieces, limiting its versatility for certain occasions or personal styles.",
+        "While stainless steel is durable, it may still require regular cleaning to maintain its shine, especially if exposed to sweat, perfumes, or other chemicals that can cause dulling over time.",
+        "The necklace's unique design may make it more difficult to pair with other jewelry pieces, potentially limiting its use in layered looks or with certain outfits that require more subtle accessories."
+    ],
+    "whoShouldBuy": "Ideal for individuals who appreciate unique and bold jewelry designs and are looking for a statement piece to express their individuality. Perfect for those who want a durable and stylish accessory that can complement a variety of outfits, from casual to formal. Suitable for anyone who enjoys modern and sophisticated jewelry with a touch of creativity.",
+    "lastUpdated": "2026-05-31",
+    "gender": "women"
   }
 ]

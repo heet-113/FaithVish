@@ -13,6 +13,16 @@ const getCategoryIcon = (cat) => {
     case 'Pendants': return <svg className={commonClasses} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2v4m0 0a4 4 0 110 8 4 4 0 010-8zm-3 14l3 4 3-4" /></svg>;
     case 'Anklets': return <svg className={commonClasses} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 21a9 9 0 100-18 9 9 0 000 18z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 12h.01M12 12h.01M16 12h.01" /></svg>;
     case 'Mangalsutra': return <svg className={commonClasses} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>;
+    case 'Jewelry Sets': return (
+      <svg className={commonClasses} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 5c2 4 4 6 6 6s4-2 6-6" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 11l-1.5 2.5L12 16l1.5-2.5L12 11z" />
+        <circle cx="8" cy="18" r="1.5" strokeWidth={1.5} />
+        <path strokeLinecap="round" strokeWidth={1.5} d="M8 14v2.5" />
+        <circle cx="16" cy="18" r="1.5" strokeWidth={1.5} />
+        <path strokeLinecap="round" strokeWidth={1.5} d="M16 14v2.5" />
+      </svg>
+    );
     default: return <svg className={commonClasses} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>;
   }
 };

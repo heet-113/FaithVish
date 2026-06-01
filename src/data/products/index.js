@@ -6,6 +6,7 @@ import bangles from './bangles.json';
 import pendants from './pendants.json';
 import anklets from './anklets.json';
 import mangalsutra from './mangalsutra.json';
+import jewelrySets from './jewelry_sets.json';
 
 /**
  * Product data loader.
@@ -44,6 +45,7 @@ const categories = {
   Pendants: pendants,
   Anklets: anklets,
   Mangalsutra: mangalsutra,
+  'Jewelry Sets': jewelrySets,
 };
 
 const productsData = [];

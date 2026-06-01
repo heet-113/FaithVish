@@ -1,13 +1,13 @@
 // Jewelry Categories with display info
 export const JEWELRY_CATEGORIES = [
   'Rings', 'Necklaces', 'Earrings', 'Bracelets',
-  'Bangles', 'Pendants', 'Anklets', 'Mangalsutra'
+  'Bangles', 'Pendants', 'Anklets', 'Mangalsutra', 'Jewelry Sets'
 ];
 
 // Women's section categories (all categories)
 export const WOMEN_CATEGORIES = [
   'Rings', 'Necklaces', 'Earrings', 'Bracelets',
-  'Bangles', 'Pendants', 'Anklets', 'Mangalsutra'
+  'Bangles', 'Pendants', 'Anklets', 'Mangalsutra', 'Jewelry Sets'
 ];
 
 // Men's section categories (shared categories that apply to men)

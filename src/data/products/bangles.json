@@ -255,15 +255,15 @@
     "lastUpdated": "2026-05-21",
     "gender": "women"
   },
-  { 
+  {
     "name": "Palmonas Crystal Love Bangle Bracelet for Womens Waterproof & Anti-Tarnish",
     "image": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/8/7/87e52e5BR076_1.jpg?rnd=20200526195200&tr=w-512",
     "description": "This crystal love bangle bracelet from Palmonas is designed for minimal feminine elegance. The delicate design features a slim band adorned with sparkling crystals, making it a versatile accessory for both casual and formal occasions. Crafted with waterproof and anti-tarnish materials, this bangle is built to withstand daily wear while maintaining its shine and beauty",
     "specs": {
-        "Material": "Stainless Steel",
-        "Plating": "Gold",
-        "Occasion": "Everyday Essentials",
-        "Warranty": "1 year"
+      "Material": "Stainless Steel",
+      "Plating": "Gold",
+      "Occasion": "Everyday Essentials",
+      "Warranty": "1 year"
     },
     "price": 1102,
     "originalPrice": 3799,
@@ -273,23 +273,63 @@
     "reviewCount": 6,
     "badge": "Minimal",
     "tags": [
-        "casual",
-        "party",
-        "anniversary"
+      "casual",
+      "party",
+      "anniversary"
     ],
     "pros": [
-        "The product image accurately represents the design and color of the bangle, which features a slim band adorned with sparkling crystals",
-        "Nykaa Fashion's return policy provides buyer protection, which is important for online jewellery purchases",
-        "Crafted with waterproof and anti-tarnish materials, this bangle is designed to withstand daily wear while maintaining its shine and beauty",
-        "The delicate design makes it a versatile accessory that can be worn for both casual and formal occasions"
+      "The product image accurately represents the design and color of the bangle, which features a slim band adorned with sparkling crystals",
+      "Nykaa Fashion's return policy provides buyer protection, which is important for online jewellery purchases",
+      "Crafted with waterproof and anti-tarnish materials, this bangle is designed to withstand daily wear while maintaining its shine and beauty",
+      "The delicate design makes it a versatile accessory that can be worn for both casual and formal occasions"
     ],
     "cons": [
-        "The material is stainless steel, which may not be as durable as other metals and can cause skin irritation for some individuals",
-        "No specific information about the type of crystals used, which may affect the perceived value and durability",
-        "The bangle is not adjustable, which may not provide a comfortable fit for all wrist sizes"
+      "The material is stainless steel, which may not be as durable as other metals and can cause skin irritation for some individuals",
+      "No specific information about the type of crystals used, which may affect the perceived value and durability",
+      "The bangle is not adjustable, which may not provide a comfortable fit for all wrist sizes"
     ],
     "whoShouldBuy": "Anyone looking for a stylish and versatile bangle that can be worn for both casual and formal occasions. The waterproof and anti-tarnish features make it suitable for everyday wear, while the delicate design with sparkling crystals adds a touch of elegance. Ideal for those who want to enhance their accessory collection with a piece that combines beauty and durability.",
     "lastUpdated": "2026-05-30",
+    "gender": "women"
+  },
+  {
+    "name": "ZENEME Bangles Set Of 36 For Girls and Women",
+    "image": "https://m.media-amazon.com/images/I/91X2Vb854CL._SY575_.jpg",
+    "description": "This latest design bangle bracelet can be used by ladies as daily wear or party wear. This modern stylish bracelet is perfect to revamp your fashion jewellery collection. These are also ideal for special gifts for girls for birthday, wife, best friend, valentine gifts for girlfriend love, wedding gifts and anniversary gifts.",
+    "specs": {
+      "Material type": "Brass",
+      "Metal type": "Brass",
+      "Clasp type": "Slide",
+      "Size": "2.4",
+      "Gem type": "Diamond",
+      "Occasion type": "Mother's Day, Christmas, Valentines Day, Wedding, Anniversary",
+      "Country of Origin": "India"
+    },
+    "price": 345,
+    "originalPrice": 2799,
+    "affiliateUrl": "https://amzn.urlvia.com/4FBxWg",
+    "store": "Amazon",
+    "rating": 4,
+    "reviewCount": 197,
+    "tags": [
+      "casual",
+      "party",
+      "anniversary"
+    ],
+    "pros": [
+      "The product image is accurate and the 197 reviews at 4 stars show consistent buyer satisfaction.",
+      "At ₹345 with a 12% discount from MRP, this offers good value for 36 bangles.",
+      "The set includes 36 bangles in various designs, offering variety for daily and festive wear.",
+      "Slide clasp type makes it easy to wear and adjust for different wrist sizes.",
+      "Brass base with gold plating and diamond accents provides a stylish look for casual and party occasions."
+    ],
+    "cons": [
+      "As this is a budget-friendly set, expect some variations in finish and durability.",
+      "The bangles may tarnish over time with regular use, as is common with brass-based jewelry.",
+      "No explicit mention of skin-friendliness, so sensitive skin types should exercise caution."
+    ],
+    "whoShouldBuy": "This set is ideal for individuals looking for a budget-friendly option to enhance their ethnic and festive wardrobe. The variety of designs and colors makes it suitable for daily wear as well as special occasions. If you prefer statement jewelry pieces and are looking for value for money, this set is a great choice.",
+    "lastUpdated": "2026-06-04",
     "gender": "women"
   }
 ]

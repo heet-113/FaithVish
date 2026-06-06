@@ -175,7 +175,14 @@ export function parseMarkdownToSections(markdown) {
     }
     if (paraLines.length > 0) {
       sections.push({ type: 'paragraph', text: paraLines.join(' ') });
+      continue;
     }
+
+    // Safeguard: If we somehow reached here without matching any block and without incrementing i,
+    // we must increment i to prevent an infinite loop. We can treat it as a paragraph fallback.
+    console.warn(`[markdownParser] Unrecognized markdown line at index ${i}: "${line}"`);
+    sections.push({ type: 'paragraph', text: line });
+    i++;
   }
 
   return sections;

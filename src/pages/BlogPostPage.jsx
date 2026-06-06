@@ -32,6 +32,105 @@ const ProductSection = ({ productId }) => {
   );
 };
 
+const parseInlineMarkdown = (text, theme, keyPrefix = '') => {
+  if (!text) return '';
+
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/;
+  const boldRegex = /\*\*([^*]+)\*\*/;
+  const italicStarRegex = /\*([^*]+)\*/;
+  const italicUnderscoreRegex = /_([^_]+)_/;
+  const codeRegex = /`([^`]+)`/;
+
+  let firstMatch = null;
+  let matchType = null;
+  let minIndex = Infinity;
+
+  const matches = [
+    { type: 'link', match: text.match(linkRegex) },
+    { type: 'bold', match: text.match(boldRegex) },
+    { type: 'italicStar', match: text.match(italicStarRegex) },
+    { type: 'italicUnderscore', match: text.match(italicUnderscoreRegex) },
+    { type: 'code', match: text.match(codeRegex) },
+  ];
+
+  for (const m of matches) {
+    if (m.match && m.match.index < minIndex) {
+      minIndex = m.match.index;
+      firstMatch = m.match;
+      matchType = m.type;
+    }
+  }
+
+  if (!firstMatch) {
+    return text;
+  }
+
+  const beforeText = text.slice(0, minIndex);
+  const matchedText = firstMatch[0];
+  const remainingText = text.slice(minIndex + matchedText.length);
+
+  let element = null;
+  const key = `${keyPrefix}-${minIndex}`;
+
+  if (matchType === 'link') {
+    const linkText = firstMatch[1];
+    const url = firstMatch[2];
+    const isExternal = url.startsWith('http://') || url.startsWith('https://');
+
+    if (isExternal) {
+      element = (
+        <a 
+          key={key} 
+          href={url} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="hover:underline font-semibold"
+          style={{ color: theme.accent }}
+        >
+          {linkText}
+        </a>
+      );
+    } else {
+      element = (
+        <Link 
+          key={key} 
+          to={url} 
+          className="hover:underline font-semibold"
+          style={{ color: theme.accent }}
+        >
+          {linkText}
+        </Link>
+      );
+    }
+  } else if (matchType === 'bold') {
+    element = (
+      <strong key={key} className="font-extrabold" style={{ color: theme.textPrimary }}>
+        {firstMatch[1]}
+      </strong>
+    );
+  } else if (matchType === 'italicStar' || matchType === 'italicUnderscore') {
+    element = (
+      <em key={key} className="italic">
+        {firstMatch[1]}
+      </em>
+    );
+  } else if (matchType === 'code') {
+    element = (
+      <code key={key} className="px-1.5 py-0.5 rounded text-xs bg-muted font-mono">
+        {firstMatch[1]}
+      </code>
+    );
+  }
+
+  return (
+    <>
+      {beforeText}
+      {element}
+      {parseInlineMarkdown(remainingText, theme, `${keyPrefix}-next`)}
+    </>
+  );
+};
+
 const ContentSection = ({ section, index }) => {
   const { activeGender } = useStore();
   const isMen = activeGender === 'men';
@@ -65,7 +164,7 @@ const ContentSection = ({ section, index }) => {
     case 'paragraph':
       return (
         <p className="text-[15px] leading-[1.85] mb-5" style={{ color: theme.textSecondary }}>
-          {section.text}
+          {parseInlineMarkdown(section.text, theme, `p-${index}`)}
         </p>
       );
     case 'heading':
@@ -102,7 +201,8 @@ const ContentSection = ({ section, index }) => {
           <div className="flex items-start gap-2.5">
             <span className="text-lg mt-0.5 shrink-0" style={{ color: theme.accent }}>💡</span>
             <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-              <span className="font-bold" style={{ color: theme.textPrimary }}>Pro Tip: </span>{section.text}
+              <span className="font-bold" style={{ color: theme.textPrimary }}>Pro Tip: </span>
+              {parseInlineMarkdown(section.text, theme, `tip-${index}`)}
             </p>
           </div>
         </div>
@@ -113,7 +213,7 @@ const ContentSection = ({ section, index }) => {
           {section.items.map((item, i) => (
             <li key={i} className="flex items-start gap-2.5 text-[15px] leading-relaxed" style={{ color: theme.textSecondary }}>
               <span className="mt-1 shrink-0" style={{ color: theme.accent }}>→</span>
-              <span>{item}</span>
+              <span>{parseInlineMarkdown(item, theme, `list-${index}-${i}`)}</span>
             </li>
           ))}
         </ul>
@@ -129,7 +229,7 @@ const ContentSection = ({ section, index }) => {
               >
                 {i + 1}
               </span>
-              <span>{item}</span>
+              <span>{parseInlineMarkdown(item, theme, `num-list-${index}-${i}`)}</span>
             </li>
           ))}
         </ol>
@@ -137,7 +237,9 @@ const ContentSection = ({ section, index }) => {
     case 'quote':
       return (
         <blockquote className="my-8 border-l-4 pl-5 py-2" style={{ borderLeftColor: theme.accent }}>
-          <p className="text-base font-serif italic leading-relaxed" style={{ color: theme.textPrimary }}>"{section.text}"</p>
+          <p className="text-base font-serif italic leading-relaxed" style={{ color: theme.textPrimary }}>
+            "{parseInlineMarkdown(section.text, theme, `quote-${index}`)}"
+          </p>
           {section.author && (
             <cite className="block text-xs mt-2 uppercase tracking-wider not-italic" style={{ color: theme.textMuted }}>
               — {section.author}

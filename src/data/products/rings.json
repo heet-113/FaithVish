@@ -513,5 +513,36 @@
     "whoShouldBuy": "Ideal for individuals looking for a stylish and affordable ring that combines bold design with vibrant color. Perfect for those who want a unique accessory for parties, weddings, or as a statement piece in their jewelry collection. Great for gift-givers seeking a thoughtful and elegant present for birthdays, anniversaries, or other special events.",
     "lastUpdated": "2026-05-29",
     "gender": "women"
+  },
+  {
+    "name": "Cardinal Elegance Ring",
+    "image": "https://salty.co.in/cdn/shop/files/MR1S0960-S-BLK_Model.png?v=1780059406&width=1080",
+    "description": "Discover the epitome of refined sophistication with the Cardinal Elegance Ring. This exquisite ring embodies timeless grace with its classic design and luxurious details. Inspired by the regal charm of cardinal red, it features a central gem or stone that captures the essence of elegance and poise.",
+    "specs": {
+      "Colour": "Silver",
+      "Material": "Alloy",
+      "Dimension": "Diameter: cm (adjustable)",
+      "Pattern": "ace, cards, poker, Birthday_GS, Love You_GS, Brothers Day_GS, Him_GS, Boyfriend_GS, Husband_GS",
+      "Adjustable": "Adjustable",
+      "Common Name": "Band",
+      "Warranty": "N/A"
+    },
+    "price": 599,
+    "originalPrice": 1080,
+    "affiliateUrl": "https://inr.deals/qYJQRr",
+    "store": "Salty",
+    "rating": 4.4,
+    "reviewCount": 27,
+    "pros": [
+      "Timeless Design: Elegant and versatile for any occasion.",
+      "Adjustable Fit: Suitable for various finger sizes."
+    ],
+    "cons": [
+      "Made from Alloy, which may not be Suitable for Individuals with Sensitive Skin",
+      "No Warranty Mentioned for the Product"
+    ],
+    "whoShouldBuy": "This ring is ideal for men who appreciate elegant and versatile jewelry pieces that can enhance their style for various occasions. It is perfect for those who want to add a touch of sophistication to their outfits without breaking the bank. However, it may not be suitable for individuals with sensitive skin or those looking for high-end jewelry with genuine gemstones.",
+    "lastUpdated": "2026-06-06",
+    "gender": "men"
   }
 ]

@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src="/FVicon.svg" alt="FaithVish Logo" className="w-9 h-9 object-contain" />
+              <img src={isMen ? "/FV_Men.png" : "/FV_Women.png"} alt="FaithVish Logo" className="w-9 h-9 object-contain" />
               <span className="text-xl font-black font-serif tracking-tight">
                 {isMen ? (
                   <><span style={{ color: '#C9A96E' }}>Faith</span><span style={{ color: '#C9A96E' }}>Vish</span></>
@@ -124,9 +124,9 @@ const Footer = () => {
             }}
           >
             <p className="text-xs leading-relaxed" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>
-              <span className="font-semibold" style={{ color: isMen ? '#C9A96E' : 'var(--color-warning)' }}>⚠️ Affiliate Disclaimer:</span> FaithVish is a jewelry curation and affiliate marketing website. 
-              When you click on product links and make a purchase, we may earn a small commission at no extra cost to you. This helps us keep the site running 
-              and continue curating beautiful jewelry for you. Product prices and availability are subject to change. We recommend verifying details on the 
+              <span className="font-semibold" style={{ color: isMen ? '#C9A96E' : 'var(--color-warning)' }}>⚠️ Affiliate Disclaimer:</span> FaithVish is a jewelry curation and affiliate marketing website.
+              When you click on product links and make a purchase, we may earn a small commission at no extra cost to you. This helps us keep the site running
+              and continue curating beautiful jewelry for you. Product prices and availability are subject to change. We recommend verifying details on the
               respective retailer's website before purchasing. All product names, logos, and brands are property of their respective owners.
             </p>
           </div>

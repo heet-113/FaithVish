@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import useStore from '../store/useStore';
+import { GrUserFemale } from "react-icons/gr";
+import { IoIosMan } from "react-icons/io";
 
 const Navbar = () => {
   const { searchQuery, setSearchQuery, activeGender, setActiveGender } = useStore();
@@ -63,9 +65,6 @@ const Navbar = () => {
               borderRadius: '2px',
             }}
           >
-            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2a7 7 0 100 14A7 7 0 0012 2zm0 2a5 5 0 110 10A5 5 0 0112 4zm-1 11.93V20H9v2h6v-2h-2v-2.07A7.001 7.001 0 0012 2a7 7 0 00-1 13.93z"/>
-            </svg>
             Women
           </button>
 
@@ -87,9 +86,6 @@ const Navbar = () => {
               borderRadius: '2px',
             }}
           >
-            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M9 9a3 3 0 116 0 3 3 0 01-6 0zm3-5a5 5 0 100 10A5 5 0 0012 4zm7 1h-2V3h-2v2h-2v2h2v2h2V7h2V5zM9.07 15.01A6.964 6.964 0 005 21h2a4.978 4.978 0 014.856-3.999A5.015 5.015 0 0117 21h2a6.964 6.964 0 00-4.07-5.99A7.07 7.07 0 0112 15c-.66 0-1.3.08-1.93.01z"/>
-            </svg>
             Men
           </button>
         </div>
@@ -98,12 +94,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 shrink-0">
-            <img src="/FVicon.svg" alt="FaithVish Logo" className="w-9 h-9 object-contain" />
+            <img src={isMen ? "/FV_Men.png" : "/FV_Women.png"} alt="FaithVish Logo" className="w-9 h-9 object-contain" />
             <span className="text-2xl font-bold font-serif tracking-tight hidden sm:block">
               {isMen ? (
                 <>
                   <span style={{ color: '#C9A96E' }}>Faith</span>
-                  <span style={{ color: '#C9A96E' }}>Vish</span>
+                  <span style={{ color: '#fff' }}>Vish</span>
                 </>
               ) : (
                 <>

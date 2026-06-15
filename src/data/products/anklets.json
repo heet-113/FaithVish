@@ -403,5 +403,32 @@
     "shortReview": "A very basic anklet that’s more about occasion-based wear than anything else. At ₹550, it’s clearly positioned as a budget ethnic accessory — probably for a single event, maybe a wedding or festival when you don’t want to wear your real silver or something expensive.",
     "lastUpdated": "2026-06-12",
     "gender": "women"
+  },
+  {
+    "name": "Golden Duo Layer Anklet",
+    "image": "https://salty.co.in/cdn/shop/files/AS14819-G_12.jpg?v=1778882595&width=1080",
+    "description": "Elevate your everyday elegance with this sleek and modern anklet designed to complement any look.",
+    "specs": {
+      "Color": "Gold",
+      "Occasion": "Everyday Essentials",
+      "Type": "Layered anklets"
+    },
+    "price": 319,
+    "originalPrice": 639,
+    "affiliateUrl": "https://salty.co.in/products/golden-duo-layer-anklet?bg_ref=3sfGeer4b2",
+    "store": "Salty",
+    "pros": [
+      "The versatile gold tone effortlessly matches with both casual and ethnic attire, making it a perfect addition to your accessory collection.",
+      "Adjustable clasp ensures a secure and comfortable fit for various ankle sizes, allowing for personalized wear.",
+      "Durable construction withstands daily wear, maintaining its shape and shine over time."
+    ],
+    "cons": [
+      "May not be suitable for individuals with sensitive skin due to base metal composition.",
+      "Requires proper care to prevent tarnishing and maintain long-lasting luster."
+    ],
+    "whoShouldBuy": "Ideal for anyone looking to add a touch of understated elegance to their everyday style. Perfect for those who appreciate minimalist design with a hint of sophistication, and for those seeking a versatile accessory that transitions seamlessly from casual outings to more dressed-up occasions.",
+    "shortReview": "This anklet is a simple yet stylish accessory that combines modern design with timeless appeal. The dual-layer construction adds a touch of elegance, while the gold tone ensures versatility with any outfit. Its comfortable fit and durable construction make it a great choice for everyday wear.",
+    "lastUpdated": "2026-06-15",
+    "gender": "women"
   }
 ]

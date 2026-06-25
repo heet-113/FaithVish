@@ -55,18 +55,18 @@ const BuyingGuidePage = () => {
     { title: 'Understanding Jewellery Materials', id: 'section-1' },
     { title: 'Gold Plating: What It Really Means', id: 'section-2' },
     { title: 'How to Read Online Jewellery Ratings', id: 'section-3' },
-    { 
-      title: isMen ? 'Chain & Necklace Sizing: The Right Length' : 'Ring Sizing: Getting It Right Online', 
-      id: 'section-4' 
+    {
+      title: isMen ? 'Chain & Necklace Sizing: The Right Length' : 'Ring Sizing: Getting It Right Online',
+      id: 'section-4'
     },
-    { 
-      title: isMen ? 'Kada & Bracelet Sizing: The Indian System' : 'Bangle Sizing: The Indian System', 
-      id: 'section-5' 
+    {
+      title: isMen ? 'Kada & Bracelet Sizing: The Indian System' : 'Bangle Sizing: The Indian System',
+      id: 'section-5'
     },
     { title: 'Red Flags When Shopping Online', id: 'section-6' },
-    { 
-      title: isMen ? "How to Make Men's Accessories Last Longer" : 'How to Make Budget Jewellery Last Longer', 
-      id: 'section-7' 
+    {
+      title: isMen ? "How to Make Men's Accessories Last Longer" : 'How to Make Budget Jewellery Last Longer',
+      id: 'section-7'
     },
     { title: 'When to Spend More vs. Save', id: 'section-8' },
     { title: 'Common Buyer Mistakes to Avoid', id: 'section-9' },
@@ -85,97 +85,23 @@ const BuyingGuidePage = () => {
       </nav>
 
       {/* Hero */}
-      <div 
-        className="mb-10 text-center py-12 border-y-2"
-        style={{
-          background: isMen
-            ? 'repeating-linear-gradient(45deg, rgba(201,169,110,0.03) 0px, rgba(201,169,110,0.03) 2px, rgba(40,40,40,0.4) 2px, rgba(40,40,40,0.4) 8px)'
-            : 'repeating-linear-gradient(45deg,rgba(217,208,193,0.1)_0px,rgba(217,208,193,0.1)_2px,rgba(250,250,247,0.5)_2px,rgba(250,250,247,0.5)_8px)',
-          borderColor: theme.cardBorder
-        }}
+      <div
+        className="text-center py-12"
       >
-        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: isMen ? theme.accent : 'var(--color-accent-secondary)' }}>In-Depth Guide</p>
         <h1 className="text-3xl sm:text-4xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: theme.textPrimary }}>
-          {isMen ? <>How to Buy Men's Jewellery <span style={{ color: theme.accent }}>Online in India</span></> : <>How to Buy Jewellery <span style={{ color: theme.accent }}>Online in India</span></>}
+          {isMen ? <>How to Buy Men's Jewellery Online in India</> : <>How to Buy Jewellery Online in India</>}
         </h1>
-        <p className="text-sm max-w-2xl mx-auto mt-4 leading-relaxed" style={{ color: theme.textSecondary }}>
-          {isMen
-            ? "Everything you need to know before buying men's chains, kadas, and bracelets online. Sizing guides, metal durability, styling tips, and common buying mistakes to avoid."
-            : "Everything you need to know before spending money on fashion jewellery online. Materials, red flags, sizing, care tips, and how to avoid common mistakes."}
-        </p>
-        <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
-          Written by the FaithVish Team · April 2026 · {isMen ? '8 min read' : '10 min read'}
-        </p>
-      </div>
-
-      {/* Why Trust Us */}
-      <div 
-        className="mb-10 border p-6"
-        style={{ 
-          background: isMen ? 'rgba(201, 169, 110, 0.02)' : 'linear-gradient(to right, rgba(236,72,153,0.02), rgba(6,182,212,0.02))', 
-          borderColor: theme.cardBorder 
-        }}
-      >
-        <div className="flex items-center gap-3 mb-3">
-          <div 
-            className="w-10 h-10 rounded-sm flex items-center justify-center border"
-            style={{
-              backgroundColor: isMen ? 'rgba(201,169,110,0.1)' : 'rgba(236,72,153,0.1)',
-              borderColor: isMen ? 'rgba(201,169,110,0.3)' : 'rgba(236,72,153,0.3)'
-            }}
-          >
-            <svg className="w-5 h-5" style={{ color: theme.accent }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h2 className="text-sm font-bold font-serif uppercase tracking-widest" style={{ color: theme.textPrimary }}>Why Trust This Guide?</h2>
-        </div>
-        <p className="text-sm leading-relaxed mb-3" style={{ color: theme.textSecondary }}>
-          FaithVish is an independent editorial team that curates and reviews jewellery from India's most trusted online stores. We earn affiliate commissions when you purchase through our links, but <strong style={{ color: theme.textPrimary }}>we are not paid by any brand to feature or promote their products</strong>.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
-          <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
-            <p className="text-lg font-black" style={{ color: theme.accent }}>{isMen ? '12+' : '24+'}</p>
-            <p className="text-[11px] sm:text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Products reviewed</p>
-          </div>
-          <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
-            <p className="text-lg font-black" style={{ color: theme.accent }}>{isMen ? '8,000+' : '20,000+'}</p>
-            <p className="text-[11px] sm:text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Buyer reviews analysed</p>
-          </div>
-          <div className="border p-3 text-center" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
-            <p className="text-lg font-black" style={{ color: theme.accent }}>₹0</p>
-            <p className="text-[11px] sm:text-[10px] uppercase tracking-wider" style={{ color: theme.textMuted }}>Paid by brands for listings</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Table of Contents */}
-      <div className="mb-10 border p-6" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
-        <h2 className="text-sm font-bold font-serif uppercase tracking-widest mb-4 pb-2 border-b" style={{ color: theme.textPrimary, borderColor: theme.cardBorder }}>Table of Contents</h2>
-        <ol className="space-y-2 text-sm">
-          {sections.map((item, i) => (
-            <li key={i} className="flex items-start gap-3">
-              <span 
-                className="w-6 h-6 rounded-sm font-bold text-xs flex items-center justify-center shrink-0 mt-0.5"
-                style={{ backgroundColor: isMen ? 'rgba(201,169,110,0.1)' : 'rgba(236,72,153,0.1)', color: theme.accent }}
-              >
-                {i + 1}
-              </span>
-              <a href={`#${item.id}`} className="transition-colors block py-2 sm:py-0.5" style={{ color: theme.textSecondary }} onMouseEnter={(e) => e.target.style.color = theme.accent} onMouseLeave={(e) => e.target.style.color = theme.textSecondary}>{item.title}</a>
-            </li>
-          ))}
-        </ol>
       </div>
 
       {/* Article Content */}
-      <article className="space-y-10">
+      <article className="space-y-20">
         {/* Section 1 */}
         <section id="section-1">
           <h2 className="text-xl font-bold font-serif uppercase tracking-widest mb-4 pb-2 border-b" style={{ color: theme.textPrimary, borderColor: theme.cardBorder }}>
             1. Understanding Jewellery Materials
           </h2>
           <p className="text-sm leading-relaxed mb-4" style={{ color: theme.textSecondary }}>
-            The single most important factor in any jewellery purchase — online or offline — is the <strong style={{ color: theme.textPrimary }}>base material</strong>.
+            The single most important factor in any jewellery purchase online is the <strong style={{ color: theme.textPrimary }}>base material</strong>.
             It determines how long the piece lasts, how it feels on your skin, whether it causes allergic reactions, and how it looks after a month of wear.
             Here's a breakdown of every material you'll encounter when shopping for jewellery online, ranked from most to least durable:
           </p>
@@ -184,9 +110,9 @@ const BuyingGuidePage = () => {
               <h3 className="text-sm font-bold mb-2" style={{ color: theme.textPrimary }}>925 Sterling Silver</h3>
               <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
                 {isMen ? (
-                  "The gold standard for premium men's jewellery. Sterling silver is 92.5% pure silver mixed with 7.5% copper for strength. It has premium weight, great metallic feel, and ages with a distinctive masculine character. Perfect for heavy chains, minimalist bands, and structured cuffs. Look for BIS hallmark certification. Brands like Clara use this. Budget: ₹1,500–₹4,000 for a single piece. Lifespan: years, and tarnishing is easily polished away."
+                  "The gold standard for premium men's jewellery. Sterling silver is 92.5% pure silver mixed with 7.5% copper for strength. It has premium weight, great metallic feel, and ages with a distinctive masculine character. Perfect for heavy chains, minimalist bands, and structured cuffs. Look for BIS hallmark certification."
                 ) : (
-                  "The gold standard of online jewellery (ironic, yes). Sterling silver is 92.5% pure silver mixed with 7.5% copper for strength. It's a genuine precious metal — it has weight, substance, and a distinctive feel against skin. Look for BIS hallmark certification. Brands like Clara use this. Budget: ₹1,500–₹3,000 for a single piece. Lifespan: years, with minimal care. Tarnishing happens naturally but is easily reversed with a silver polishing cloth."
+                  "The gold standard of online jewellery (ironic, yes). Sterling silver is 92.5% pure silver mixed with 7.5% copper for strength. It's a genuine precious metal it has weight, substance, and a distinctive feel against skin. Look for BIS hallmark certification."
                 )}
               </p>
             </div>
@@ -194,9 +120,9 @@ const BuyingGuidePage = () => {
               <h3 className="text-sm font-bold mb-2" style={{ color: theme.textPrimary }}>Stainless Steel</h3>
               <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
                 {isMen ? (
-                  "The absolute champion of men's lifestyle accessories. Stainless steel doesn't rust, corrode, or tarnish, and is completely hypoallergenic. It's the same material used in luxury sports watches. If you want a chain, Kada, or cuff that survives intense workouts, sweat, rain, and rough daily use without any maintenance — stainless steel is the only choice. Budget: ₹200–₹500. Lifespan: virtually lifetime. Found in brands like Fashion Frill."
+                  "The absolute champion of men's lifestyle accessories. Stainless steel doesn't rust, corrode, or tarnish, and is completely hypoallergenic. It's the same material used in luxury sports watches. If you want a chain, Kada, or cuff that survives intense workouts, sweat, rain, and rough daily use without any maintenance, stainless steel is the only choice."
                 ) : (
-                  "The most underrated material in fashion jewellery. Stainless steel doesn't rust, doesn't corrode, doesn't tarnish, and is hypoallergenic. It's the same material used in quality watches and surgical instruments. If you want something that survives gym, rain, and daily rough use — stainless steel is your answer. Budget: ₹150–₹400. Lifespan: essentially indefinite for the base metal. Found in brands like Fashion Frill (rings, bracelets)."
+                  "The most underrated material in fashion jewellery. Stainless steel doesn't rust, doesn't corrode, doesn't tarnish, and is hypoallergenic. It's the same material used in quality watches and surgical instruments. If you want something that survives gym, rain, and daily rough use, stainless steel is your answer."
                 )}
               </p>
             </div>
@@ -204,19 +130,19 @@ const BuyingGuidePage = () => {
               <h3 className="text-sm font-bold mb-2" style={{ color: theme.textPrimary }}>Brass</h3>
               <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
                 {isMen ? (
-                  "A copper-zinc alloy common in mid-range traditional men's accessories (like Punjabi kadas). Brass has a heavy, solid feel and a warm authentic gold tone. The major drawback: high body heat and sweat can cause copper oxidation, leaving a temporary green mark on your skin in humid conditions. Budget: ₹250–₹700. Lifespan: 6–12 months depending on plating quality and sweat exposure."
+                  "A copper-zinc alloy common in mid-range traditional men's accessories (like Punjabi kadas). Brass has a heavy, solid feel and a warm authentic gold tone. The major drawback: high body heat and sweat can cause copper oxidation, leaving a temporary green mark on your skin in humid conditions."
                 ) : (
-                  "A copper-zinc alloy that's the backbone of most mid-range Indian fashion jewellery. Brass has a warm tone, decent weight, and holds plating better than lighter alloys. The downside: brass can turn your skin green (copper oxidation) in humid conditions. If you live in a coastal or humid city, keep this in mind. Budget: ₹200–₹600. Lifespan: 3–12 months depending on plating quality and care."
+                  "A copper-zinc alloy that's the backbone of most mid-range Indian fashion jewellery. Brass has a warm tone, decent weight, and holds plating better than lighter alloys. The downside: brass can turn your skin green (copper oxidation) in humid conditions. If you live in a coastal or humid city, keep this in mind."
                 )}
               </p>
             </div>
             <div className="border p-5" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
-              <h3 className="text-sm font-bold mb-2" style={{ color: theme.textPrimary }}>"Metal" / "Alloy" (Unspecified)</h3>
+              <h3 className="text-sm font-bold mb-2" style={{ color: theme.textPrimary }}>Metal / Alloy (Unspecified)</h3>
               <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
                 {isMen ? (
-                  "The vaguest listing you'll encounter — and very common in budget men's chains and multi-layered bracelets. It typically means zinc alloy or pot metal. While extremely affordable (₹150–₹250), expect the standard gold or silver plating to wear away in 1–2 months of normal use. Best for occasional wear and party outfits. Avoid if you have sensitive skin."
+                  "The vaguest listing you'll encounter and very common in budget men's chains and multi-layered bracelets. It typically means zinc alloy or pot metal. While extremely affordable (₹150–₹250), expect the standard gold or silver plating to wear away in 1–2 months of normal use."
                 ) : (
-                  "The vaguest listing you'll encounter — and the most common. When a listing says just 'Metal' or 'Alloy' without specifying what kind, it usually means pot metal, zinc alloy, or the cheapest base available. This isn't necessarily terrible — at ₹150–₹300, you get what you pay for. But set expectations: 1–4 months of wear before visible degradation. Best for one-time event use. Avoid if you have metal allergies."
+                  "The vaguest listing you'll encounter and the most common. When a listing says just 'Metal' or 'Alloy' without specifying what kind, it usually means pot metal, zinc alloy, or the cheapest base available. This isn't necessarily terrible at ₹150–₹300, you get what you pay for."
                 )}
               </p>
             </div>
@@ -424,10 +350,10 @@ const BuyingGuidePage = () => {
                 <p className="text-xs uppercase tracking-wider mb-2" style={{ color: theme.textMuted }}>Small</p>
                 <p className="text-xs" style={{ color: theme.textSecondary }}>Internal diameter: 65mm. Fits slender wrists. Best for slim or lean builds.</p>
               </div>
-              <div 
-                className="border-2 p-5 text-center" 
-                style={{ 
-                  backgroundColor: theme.cardBg, 
+              <div
+                className="border-2 p-5 text-center"
+                style={{
+                  backgroundColor: theme.cardBg,
                   borderColor: theme.accent,
                   boxShadow: '0 4px 20px rgba(201, 169, 110, 0.15)'
                 }}
@@ -460,10 +386,10 @@ const BuyingGuidePage = () => {
                 <p className="text-xs uppercase tracking-wider mb-2" style={{ color: theme.textMuted }}>Small / Petite</p>
                 <p className="text-xs" style={{ color: theme.textSecondary }}>Internal diameter: 60mm. Fits slender wrists. Difficult to find online — YouBella offers this size.</p>
               </div>
-              <div 
-                className="border-2 p-5 text-center" 
-                style={{ 
-                  backgroundColor: theme.cardBg, 
+              <div
+                className="border-2 p-5 text-center"
+                style={{
+                  backgroundColor: theme.cardBg,
                   borderColor: theme.accent,
                   boxShadow: '0 4px 20px rgba(236, 72, 153, 0.1)'
                 }}
@@ -479,7 +405,7 @@ const BuyingGuidePage = () => {
               </div>
             </div>
             <p className="text-sm leading-relaxed mt-4" style={{ color: theme.textSecondary }}>
-              <strong style={{ color: theme.textPrimary }}>Pro tip:</strong> If you're between sizes, always go one size up. A slightly loose bangle is wearable 
+              <strong style={{ color: theme.textPrimary }}>Pro tip:</strong> If you're between sizes, always go one size up. A slightly loose bangle is wearable
               — a too-tight bangle is not. Bangles can't be adjusted after purchase.
             </p>
           </section>
@@ -556,11 +482,11 @@ const BuyingGuidePage = () => {
             8. When to Spend More vs. Save
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-            <div 
-              className="border p-5" 
-              style={{ 
-                backgroundColor: isMen ? 'rgba(46, 125, 50, 0.04)' : '#F0FDF4', 
-                borderColor: isMen ? 'rgba(46, 125, 50, 0.2)' : '#BBF7D0' 
+            <div
+              className="border p-5"
+              style={{
+                backgroundColor: isMen ? 'rgba(46, 125, 50, 0.04)' : '#F0FDF4',
+                borderColor: isMen ? 'rgba(46, 125, 50, 0.2)' : '#BBF7D0'
               }}
             >
               <h3 className="text-sm font-bold mb-3" style={{ color: isMen ? '#81C784' : '#166534' }}>💰 Save (Under ₹300)</h3>
@@ -584,11 +510,11 @@ const BuyingGuidePage = () => {
                 )}
               </ul>
             </div>
-            <div 
-              className="border p-5" 
-              style={{ 
-                backgroundColor: theme.alertBg, 
-                borderColor: isMen ? 'rgba(201, 169, 110, 0.2)' : 'rgba(236, 72, 153, 0.2)' 
+            <div
+              className="border p-5"
+              style={{
+                backgroundColor: theme.alertBg,
+                borderColor: isMen ? 'rgba(201, 169, 110, 0.2)' : 'rgba(236, 72, 153, 0.2)'
               }}
             >
               <h3 className="text-sm font-bold mb-3" style={{ color: theme.accent }}>💎 Spend More (₹1,000+)</h3>
@@ -673,7 +599,7 @@ const BuyingGuidePage = () => {
                 { criterion: 'Brand Track Record', weight: '10%', detail: isMen ? 'The brand\'s history across their full product range online. Strong brands provide better manufacturing trust.' : 'The brand\'s history across their full product range online. A strong brand provides quality assurance even for new listings.' },
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 pb-4 border-b last:border-b-0 last:pb-0" style={{ borderColor: theme.cardBorder }}>
-                  <span 
+                  <span
                     className="px-2 py-1 text-xs font-bold rounded-sm shrink-0"
                     style={{ backgroundColor: isMen ? 'rgba(201, 169, 110, 0.1)' : 'rgba(236,72,153,0.1)', color: theme.accent }}
                   >
@@ -700,10 +626,10 @@ const BuyingGuidePage = () => {
           <Link
             to="/"
             className="px-8 py-3 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all border-2"
-            style={{ 
-              backgroundColor: theme.accent, 
-              color: isMen ? '#1E1E20' : '#ffffff', 
-              borderColor: theme.accent 
+            style={{
+              backgroundColor: theme.accent,
+              color: isMen ? '#1E1E20' : '#ffffff',
+              borderColor: theme.accent
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = theme.accentHover;
@@ -720,10 +646,10 @@ const BuyingGuidePage = () => {
             <Link
               to="/top-rings-under-1000"
               className="px-8 py-3 border-2 text-sm font-bold uppercase tracking-[0.2em] rounded-sm transition-all"
-              style={{ 
-                backgroundColor: theme.cardBg, 
-                color: theme.textSecondary, 
-                borderColor: theme.cardBorder 
+              style={{
+                backgroundColor: theme.cardBg,
+                color: theme.textSecondary,
+                borderColor: theme.cardBorder
               }}
               onMouseEnter={(e) => {
                 e.target.style.borderColor = theme.accent;
@@ -743,11 +669,11 @@ const BuyingGuidePage = () => {
       {/* Author & Affiliate Disclaimer */}
       <div className="mt-8 border p-5" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
         <div className="flex items-center gap-3 mb-3">
-          <div 
+          <div
             className="w-10 h-10 rounded-full border flex items-center justify-center shrink-0"
-            style={{ 
-              backgroundColor: isMen ? 'rgba(201, 169, 110, 0.1)' : 'rgba(236, 72, 153, 0.1)', 
-              borderColor: isMen ? 'rgba(201, 169, 110, 0.3)' : 'rgba(236, 72, 153, 0.3)' 
+            style={{
+              backgroundColor: isMen ? 'rgba(201, 169, 110, 0.1)' : 'rgba(236, 72, 153, 0.1)',
+              borderColor: isMen ? 'rgba(201, 169, 110, 0.3)' : 'rgba(236, 72, 153, 0.3)'
             }}
           >
             <span className="text-sm font-bold" style={{ color: theme.accent }}>FV</span>
@@ -770,10 +696,10 @@ const BuyingGuidePage = () => {
         <Link
           to="/"
           className="px-8 py-3 text-sm font-bold uppercase tracking-widest border-2 rounded-sm transition-all"
-          style={{ 
-            backgroundColor: theme.cardBg, 
-            color: theme.textSecondary, 
-            borderColor: theme.cardBorder 
+          style={{
+            backgroundColor: theme.cardBg,
+            color: theme.textSecondary,
+            borderColor: theme.cardBorder
           }}
           onMouseEnter={(e) => {
             e.target.style.borderColor = theme.textPrimary;

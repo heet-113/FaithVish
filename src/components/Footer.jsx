@@ -8,62 +8,58 @@ const Footer = () => {
 
   return (
     <footer
-      className="border-t mt-16"
+      className="mt-16"
       style={{
-        background: isMen ? '#1A1A1C' : 'var(--color-surface-light)',
-        borderColor: isMen ? '#3A3A3C' : 'var(--color-border)',
+        background: isMen ? '#1A1A1C' : '#F0E8DF',
+        borderTop: `1px solid ${isMen ? '#282828' : '#E8DDD1'}`,
       }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Main footer content */}
         <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <img src={isMen ? "/FV_Men.png" : "/FV_Women.png"} alt="FaithVish Logo" className="w-9 h-9 object-contain" />
-              <span className="text-xl font-black font-serif tracking-tight">
+              <img src={isMen ? "/FV_Men.png" : "/FV_Women.png"} alt="FaithVish Logo" className="w-8 h-8 object-contain" />
+              <span className="text-lg font-semibold font-display tracking-tight">
                 {isMen ? (
                   <><span style={{ color: '#C9A96E' }}>Faith</span><span style={{ color: '#C9A96E' }}>Vish</span></>
                 ) : (
-                  <><span className="text-pink-500">Faith</span><span className="text-cyan-500">Vish</span></>
+                  <><span style={{ color: '#B85C6A' }}>Faith</span><span style={{ color: '#C4A882' }}>Vish</span></>
                 )}
               </span>
             </div>
-            <p className="text-sm leading-relaxed" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
-            >
+            <p className="text-[12px] leading-relaxed" style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}>
               {isMen
-                ? "Bold, minimal men's jewellery from India's trusted brands. Handpicked chains, rings & bracelets for every man."
-                : "Discover exquisite jewelry from India's most trusted brands. Handpicked collections for every occasion, from daily elegance to bridal grandeur."}
+                ? "Aesthetic & affordable men's jewellery, handpicked from India's trusted brands."
+                : "Aesthetic & affordable jewelry, handpicked from India's most trusted brands."}
             </p>
-            <p className="text-sm mt-3" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>
-              <strong style={{ color: isMen ? '#9A9A9A' : 'var(--color-text-secondary)' }}>📧</strong>{' '}
-              <a href="mailto:contact@faithvish.com" className="underline transition-colors" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>contact@faithvish.com</a>
+            <p className="text-[12px] mt-3" style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}>
+              <a href="mailto:contact@faithvish.com" className="underline transition-colors" style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}>contact@faithvish.com</a>
             </p>
-            <p className="text-[12px] sm:text-[11px] mt-2 italic" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>Written &amp; curated by the FaithVish Editorial Team</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: isMen ? '#F5F5F0' : 'var(--color-text-primary)' }}>Quick Links</h3>
-            <ul className="space-y-1 sm:space-y-2.5">
+            <h3 className="text-[11px] font-semibold mb-4 tracking-wide" style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}>Quick Links</h3>
+            <ul className="space-y-1 sm:space-y-2">
               {[
                 { to: '/', label: 'Home' },
                 { to: '/categories', label: 'Collections' },
-                { to: '/top-rings-under-1000', label: 'Best Rings Under ₹1,000' },
                 { to: '/gifting-guide', label: 'Gifting Guide' },
                 { to: '/buying-guide', label: 'Buying Guide' },
                 { to: '/jewellery-care-guide', label: 'Jewellery Care' },
-                { to: '/blog', label: 'Blog' },
-                { to: '/about', label: 'About Us' },
+                { to: '/blog', label: 'Journal' },
+                { to: '/about', label: 'About' },
                 { to: '/contact', label: 'Contact' },
-              ].filter(link => !(isMen && link.to === '/top-rings-under-1000')).map(({ to, label }) => (
+              ].map(({ to, label }) => (
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm transition-colors block py-2 sm:py-0"
-                    style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
-                    onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
-                    onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}
+                    className="text-[12px] transition-colors block py-1.5 sm:py-0"
+                    style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}
+                    onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A'}
+                    onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : '#8A7E72'}
                   >
                     {label}
                   </Link>
@@ -74,13 +70,16 @@ const Footer = () => {
 
           {/* Collections */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: isMen ? '#F5F5F0' : 'var(--color-text-primary)' }}>Collections</h3>
-            <ul className="space-y-1 sm:space-y-2.5">
+            <h3 className="text-[11px] font-semibold mb-4 tracking-wide" style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}>Collections</h3>
+            <ul className="space-y-1 sm:space-y-2">
               {(isMen ? MEN_CATEGORIES : JEWELRY_CATEGORIES.slice(0, 6)).map(cat => (
                 <li key={cat}>
-                  <Link to="/categories" className="text-sm transition-colors block py-2 sm:py-0" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
-                    onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
-                    onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}
+                  <Link
+                    to={`/categories/${encodeURIComponent(cat)}`}
+                    className="text-[12px] transition-colors block py-1.5 sm:py-0"
+                    style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}
+                    onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A'}
+                    onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : '#8A7E72'}
                   >
                     {isMen ? (MEN_CATEGORY_LABELS[cat] || cat) : cat}
                   </Link>
@@ -89,10 +88,10 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Customer Care */}
+          {/* Information */}
           <div>
-            <h3 className="text-sm font-semibold mb-4 uppercase tracking-wider" style={{ color: isMen ? '#F5F5F0' : 'var(--color-text-primary)' }}>Information</h3>
-            <ul className="space-y-1 sm:space-y-2.5">
+            <h3 className="text-[11px] font-semibold mb-4 tracking-wide" style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}>Information</h3>
+            <ul className="space-y-1 sm:space-y-2">
               {[
                 { to: '/privacy-policy', label: 'Privacy Policy' },
                 { to: '/terms', label: 'Terms of Service' },
@@ -101,10 +100,10 @@ const Footer = () => {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-sm transition-colors py-1 sm:py-0"
-                    style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
-                    onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
-                    onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}
+                    className="text-[12px] transition-colors py-1 sm:py-0"
+                    style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}
+                    onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A'}
+                    onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : '#8A7E72'}
                   >
                     {label}
                   </Link>
@@ -114,43 +113,16 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Affiliate Disclaimer */}
-        <div className="py-4" style={{ borderTop: `1px solid ${isMen ? '#3A3A3C' : 'var(--color-border)'}` }}>
-          <div
-            className="rounded-sm p-4 mb-4"
-            style={{
-              background: isMen ? '#282828' : '#ffffff',
-              border: `2px solid ${isMen ? '#3A3A3C' : 'var(--color-border)'}`,
-            }}
-          >
-            <p className="text-xs leading-relaxed" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>
-              <span className="font-semibold" style={{ color: isMen ? '#C9A96E' : 'var(--color-warning)' }}>⚠️ Affiliate Disclaimer:</span> FaithVish is a jewelry curation and affiliate marketing website.
-              When you click on product links and make a purchase, we may earn a small commission at no extra cost to you. This helps us keep the site running
-              and continue curating beautiful jewelry for you. Product prices and availability are subject to change. We recommend verifying details on the
-              respective retailer's website before purchasing. All product names, logos, and brands are property of their respective owners.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p className="text-xs" style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}>
+        {/* Bottom bar */}
+        <div className="py-6" style={{ borderTop: `1px solid ${isMen ? '#282828' : '#E8DDD1'}` }}>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-[11px]" style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}>
               © 2026 FaithVish. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              {[
-                { to: '/privacy-policy', label: 'Privacy Policy' },
-                { to: '/terms', label: 'Terms of Service' },
-              ].map(({ to, label }) => (
-                <Link
-                  key={to}
-                  to={to}
-                  className="text-xs transition-colors"
-                  style={{ color: isMen ? '#6B6B6B' : 'var(--color-text-muted)' }}
-                  onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : 'var(--color-text-primary)'}
-                  onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : 'var(--color-text-muted)'}
-                >
-                  {label}
-                </Link>
-              ))}
-            </div>
+            <p className="text-[10px] text-center sm:text-right max-w-md" style={{ color: isMen ? '#4A4A4A' : '#B0A598' }}>
+              FaithVish is an affiliate curation website. We may earn a small commission at no extra cost to you.
+              Product prices and availability are subject to change.
+            </p>
           </div>
         </div>
       </div>

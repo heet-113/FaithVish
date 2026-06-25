@@ -138,7 +138,7 @@ const GiftCard = ({ product }) => {
   const discount = getDiscountPercentage(product.price, product.originalPrice);
 
   return (
-    <div 
+    <div
       className="border overflow-hidden group transition-all"
       style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
       onMouseEnter={(e) => e.currentTarget.style.borderColor = theme.cardBorderHover}
@@ -146,11 +146,11 @@ const GiftCard = ({ product }) => {
     >
       {/* Image */}
       <Link to={`/product/${product.id}`}>
-        <div 
+        <div
           className="relative aspect-square border-b p-2"
-          style={{ 
-            backgroundColor: isMen ? '#1A1A1C' : '#ffffff', 
-            borderColor: theme.cardBorder 
+          style={{
+            backgroundColor: isMen ? '#1A1A1C' : '#ffffff',
+            borderColor: theme.cardBorder
           }}
         >
           <img
@@ -160,11 +160,11 @@ const GiftCard = ({ product }) => {
             loading="lazy"
           />
           {discount > 0 && (
-            <span 
+            <span
               className="absolute top-0 right-0 px-2 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest font-serif"
-              style={{ 
-                backgroundColor: theme.accent, 
-                color: isMen ? m.bg : '#ffffff' 
+              style={{
+                backgroundColor: theme.accent,
+                color: isMen ? m.bg : '#ffffff'
               }}
             >
               {discount}% Off
@@ -175,7 +175,7 @@ const GiftCard = ({ product }) => {
 
       <div className="p-4 space-y-3">
         <Link to={`/product/${product.id}`}>
-          <h4 
+          <h4
             className="text-sm font-semibold line-clamp-2 transition-colors leading-snug"
             style={{ color: theme.textPrimary }}
             onMouseEnter={(e) => e.target.style.color = theme.accent}
@@ -229,9 +229,9 @@ const GiftCard = ({ product }) => {
             target="_blank"
             rel="noopener noreferrer"
             className="flex-1 px-3 py-2.5 sm:py-2 text-center text-[11px] sm:text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all"
-            style={{ 
-              backgroundColor: theme.accent, 
-              color: isMen ? m.bg : '#ffffff' 
+            style={{
+              backgroundColor: theme.accent,
+              color: isMen ? m.bg : '#ffffff'
             }}
             onMouseEnter={(e) => {
               e.target.style.backgroundColor = theme.accentHover;
@@ -245,10 +245,10 @@ const GiftCard = ({ product }) => {
           <Link
             to={`/product/${product.id}`}
             className="px-3 py-2.5 sm:py-2 border text-[11px] sm:text-[10px] font-bold uppercase tracking-widest rounded-sm transition-all"
-            style={{ 
-              backgroundColor: theme.cardBg, 
-              borderColor: theme.cardBorder, 
-              color: theme.textSecondary 
+            style={{
+              backgroundColor: theme.cardBg,
+              borderColor: theme.cardBorder,
+              color: theme.textSecondary
             }}
             onMouseEnter={(e) => {
               e.target.style.borderColor = theme.accent;
@@ -312,64 +312,17 @@ const GiftingGuidePage = () => {
       </nav>
 
       {/* Hero */}
-      <div 
-        className="mb-10 text-center py-12 border-y-2"
-        style={{ 
-          borderColor: theme.cardBorder,
-          backgroundImage: isMen 
-            ? 'repeating-linear-gradient(45deg, rgba(201, 169, 110, 0.03) 0px, rgba(201, 169, 110, 0.03) 2px, rgba(40, 40, 40, 0.4) 2px, rgba(40, 40, 40, 0.4) 8px)'
-            : 'repeating-linear-gradient(45deg, rgba(217,208,193,0.1) 0px, rgba(217,208,193,0.1) 2px, rgba(250,250,247,0.5) 2px, rgba(250,250,247,0.5) 8px)'
-        }}
-      >
-        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>Gift Guide</p>
+      <div className="text-center py-12">
         <h1 className="text-3xl sm:text-4xl font-black mb-4 font-serif uppercase tracking-widest leading-tight" style={{ color: theme.textPrimary }}>
-          Best {isMen ? "Men's Jewelry" : "Jewelry"} for <span style={{ color: theme.accent }}>Gifting</span>
+          Best {isMen ? "Men's Jewelry" : "Jewelry"} for Gifting
         </h1>
-        <p className="text-sm max-w-2xl mx-auto mt-4 leading-relaxed" style={{ color: theme.textSecondary }}>
-          {isMen 
-            ? "Finding the right jewelry gift for a man can be a challenge — standard sizes, metal durability, and style preferences. We've compiled the ultimate guide to the best men's chains, cuffs, and kadas." 
-            : "Choosing jewellery as a gift can be overwhelming — wrong size, wrong style, wrong budget. We've organised our collection into practical gift categories so you can find the right piece in minutes, not hours."}
-        </p>
-        <p className="text-[11px] sm:text-[10px] mt-4 uppercase tracking-wider" style={{ color: theme.textMuted }}>
-          All products available on trusted online stores · Prices verified April 2026
-        </p>
-      </div>
-
-      {/* Why Trust Us */}
-      <div 
-        className="mb-10 border p-6"
-        style={{ 
-          backgroundColor: theme.alertBg, 
-          borderColor: theme.cardBorder
-        }}
-      >
-        <div className="flex items-center gap-3 mb-3">
-          <div 
-            className="w-10 h-10 rounded-sm flex items-center justify-center border"
-            style={{ 
-              backgroundColor: isMen ? 'rgba(201, 169, 110, 0.15)' : 'rgba(var(--color-accent-rgb), 0.1)',
-              borderColor: isMen ? 'rgba(201, 169, 110, 0.3)' : 'rgba(var(--color-accent-rgb), 0.3)'
-            }}
-          >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" style={{ color: theme.accent }}>
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h2 className="text-sm font-bold font-serif uppercase tracking-widest" style={{ color: theme.textPrimary }}>Why Trust This Guide?</h2>
-        </div>
-        <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-          Our gift recommendations are based on real buyer data — ratings, review volumes, material specs, and price-to-value ratio. 
-          <strong style={{ color: theme.textPrimary }}> No brand has paid us to feature their products as gift picks.</strong> We earn affiliate 
-          commissions on purchases, but our selections are editorially independent.
-        </p>
-        <p className="text-[11px] sm:text-[10px] mt-3 italic" style={{ color: theme.textMuted }}>Written by the FaithVish Editorial Team · contact@faithvish.com</p>
       </div>
 
       {/* Gift Buying Tips */}
-      <div 
+      <div
         className="mb-10 border p-6 sm:p-8"
-        style={{ 
-          backgroundColor: theme.alertBg, 
+        style={{
+          backgroundColor: theme.alertBg,
           borderColor: theme.cardBorder
         }}
       >
@@ -390,16 +343,16 @@ const GiftingGuidePage = () => {
             { num: '4', tip: 'Sets feel more premium', detail: 'A matching set (necklace + earrings) feels more special than a single piece.' },
             { num: '5', tip: 'Consider the occasion', detail: 'Traditional designs for weddings, modern for birthdays and casual events.' },
           ]).map((item) => (
-            <div 
-              key={item.num} 
+            <div
+              key={item.num}
               className="border p-4"
               style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
             >
-              <span 
+              <span
                 className="w-6 h-6 rounded-sm font-bold text-xs flex items-center justify-center mb-2"
-                style={{ 
-                  backgroundColor: theme.accent, 
-                  color: isMen ? m.bg : '#ffffff' 
+                style={{
+                  backgroundColor: theme.accent,
+                  color: isMen ? m.bg : '#ffffff'
                 }}
               >
                 {item.num}
@@ -455,21 +408,21 @@ const GiftingGuidePage = () => {
               <div>
                 <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>What if I don't know his wrist or Kada size?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-                  Choose open-cuff bracelets or classic 20-22 inch neck chains, which fit almost all men comfortably. For solid Kadas, 
+                  Choose open-cuff bracelets or classic 20-22 inch neck chains, which fit almost all men comfortably. For solid Kadas,
                   standard men's sizes are 2.6 (small-medium) and 2.8 (medium-large). When in doubt, a classic neck chain is the safest option as it requires no sizing.
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Is modern fashion jewelry appropriate as a gift for men?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-                  Absolutely. Modern men's fashion jewelry made from premium surgical stainless steel or rhodium plating looks highly sophisticated. 
+                  Absolutely. Modern men's fashion jewelry made from premium surgical stainless steel or rhodium plating looks highly sophisticated.
                   Cuff bracelets, Kada bands, and Cuban link chains are extremely popular. Look for high review counts to buy with confidence.
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Can I return jewelry bought online?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-                  Return policies vary by seller and platform. Most fashion jewelry has a 10–30 day return window. 
+                  Return policies vary by seller and platform. Most fashion jewelry has a 10–30 day return window.
                   Check the specific product listing on the store's website for return policies before buying.
                 </p>
               </div>
@@ -479,15 +432,15 @@ const GiftingGuidePage = () => {
               <div>
                 <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>What if I don't know their ring or bangle size?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-                  Choose adjustable rings — all the rings we feature have adjustable sizing. For bangles, size 2.4 is considered small and size 2.6 is medium/standard for Indian women.
-                  When in doubt, go with a pendant, bracelet, or earrings instead — they don't require sizing.
+                  Choose adjustable rings. All the rings we feature have adjustable sizing. For bangles, size 2.4 is considered small and size 2.6 is medium/standard for Indian women.
+                  When in doubt, go with a pendant, bracelet, or earrings instead. They don't require sizing.
                 </p>
               </div>
               <div>
                 <h3 className="text-sm font-bold mb-1" style={{ color: theme.textPrimary }}>Is fashion jewellery appropriate as a gift?</h3>
                 <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
                   Absolutely. Fashion jewellery from brands like YouBella, Shining Diva, and Clara is widely accepted and appreciated.
-                  For added credibility, choose products with high review counts — it shows the item is well-liked by many buyers.
+                  For added credibility, choose products with high review counts. It shows the item is well-liked by many buyers.
                   Sterling silver pieces (like Clara's range) feel more premium if your budget allows.
                 </p>
               </div>
@@ -507,7 +460,7 @@ const GiftingGuidePage = () => {
       <div className="mt-6 p-4 border" style={{ backgroundColor: theme.surfaceBg, borderColor: theme.cardBorder }}>
         <p className="text-[11px] sm:text-[10px] leading-relaxed" style={{ color: theme.textMuted }}>
           <strong style={{ color: theme.textSecondary }}>Affiliate Disclosure:</strong> FaithVish participates in affiliate programs including the Amazon Services LLC Associates Program and others.
-          Links on this page are affiliate links — when you buy through them, we may earn a small commission at no extra cost to you. Our gift recommendations
+          Links on this page are affiliate links. When you buy through them, we may earn a small commission at no extra cost to you. Our gift recommendations
           are based on publicly available data (prices, ratings, reviews) and our editorial judgement. We are not paid to feature any product.
         </p>
       </div>
@@ -517,10 +470,10 @@ const GiftingGuidePage = () => {
         <Link
           to="/"
           className="px-8 py-3 text-sm font-bold uppercase tracking-widest border-2 rounded-sm transition-all"
-          style={{ 
-            backgroundColor: theme.cardBg, 
-            borderColor: theme.cardBorder, 
-            color: theme.textSecondary 
+          style={{
+            backgroundColor: theme.cardBg,
+            borderColor: theme.cardBorder,
+            color: theme.textSecondary
           }}
           onMouseEnter={(e) => {
             e.target.style.borderColor = theme.textPrimary;

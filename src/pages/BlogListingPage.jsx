@@ -32,7 +32,7 @@ const BlogListingPage = () => {
     accentHover: isMen ? m.goldLight : 'var(--color-accent-light)',
     cardBg: isMen ? m.card : '#ffffff',
     cardBorder: isMen ? m.border : 'var(--color-border)',
-    heroBg: isMen 
+    heroBg: isMen
       ? 'repeating-linear-gradient(45deg,rgba(201,169,110,0.05) 0px,rgba(201,169,110,0.05) 2px,rgba(30,30,32,0.8) 2px,rgba(30,30,32,0.8) 8px)'
       : 'repeating-linear-gradient(45deg,rgba(217,208,193,0.1) 0px,rgba(217,208,193,0.1) 2px,rgba(250,250,247,0.5) 2px,rgba(250,250,247,0.5) 8px)'
   };
@@ -63,47 +63,15 @@ const BlogListingPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Hero */}
-      <div 
-        className="mb-10 text-center py-14 border-y-2"
-        style={{ 
-          background: theme.heroBg,
-          borderColor: theme.cardBorder 
-        }}
+      <div
+        className="text-center py-14"
       >
-        <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-4" style={{ color: theme.accent }}>
-          FaithVish Journal
-        </p>
-        <h1 
-          className="text-4xl sm:text-5xl font-black mb-4 font-serif uppercase tracking-widest leading-tight"
+        <h1
+          className="text-4xl sm:text-5xl font-black font-serif uppercase tracking-widest leading-tight"
           style={{ color: theme.textPrimary }}
         >
-          Our <span style={{ color: theme.accent, textDecoration: 'underline', textDecorationColor: theme.accent, textDecorationThickness: '4px', textUnderlineOffset: '8px' }}>Blog</span>
+          Our Blogs
         </h1>
-        <p className="text-sm sm:text-base max-w-2xl mx-auto font-medium mt-6 uppercase tracking-widest" style={{ color: theme.textSecondary }}>
-          Styling tips, buying advice, and jewellery trends — curated by our editorial team.
-        </p>
-      </div>
-
-      {/* Category Filters */}
-      <div className="mb-8 flex flex-wrap gap-2 justify-center">
-        {categories.map((cat) => {
-          const isActive = selectedCategory === cat;
-          return (
-            <button
-              key={cat}
-              onClick={() => handleCategoryChange(cat)}
-              className="px-4 py-2.5 sm:py-2 text-xs font-bold uppercase tracking-widest border-2 transition-all"
-              style={{
-                backgroundColor: isActive ? theme.accent : theme.cardBg,
-                color: isActive ? (isMen ? m.bg : '#ffffff') : theme.textSecondary,
-                borderColor: isActive ? theme.accent : theme.cardBorder
-              }}
-              id={`blog-filter-${cat.toLowerCase().replace(/\s+/g, '-')}`}
-            >
-              {cat}
-            </button>
-          );
-        })}
       </div>
 
       {/* Posts count */}
@@ -117,13 +85,13 @@ const BlogListingPage = () => {
       {/* Blog Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-children">
         {visiblePosts.map((post) => (
-          <Link 
-            key={post.slug} 
-            to={`/blog/${post.slug}`} 
-            className="group transition-all overflow-hidden blog-card border rounded-sm" 
-            style={{ 
-              backgroundColor: theme.cardBg, 
-              borderColor: theme.cardBorder 
+          <Link
+            key={post.slug}
+            to={`/blog/${post.slug}`}
+            className="group transition-all overflow-hidden blog-card border rounded-sm"
+            style={{
+              backgroundColor: theme.cardBg,
+              borderColor: theme.cardBorder
             }}
             onMouseEnter={(e) => { e.currentTarget.style.borderColor = theme.accent; }}
             onMouseLeave={(e) => { e.currentTarget.style.borderColor = theme.cardBorder; }}
@@ -132,7 +100,7 @@ const BlogListingPage = () => {
             <div className="aspect-[16/10] overflow-hidden bg-surface relative">
               <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
               <div className="absolute top-3 left-3">
-                <span 
+                <span
                   className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest border backdrop-blur-sm"
                   style={{
                     backgroundColor: isMen ? 'rgba(40,40,40,0.9)' : 'rgba(255,255,255,0.9)',
@@ -154,7 +122,7 @@ const BlogListingPage = () => {
                   {post.readTime}
                 </span>
               </div>
-              <h2 
+              <h2
                 className="text-base font-bold font-serif group-hover:text-accent transition-colors leading-snug mb-2 line-clamp-2"
                 style={{ color: theme.textPrimary }}
               >
@@ -163,7 +131,7 @@ const BlogListingPage = () => {
               <p className="text-sm leading-relaxed line-clamp-3 mb-4" style={{ color: theme.textMuted }}>
                 {post.excerpt}
               </p>
-              <div 
+              <div
                 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest group-hover:gap-3 transition-all"
                 style={{ color: theme.accent }}
               >
@@ -180,7 +148,7 @@ const BlogListingPage = () => {
       {/* Empty state */}
       {filteredPosts.length === 0 && (
         <div className="flex flex-col items-center justify-center py-20 text-center">
-          <div 
+          <div
             className="w-20 h-20 border flex items-center justify-center mb-4 rounded-sm"
             style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}
           >
@@ -200,8 +168,8 @@ const BlogListingPage = () => {
       {/* Load More */}
       {hasMore && (
         <div className="flex justify-center mt-10">
-          <button 
-            onClick={() => setVisibleCount((prev) => prev + POSTS_PER_PAGE)} 
+          <button
+            onClick={() => setVisibleCount((prev) => prev + POSTS_PER_PAGE)}
             className="px-8 py-3 text-sm font-bold uppercase tracking-widest border-2 transition-all rounded-sm"
             style={{
               backgroundColor: theme.cardBg,
@@ -224,11 +192,11 @@ const BlogListingPage = () => {
       )}
 
       {/* Newsletter-style CTA */}
-      <div 
+      <div
         className="mt-16 mb-4 border-2 p-8 sm:p-10 text-center rounded-sm"
-        style={{ 
-          backgroundColor: theme.cardBg, 
-          borderColor: theme.cardBorder 
+        style={{
+          backgroundColor: theme.cardBg,
+          borderColor: theme.cardBorder
         }}
       >
         <p className="text-[11px] sm:text-[10px] font-bold uppercase tracking-[0.4em] mb-3" style={{ color: theme.accent }}>
@@ -240,10 +208,10 @@ const BlogListingPage = () => {
         <p className="text-sm max-w-lg mx-auto mb-6 leading-relaxed" style={{ color: theme.textMuted }}>
           We share new styling tips, jewellery trends, and curated collections every week. Follow FaithVish on Pinterest for your daily dose of jewellery inspiration.
         </p>
-        <a 
-          href="https://pinterest.com/faithvish" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a
+          href="https://pinterest.com/faithvish06"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-8 py-3 font-bold uppercase tracking-widest transition-all rounded-sm text-sm"
           style={{
             backgroundColor: theme.accent,

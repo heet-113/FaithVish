@@ -31,8 +31,8 @@ const AffiliateDisclosurePage = () => {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-sm mb-6" style={{ color: theme.textMuted }}>
-        <Link 
-          to="/" 
+        <Link
+          to="/"
           className="transition-colors"
           style={{ color: theme.textMuted }}
           onMouseEnter={(e) => e.target.style.color = theme.textPrimary}
@@ -44,7 +44,7 @@ const AffiliateDisclosurePage = () => {
         <span style={{ color: theme.textSecondary }}>Affiliate Disclosure</span>
       </nav>
 
-      <h1 
+      <h1
         className="text-3xl font-black mb-2 font-serif uppercase tracking-widest"
         style={{ color: theme.textPrimary }}
       >
@@ -55,11 +55,11 @@ const AffiliateDisclosurePage = () => {
       <div className="prose max-w-none space-y-6" style={{ color: theme.textMuted }}>
         <p><strong style={{ color: theme.textPrimary }}>Last Updated:</strong> April 2026</p>
 
-        <div 
+        <div
           className="border-l-4 p-5 my-6"
-          style={{ 
-            backgroundColor: theme.alertBg, 
-            borderLeftColor: theme.accent 
+          style={{
+            backgroundColor: theme.alertBg,
+            borderLeftColor: theme.accent
           }}
         >
           <p className="text-sm leading-relaxed font-medium" style={{ color: theme.textSecondary }}>
@@ -69,7 +69,7 @@ const AffiliateDisclosurePage = () => {
           </p>
         </div>
 
-        <h2 
+        <h2
           className="text-2xl font-bold mt-8 mb-4 font-serif uppercase tracking-wider"
           style={{ color: theme.textPrimary }}
         >
@@ -86,7 +86,7 @@ const AffiliateDisclosurePage = () => {
           used by most product review and recommendation websites.
         </p>
 
-        <h2 
+        <h2
           className="text-2xl font-bold mt-8 mb-4 font-serif uppercase tracking-wider"
           style={{ color: theme.textPrimary }}
         >
@@ -103,12 +103,19 @@ const AffiliateDisclosurePage = () => {
         <div className="border p-5 my-4 rounded-sm animate-fade-in-up" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
           <h3 className="text-sm font-bold mb-3 uppercase tracking-wider font-serif" style={{ color: theme.textPrimary }}>INRDeals</h3>
           <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
-            We also utilize INRDeals, an affiliate marketing platform that automatically transforms eligible outbound product links into affiliate links. 
+            We also utilize INRDeals, an affiliate marketing platform that automatically transforms eligible outbound product links into affiliate links.
             This allows us to earn referral commissions when you shop on partnered retail websites.
           </p>
         </div>
 
-        <h2 
+        <div className="border p-5 my-4 rounded-sm animate-fade-in-up" style={{ backgroundColor: theme.cardBg, borderColor: theme.cardBorder }}>
+          <h3 className="text-sm font-bold mb-3 uppercase tracking-wider font-serif" style={{ color: theme.textPrimary }}>Salty</h3>
+          <p className="text-sm leading-relaxed" style={{ color: theme.textSecondary }}>
+            We use Salty's Affiliate Program to promote products and earn commissions when you shop on partnered retail websites.
+          </p>
+        </div>
+
+        <h2
           className="text-2xl font-bold mt-8 mb-4 font-serif uppercase tracking-wider"
           style={{ color: theme.textPrimary }}
         >
@@ -129,7 +136,7 @@ const AffiliateDisclosurePage = () => {
           Commission rates do not influence which products we recommend or how we rank them.
         </p>
 
-        <h2 
+        <h2
           className="text-2xl font-bold mt-8 mb-4 font-serif uppercase tracking-wider"
           style={{ color: theme.textPrimary }}
         >
@@ -142,7 +149,7 @@ const AffiliateDisclosurePage = () => {
           <li>We <strong>do not</strong> accept sponsored placements or paid rankings.</li>
         </ul>
 
-        <h2 
+        <h2
           className="text-2xl font-bold mt-8 mb-4 font-serif uppercase tracking-wider"
           style={{ color: theme.textPrimary }}
         >
@@ -160,7 +167,7 @@ const AffiliateDisclosurePage = () => {
           <li>Display this affiliate disclosure prominently across the site</li>
         </ul>
 
-        <h2 
+        <h2
           className="text-2xl font-bold mt-8 mb-4 font-serif uppercase tracking-wider"
           style={{ color: theme.textPrimary }}
         >
@@ -170,8 +177,8 @@ const AffiliateDisclosurePage = () => {
           If you have any questions about our affiliate relationships or how we make money, feel free to reach out:
         </p>
         <p>
-          <Link 
-            to="/contact" 
+          <Link
+            to="/contact"
             className="underline font-medium transition-colors"
             style={{ color: theme.accent }}
           >

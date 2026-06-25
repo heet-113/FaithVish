@@ -148,7 +148,7 @@ const CategoriesPage = () => {
               </button>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-4 stagger-children">
+            <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 stagger-children">
               {categoryProducts.map((product) =>
                 isMen
                   ? <MenProductCard key={product.id} product={product} />
@@ -185,7 +185,7 @@ const CategoriesPage = () => {
       </div>
 
       {/* Editorial Category Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 stagger-children">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 stagger-children">
         {categories.map((category) => {
           const stats = getCategoryStats(category);
           const displayLabel = isMen ? (MEN_CATEGORY_LABELS[category] || category) : category;

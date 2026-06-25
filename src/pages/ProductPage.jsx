@@ -97,12 +97,12 @@ const ProductPage = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm mb-6 flex-wrap overflow-hidden" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
+      <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm mb-6 overflow-hidden" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
         <Link to="/" className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>Home</Link>
         <span>/</span>
         <Link to="/categories" className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>{product.category}</Link>
         <span>/</span>
-        <span className="truncate" style={{ color: isMen ? m.textSecondary : 'var(--color-text-secondary)' }}>{product.name}</span>
+        <span className="truncate max-w-[120px] sm:max-w-none" style={{ color: isMen ? m.textSecondary : 'var(--color-text-secondary)' }}>{product.name}</span>
       </nav>
 
       {/* Product main section */}
@@ -168,7 +168,7 @@ const ProductPage = () => {
               {product.category}
             </span>
             <h1
-              className="text-2xl sm:text-3xl font-extrabold font-serif tracking-widest uppercase mb-2 leading-tight"
+              className="text-xl sm:text-2xl md:text-3xl font-extrabold font-serif tracking-wider sm:tracking-widest uppercase mb-2 leading-tight"
               style={{ color: isMen ? m.textPrimary : 'var(--color-text-primary)' }}
             >
               {product.name}
@@ -475,7 +475,7 @@ const ProductPage = () => {
               <div className="w-12 h-0.75 mt-2" style={{ background: isMen ? m.accent : 'var(--color-accent)' }} />
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stagger-children">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 stagger-children">
             {relatedProducts.map((p) => (
               isMen ? <MenProductCard key={p.id} product={p} /> : <ProductCard key={p.id} product={p} />
             ))}

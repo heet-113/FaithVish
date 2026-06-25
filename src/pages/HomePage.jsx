@@ -91,7 +91,7 @@ const HomePage = () => {
         {/* Hero */}
         <section className="men-hero">
           <h1
-            className="text-4xl sm:text-5xl md:text-6xl font-display font-normal leading-tight mb-6 animate-gentle-fade-delay-1"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-normal leading-tight mb-6 animate-gentle-fade-delay-1"
             style={{ color: '#F5F5F0' }}
           >
             Looking for Jewelry?
@@ -162,7 +162,7 @@ const HomePage = () => {
               <div className="hidden lg:block shrink-0"><FilterSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} /></div>
               <div className="lg:hidden"><FilterSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} /></div>
               <div className="flex-1 min-w-0">
-                <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-4 stagger-children">
+                <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 stagger-children">
                   {products.map((product) => <MenProductCard key={product.id} product={product} />)}
                 </div>
                 {products.length === 0 && (
@@ -185,7 +185,7 @@ const HomePage = () => {
                   <h2 className="text-2xl font-display font-normal" style={{ color: '#F5F5F0' }}>Bold Picks</h2>
                   <div className="section-divider mt-3" style={{ background: '#C9A96E' }} />
                 </div>
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 stagger-children">
                   {picksProducts.map((product) => <MenProductCard key={product.id} product={product} />)}
                 </div>
               </section>
@@ -239,7 +239,7 @@ const HomePage = () => {
       {/* Hero */}
       <section className="landing-hero">
         <h1
-          className="text-4xl sm:text-5xl md:text-6xl font-display font-normal leading-tight mb-6 animate-gentle-fade-delay-1"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-normal leading-tight mb-6 animate-gentle-fade-delay-1"
           style={{ color: 'var(--color-text-primary)' }}
         >
           Looking for Jewelry?
@@ -316,7 +316,7 @@ const HomePage = () => {
             <div className="hidden lg:block shrink-0"><FilterSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} /></div>
             <div className="lg:hidden"><FilterSidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} /></div>
             <div className="flex-1 min-w-0">
-              <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-4 stagger-children">
+              <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 stagger-children">
                 {products.map((product) => <ProductCard key={product.id} product={product} />)}
               </div>
               {products.length === 0 && (
@@ -339,7 +339,7 @@ const HomePage = () => {
                 <h2 className="text-2xl font-display font-normal" style={{ color: 'var(--color-text-primary)' }}>Aesthetic Finds</h2>
                 <div className="section-divider mt-3" />
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 stagger-children">
                 {picksProducts.map((product) => <ProductCard key={product.id} product={product} />)}
               </div>
             </section>
@@ -352,7 +352,7 @@ const HomePage = () => {
                 <h2 className="text-2xl font-display font-normal" style={{ color: 'var(--color-text-primary)' }}>For minimalist lovers</h2>
                 <div className="section-divider mt-3" />
               </div>
-              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 stagger-children">
                 {minimalistProducts.map((product) => <ProductCard key={product.id} product={product} />)}
               </div>
               <div className="text-center mt-8">

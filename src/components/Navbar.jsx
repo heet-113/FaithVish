@@ -127,7 +127,7 @@ const Navbar = () => {
             borderTop: `1px solid ${isMen ? '#282828' : '#E8DDD1'}`,
           }}
         >
-          <div className="px-5 py-4 space-y-1">
+          <div className="px-5 py-4 pb-8 space-y-0.5">
             {[
               { to: '/', label: 'Home' },
               { to: '/categories', label: 'Collections' },
@@ -142,7 +142,7 @@ const Navbar = () => {
                 key={to}
                 to={to}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block px-3 py-3 text-[13px] font-medium transition-colors rounded-lg"
+                className="block px-3 py-3.5 text-[14px] font-medium transition-colors rounded-lg"
                 style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}
                 onMouseEnter={e => {
                   e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A';

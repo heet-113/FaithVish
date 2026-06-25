@@ -27,7 +27,7 @@ const MenProductCard = ({ product }) => {
       style={{ borderRadius: '2px' }}
     >
       {/* Image section */}
-      <div className="relative w-full overflow-hidden aspect-square border-b flex-shrink-0" style={{ borderColor: '#3A3A3C', backgroundColor: '#222224', padding: '8px' }}>
+      <div className="relative w-full overflow-hidden aspect-square border-b flex-shrink-0" style={{ borderColor: '#3A3A3C', backgroundColor: '#222224', padding: '6px' }}>
         <img
           src={product.image}
           alt={product.name}
@@ -37,7 +37,7 @@ const MenProductCard = ({ product }) => {
         {/* Category badge */}
         <div className="absolute top-0 left-0">
           <span
-            className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest font-serif border-b border-r"
+            className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest font-serif border-b border-r"
             style={{ background: '#1E1E20', color: '#C9A96E', borderColor: '#3A3A3C' }}
           >
             {displayCategory}
@@ -47,7 +47,7 @@ const MenProductCard = ({ product }) => {
         {discount > 0 && (
           <div className="absolute top-0 right-0">
             <span
-              className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold uppercase tracking-widest font-serif border-b border-l"
+              className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold uppercase tracking-widest font-serif border-b border-l"
               style={{ background: '#C9A96E', color: '#1E1E20', borderColor: '#A8903E' }}
             >
               {discount}% Off
@@ -68,10 +68,10 @@ const MenProductCard = ({ product }) => {
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col flex-grow">
+      <div className="p-3 sm:p-4 flex flex-col flex-grow">
         {/* Product name */}
         <h3
-          className="text-sm font-semibold mb-1.5 line-clamp-2 transition-colors leading-snug"
+          className="text-xs sm:text-sm font-semibold mb-1.5 line-clamp-2 transition-colors leading-snug"
           style={{ color: '#F5F5F0' }}
           onMouseEnter={e => e.currentTarget.style.color = '#C9A96E'}
           onMouseLeave={e => e.currentTarget.style.color = '#F5F5F0'}
@@ -103,8 +103,8 @@ const MenProductCard = ({ product }) => {
 
         {/* Price section */}
         <div className="mb-3">
-          <div className="flex items-baseline gap-2">
-            <span className="text-lg font-bold" style={{ color: '#F5F5F0' }}>
+          <div className="flex items-baseline gap-1.5 sm:gap-2 flex-wrap">
+            <span className="text-base sm:text-lg font-bold" style={{ color: '#F5F5F0' }}>
               {formatPrice(product.price)}
             </span>
             {product.originalPrice && product.originalPrice > product.price && (
@@ -121,7 +121,7 @@ const MenProductCard = ({ product }) => {
         </div>
 
         {/* CTA */}
-        <div className="mt-auto pt-3 border-t flex items-center justify-end min-h-[44px] sm:min-h-0" style={{ borderColor: '#3A3A3C' }}>
+        <div className="mt-auto pt-2 sm:pt-3 border-t flex items-center justify-end min-h-[44px] sm:min-h-0" style={{ borderColor: '#3A3A3C' }}>
           <span
             className="text-xs font-bold uppercase tracking-widest transition-colors group-hover:opacity-80"
             style={{ color: '#C9A96E' }}

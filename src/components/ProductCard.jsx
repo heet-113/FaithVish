@@ -25,7 +25,7 @@ const ProductCard = ({ product }) => {
       id={`product-card-${product.id}`}
     >
       {/* Image section */}
-      <div className="relative w-full overflow-hidden aspect-square p-2 shrink-0" style={{ background: '#FFFBF7', borderBottom: '1px solid var(--color-border)' }}>
+      <div className="relative w-full overflow-hidden aspect-square p-1.5 sm:p-2 shrink-0" style={{ background: '#FFFBF7', borderBottom: '1px solid var(--color-border)' }}>
         <img
           src={product.image}
           alt={product.name}
@@ -36,7 +36,7 @@ const ProductCard = ({ product }) => {
         {/* Category badge */}
         <div className="absolute top-0 left-0">
           <span
-            className="px-2.5 py-1 text-[11px] sm:text-[10px] font-medium tracking-wide font-display"
+            className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-medium tracking-wide font-display"
             style={{
               background: '#FFFBF7',
               color: 'var(--color-text-secondary)',
@@ -52,7 +52,7 @@ const ProductCard = ({ product }) => {
         {discount > 0 && (
           <div className="absolute top-0 right-0">
             <span
-              className="px-2.5 py-1 text-[11px] sm:text-[10px] font-bold tracking-wide font-display"
+              className="px-1.5 py-0.5 text-[9px] sm:text-[10px] font-bold tracking-wide font-display"
               style={{
                 background: 'var(--color-accent)',
                 color: '#FFFBF7',
@@ -79,10 +79,10 @@ const ProductCard = ({ product }) => {
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col grow">
+      <div className="p-3 sm:p-4 flex flex-col grow">
         {/* Product name */}
         <h3
-          className="text-sm font-medium mb-1.5 line-clamp-2 transition-colors leading-snug"
+          className="text-xs sm:text-sm font-medium mb-1.5 line-clamp-2 transition-colors leading-snug"
           style={{ color: 'var(--color-text-primary)' }}
         >
           {product.name}
@@ -112,8 +112,8 @@ const ProductCard = ({ product }) => {
 
         {/* Price section */}
         <div className="mb-3">
-          <div className="flex items-baseline gap-2">
-            <span className="text-lg font-bold" style={{ color: 'var(--color-text-primary)' }}>
+          <div className="flex items-baseline gap-1.5 sm:gap-2 flex-wrap">
+            <span className="text-base sm:text-lg font-bold" style={{ color: 'var(--color-text-primary)' }}>
               {formatPrice(product.price)}
             </span>
             {product.originalPrice && product.originalPrice > product.price && (
@@ -131,7 +131,7 @@ const ProductCard = ({ product }) => {
 
         {/* CTA */}
         <div
-          className="mt-auto pt-3 flex items-center justify-end min-h-11 sm:min-h-0"
+          className="mt-auto pt-2 sm:pt-3 flex items-center justify-end min-h-[44px] sm:min-h-0"
           style={{ borderTop: '1px solid var(--color-border)' }}
         >
           <span

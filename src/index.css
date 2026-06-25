@@ -34,6 +34,8 @@
 
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -44,6 +46,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.7;
+    overflow-x: hidden;
   }
 
   ::-webkit-scrollbar {
@@ -143,6 +146,25 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+/* Mobile category card adjustments */
+@media (max-width: 639px) {
+  .category-editorial-card {
+    border-radius: 12px;
+  }
+
+  .category-editorial-card .cat-card-overlay {
+    padding: 1rem;
+  }
+
+  .category-editorial-card .cat-card-label {
+    font-size: 1.1rem;
+  }
+
+  .category-editorial-card .cat-card-count {
+    font-size: 0.65rem;
+  }
 }
 
 /* Men's editorial card variant */
@@ -351,19 +373,20 @@ input[type="range"]::-moz-range-thumb {
    =========================== */
 
 .landing-hero {
-  min-height: 50vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1rem;
   position: relative;
 }
 
 @media (min-width: 640px) {
   .landing-hero {
-    min-height: 60vh;
+    min-height: 50vh;
+    padding: 3rem 1.5rem;
   }
 }
 
@@ -441,19 +464,20 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .men-hero {
-  min-height: 50vh;
+  min-height: 40vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 3rem 1.5rem;
+  padding: 2rem 1rem;
   position: relative;
 }
 
 @media (min-width: 640px) {
   .men-hero {
-    min-height: 60vh;
+    min-height: 50vh;
+    padding: 3rem 1.5rem;
   }
 }
 

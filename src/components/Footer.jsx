@@ -16,7 +16,7 @@ const Footer = () => {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Main footer content */}
-        <div className="py-12 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="py-10 sm:py-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -42,7 +42,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h3 className="text-[11px] font-semibold mb-4 tracking-wide" style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}>Quick Links</h3>
-            <ul className="space-y-1 sm:space-y-2">
+            <ul className="space-y-0.5">
               {[
                 { to: '/', label: 'Home' },
                 { to: '/categories', label: 'Collections' },
@@ -56,7 +56,7 @@ const Footer = () => {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-[12px] transition-colors block py-1.5 sm:py-0"
+                    className="text-[12px] transition-colors block py-2 sm:py-1"
                     style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}
                     onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A'}
                     onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : '#8A7E72'}
@@ -71,12 +71,12 @@ const Footer = () => {
           {/* Collections */}
           <div>
             <h3 className="text-[11px] font-semibold mb-4 tracking-wide" style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}>Collections</h3>
-            <ul className="space-y-1 sm:space-y-2">
+            <ul className="space-y-0.5">
               {(isMen ? MEN_CATEGORIES : JEWELRY_CATEGORIES.slice(0, 6)).map(cat => (
                 <li key={cat}>
                   <Link
                     to={`/categories/${encodeURIComponent(cat)}`}
-                    className="text-[12px] transition-colors block py-1.5 sm:py-0"
+                    className="text-[12px] transition-colors block py-2 sm:py-1"
                     style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}
                     onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A'}
                     onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : '#8A7E72'}
@@ -91,7 +91,7 @@ const Footer = () => {
           {/* Information */}
           <div>
             <h3 className="text-[11px] font-semibold mb-4 tracking-wide" style={{ color: isMen ? '#9A9A9A' : '#5A4E42' }}>Information</h3>
-            <ul className="space-y-1 sm:space-y-2">
+            <ul className="space-y-0.5">
               {[
                 { to: '/privacy-policy', label: 'Privacy Policy' },
                 { to: '/terms', label: 'Terms of Service' },
@@ -100,7 +100,7 @@ const Footer = () => {
                 <li key={to}>
                   <Link
                     to={to}
-                    className="text-[12px] transition-colors py-1 sm:py-0"
+                    className="text-[12px] transition-colors block py-2 sm:py-1"
                     style={{ color: isMen ? '#6B6B6B' : '#8A7E72' }}
                     onMouseEnter={e => e.currentTarget.style.color = isMen ? '#C9A96E' : '#B85C6A'}
                     onMouseLeave={e => e.currentTarget.style.color = isMen ? '#6B6B6B' : '#8A7E72'}

@@ -100,7 +100,7 @@ const ProductPage = () => {
       <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm mb-6 overflow-hidden" style={{ color: isMen ? m.textMuted : 'var(--color-text-muted)' }}>
         <Link to="/" className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>Home</Link>
         <span>/</span>
-        <Link to="/categories" className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>{product.category}</Link>
+        <Link to={`/categories/${encodeURIComponent(product.category)}`} className="transition-colors" style={{ color: isMen ? m.textMuted : undefined }} onMouseEnter={e => e.currentTarget.style.color = isMen ? m.accent : ''} onMouseLeave={e => e.currentTarget.style.color = isMen ? m.textMuted : ''}>{product.category}</Link>
         <span>/</span>
         <span className="truncate max-w-[120px] sm:max-w-none" style={{ color: isMen ? m.textSecondary : 'var(--color-text-secondary)' }}>{product.name}</span>
       </nav>

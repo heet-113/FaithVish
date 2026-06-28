@@ -8,22 +8,22 @@ import { JEWELRY_CATEGORIES, MEN_CATEGORIES, MEN_CATEGORY_LABELS, formatPrice } 
 
 // Category image map for editorial cards
 const WOMEN_CATEGORY_IMAGES = {
-  Rings: '/categories/rings.jpg',
-  Necklaces: '/categories/necklaces.jpg',
-  Earrings: '/categories/earrings.jpg',
-  Bracelets: '/categories/bracelets.jpg',
-  Bangles: '/categories/bangles.jpg',
-  Pendants: '/categories/pendants.jpg',
-  Anklets: '/categories/anklets.jpg',
-  Mangalsutra: '/categories/mangalsutra.jpg',
-  'Jewelry Sets': '/categories/jewelry_sets.jpg',
+  Rings: 'https://images.pexels.com/photos/17593587/pexels-photo-17593587.jpeg',
+  Necklaces: 'https://images.pexels.com/photos/23495720/pexels-photo-23495720.jpeg',
+  Earrings: 'https://images.pexels.com/photos/7541804/pexels-photo-7541804.jpeg',
+  Bracelets: 'https://images.pexels.com/photos/16055236/pexels-photo-16055236.jpeg',
+  Bangles: 'https://images.pexels.com/photos/37485307/pexels-photo-37485307.jpeg',
+  Pendants: 'https://images.pexels.com/photos/32382447/pexels-photo-32382447.jpeg',
+  Anklets: 'https://images.pexels.com/photos/28573578/pexels-photo-28573578.jpeg',
+  Mangalsutra: 'https://images.pexels.com/photos/7541802/pexels-photo-7541802.jpeg',
+  'Jewelry Sets': 'https://images.pexels.com/photos/7093174/pexels-photo-7093174.jpeg',
 };
 
 const MEN_CATEGORY_IMAGES = {
-  Rings: '/categories/men_rings.jpg',
-  Necklaces: '/categories/men_chains.jpg',
-  Bracelets: '/categories/men_bracelets.jpg',
-  Pendants: '/categories/men_pendants.jpg',
+  Rings: 'https://images.pexels.com/photos/20157679/pexels-photo-20157679.jpeg',
+  Necklaces: 'https://images.pexels.com/photos/16109292/pexels-photo-16109292.jpeg',
+  Bracelets: 'https://images.pexels.com/photos/15325460/pexels-photo-15325460.jpeg',
+  Pendants: 'https://images.pexels.com/photos/15947180/pexels-photo-15947180.jpeg',
 };
 
 const CategoriesPage = () => {
@@ -289,7 +289,7 @@ const CategoriesPage = () => {
                   const isLarge = index % 3 === 0;
                   return (
                     <div key={product.id} className={isLarge ? 'col-span-2' : 'col-span-1'}>
-                      {isMen 
+                      {isMen
                         ? <MenProductCard product={product} isLarge={isLarge} />
                         : <ProductCard product={product} isLarge={isLarge} />
                       }

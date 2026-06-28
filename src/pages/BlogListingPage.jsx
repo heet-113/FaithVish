@@ -98,7 +98,7 @@ const BlogListingPage = () => {
             id={`blog-card-${post.slug}`}
           >
             <div className="aspect-[16/10] overflow-hidden bg-surface relative">
-              <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover transition-transform duration-500" loading="lazy" />
               <div className="absolute top-3 left-3">
                 <span
                   className="px-2.5 py-1 text-[10px] font-bold uppercase tracking-widest border backdrop-blur-sm"

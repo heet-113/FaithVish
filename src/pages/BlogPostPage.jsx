@@ -511,7 +511,7 @@ const BlogPostPage = () => {
                   onMouseLeave={(e) => { e.currentTarget.style.borderColor = theme.cardBorder; }}
                 >
                   <div className="aspect-[16/10] overflow-hidden bg-surface">
-                    <img src={relPost.coverImage} alt={relPost.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+                    <img src={relPost.coverImage} alt={relPost.title} className="w-full h-full object-cover transition-transform duration-500" loading="lazy" />
                   </div>
                   <div className="p-4">
                     <span className="text-[11px] sm:text-[10px] font-bold uppercase tracking-widest" style={{ color: theme.accent }}>

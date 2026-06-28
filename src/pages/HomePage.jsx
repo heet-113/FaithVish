@@ -419,7 +419,7 @@ const HomePage = () => {
                   {blogPosts.map((post) => (
                     <Link key={post.slug} to={`/blog/${post.slug}`} className="group border rounded-xl overflow-hidden transition-all" style={{ background: '#FFFBF7', borderColor: 'var(--color-border)' }}>
                       <div className="aspect-16/10 overflow-hidden relative" style={{ background: 'var(--color-surface)' }}>
-                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                        <img src={post.coverImage} alt={post.title} className="w-full h-full object-cover transition-transform duration-700" loading="lazy" />
                       </div>
                       <div className="p-5">
                         <span className="text-[10px] font-medium tracking-wide" style={{ color: 'var(--color-accent-secondary)' }}>

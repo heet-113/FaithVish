@@ -5,10 +5,10 @@ import useStore from '../store/useStore';
 
 // Category image map for men
 const MEN_CATEGORY_IMAGES = {
-  Rings: '/categories/men_rings.jpg',
-  Necklaces: '/categories/men_chains.jpg',
-  Bracelets: '/categories/men_bracelets.jpg',
-  Pendants: '/categories/men_pendants.jpg',
+  Rings: 'https://images.pexels.com/photos/20157679/pexels-photo-20157679.jpeg',
+  Necklaces: 'https://images.pexels.com/photos/16109292/pexels-photo-16109292.jpeg',
+  Bracelets: 'https://images.pexels.com/photos/15325460/pexels-photo-15325460.jpeg',
+  Pendants: 'https://images.pexels.com/photos/15947180/pexels-photo-15947180.jpeg',
 };
 
 const MenCategoryGrid = () => {

@@ -105,7 +105,7 @@
 }
 
 .category-editorial-card:hover .cat-card-image {
-  transform: scale(1.08);
+  transform: none;
 }
 
 .category-editorial-card .cat-card-overlay {
@@ -232,24 +232,25 @@
 /* Fade in animation */
 @keyframes fadeInUp {
   from {
-    opacity: 0;
-    transform: translateY(16px);
+    opacity: 1;
+    transform: none;
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
 .animate-fade-in-up {
-  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 1;
+  transform: none;
 }
 
 /* Stagger children */
 .stagger-children>* {
-  opacity: 0;
-  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 1;
+  transform: none;
 }
 
 .stagger-children>*:nth-child(1) {
@@ -567,36 +568,43 @@ input[type="range"]::-moz-range-thumb {
 /* Gentle fade for landing page entrance */
 @keyframes gentleFade {
   from {
-    opacity: 0;
-    transform: translateY(8px);
+    opacity: 1;
+    transform: none;
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: none;
   }
 }
 
 .animate-gentle-fade {
-  animation: gentleFade 0.8s ease-out forwards;
+  opacity: 1;
+  transform: none;
 }
 
 .animate-gentle-fade-delay-1 {
-  opacity: 0;
-  animation: gentleFade 0.8s ease-out 0.15s forwards;
+  opacity: 1;
+  transform: none;
 }
 
 .animate-gentle-fade-delay-2 {
-  opacity: 0;
-  animation: gentleFade 0.8s ease-out 0.3s forwards;
+  opacity: 1;
+  transform: none;
 }
 
 .animate-gentle-fade-delay-3 {
-  opacity: 0;
-  animation: gentleFade 0.8s ease-out 0.45s forwards;
+  opacity: 1;
+  transform: none;
 }
 
 .animate-gentle-fade-delay-4 {
-  opacity: 0;
-  animation: gentleFade 0.8s ease-out 0.6s forwards;
+  opacity: 1;
+  transform: none;
 }
+
+/* Global rule to disable all animations and transitions */
+* {
+  animation: none !important;
+  transition: none !important;
+}

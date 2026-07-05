@@ -906,5 +906,39 @@
     "shortReview": "This bracelet offers a distinctive look with its rhodium plating and american-diamonds, creating a striking contrast that's sure to turn heads. Made with high-quality stainless steel, it combines durability with a luxurious feel. The versatile design allows it to be dressed up or down, making it suitable for both casual and party occasions.",
     "lastUpdated": "2026-06-24",
     "gender": "men"
+  },
+  {
+    "name": "Mohawk Silver Cuff",
+    "image": "https://salty.co.in/cdn/shop/files/Mohawk-Silver-Cuff-Salty-Alpha-224563585.jpg",
+    "description": "Crafted with utmost precision and attention to detail, this bracelet is designed to effortlessly elevate any outfit!",
+    "specs": {
+      "Colour": "Silver",
+      "Material": "Stainless steel",
+      "Dimension": "Diameter: 6.5 cm, Width: 0.8 cm",
+      "Common Name": "Cuff Bracelets",
+      "Warranty": "N/A"
+    },
+    "price": 549,
+    "originalPrice": 980,
+    "affiliateUrl": "https://salty.co.in/products/mohawk-silver-cuff?bg_ref=3sfGeer4b2",
+    "store": "Salty",
+    "rating": 4.5,
+    "reviewCount": 38,
+    "badge": "Bold",
+    "tags": [
+      "cuff"
+    ],
+    "pros": [
+      "Minimal and timeless design that never goes out of style",
+      "Made with high-quality stainless steel for durability and long-lasting shine"
+    ],
+    "cons": [
+      "The cuff design may not be suitable for individuals with smaller wrists",
+      "May not be suitable for individuals with sensitive skin"
+    ],
+    "whoShouldBuy": "This bracelet is ideal for individuals looking for a stylish and versatile accessory that can be worn for various occasions, from everyday wear to special events.",
+    "shortReview": "Whether you're heading to a formal event or a casual outing, this bracelet is bound to make a statement!",
+    "lastUpdated": "2026-07-05",
+    "gender": "men"
   }
 ]
